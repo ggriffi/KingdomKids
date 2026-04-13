@@ -1,0 +1,33 @@
+{
+  "name": "The Kingdom Kids",
+  "tagline": "Discover Faith. Learn Jesus. Join the Mission.",
+  "description": "A vibrant Safari Adventure Bible curriculum series for children ages 4–12. Join the Explorer animals on an exciting journey through God's Word!",
+  "ctaButton": {
+    "label": "Get Started",
+    "href": "/curriculum"
+  },
+  "contact": {
+    "email": "hello@kingdomkids.com",
+    "phone": "",
+    "address": ""
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  },
+  "nav": [
+    { "label": "Bookshelf",          "href": "/bookshelf" },
+    { "label": "Curriculum",         "href": "/curriculum" },
+    { "label": "Meet the Explorers", "href": "/explorers" },
+    { "label": "Missions",           "href": "/missions" },
+    { "label": "Shop",               "href": "/shop" }
+  ],
+  "footer": {
+    "copyright": "© 2026 The Kingdom Kids. All rights reserved.",
+    "links": [
+      { "label": "Privacy Policy", "href": "/privacy" },
+      { "label": "Terms of Use",   "href": "/terms" }
+    ]
+  }
+}

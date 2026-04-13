@@ -1,0 +1,54 @@
+{
+  "heading": "Meet the Explorers",
+  "subheading": "Your brave guides through God's Word",
+  "explorers": [
+    {
+      "id": "ellie",
+      "name": "Ellie",
+      "animal": "Elephant",
+      "emoji": "🐘",
+      "color": "#9b8db0",
+      "role": "The Wise Leader",
+      "verse": "\"Be strong and courageous. Do not be afraid.\" — Joshua 1:9",
+      "bio": "Ellie is the thoughtful, gentle leader of the group. She never forgets a Bible verse — elephants never forget! She encourages her friends when things get tough.",
+      "traits": ["Wise", "Gentle", "Encouraging"],
+      "favoriteBook": "Proverbs"
+    },
+    {
+      "id": "giraffy",
+      "name": "Giraffy",
+      "animal": "Giraffe",
+      "emoji": "🦒",
+      "color": "#d4a853",
+      "role": "The Lookout",
+      "verse": "\"I lift up my eyes to the mountains — where does my help come from?\" — Psalm 121:1",
+      "bio": "Giraffy can see farther than anyone! She spots trouble before it arrives and always looks to God for help. Her long neck keeps her head above the clouds.",
+      "traits": ["Observant", "Hopeful", "Curious"],
+      "favoriteBook": "Psalms"
+    },
+    {
+      "id": "stripes",
+      "name": "Stripes",
+      "animal": "Tiger",
+      "emoji": "🐯",
+      "color": "#e8700a",
+      "role": "The Brave Scout",
+      "verse": "\"The Lord is my strength and my shield.\" — Psalm 28:7",
+      "bio": "Stripes is bold, fast, and always ready for adventure! Sometimes a little too eager, he is learning to pause and pray before leaping into action.",
+      "traits": ["Brave", "Energetic", "Passionate"],
+      "favoriteBook": "Acts"
+    },
+    {
+      "id": "hippo",
+      "name": "Hippo",
+      "animal": "Hippopotamus",
+      "emoji": "🦛",
+      "color": "#7aadcf",
+      "role": "The Loyal Friend",
+      "verse": "\"A friend loves at all times.\" — Proverbs 17:17",
+      "bio": "Hippo may be big, but he has the biggest heart on the team. He is always the first to share his snacks, lend a hand, or give a hug when someone is sad.",
+      "traits": ["Loyal", "Kind", "Generous"],
+      "favoriteBook": "Ruth"
+    }
+  ]
+}
