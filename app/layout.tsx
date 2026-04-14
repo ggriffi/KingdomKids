@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description: site.description,
   keywords: ["Bible curriculum", "children's ministry", "safari adventure", "Kingdom Kids", "Christian education"],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
