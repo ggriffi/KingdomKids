@@ -151,15 +151,20 @@ export default function HomePage() {
 
         {/* ── CENTER: Hero + Map + CTA ───────────── */}
         <main className="order-1 lg:order-2 flex flex-col items-center gap-5">
-          {/* Hero mascot */}
-          <div className="w-full max-w-2xl">
+          {/* Hero mascot — masked to blend into jungle background */}
+          <div className="w-full max-w-2xl"
+            style={{
+              WebkitMaskImage:
+                "radial-gradient(ellipse 82% 72% at 50% 48%, black 35%, rgba(0,0,0,0.7) 55%, transparent 78%)",
+              maskImage:
+                "radial-gradient(ellipse 82% 72% at 50% 48%, black 35%, rgba(0,0,0,0.7) 55%, transparent 78%)",
+            }}>
             <Image
               src="/images/KingdomKids.png"
               alt="The Kingdom Kids — Ellie, Giraffy, Stripes, and Hippo"
               width={800}
               height={500}
-              className="w-full h-auto rounded-3xl"
-              style={{ filter: "drop-shadow(0 14px 44px rgba(0,0,0,.65))" }}
+              className="w-full h-auto"
               priority
             />
           </div>
