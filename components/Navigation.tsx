@@ -18,7 +18,7 @@ export default function Navigation() {
 
   return (
     <div className="sticky top-0 z-50 w-full px-3 pt-[10px] pb-0"
-      style={{ background: "transparent" }}>
+      style={{ background: "#0a2c10" }}>
 
       {/* Rope hooks */}
       <span className="kk-rope left"  aria-hidden="true" />
