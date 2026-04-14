@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { curriculum } from "@/lib/data";
 
@@ -17,8 +18,17 @@ export default function CurriculumPage() {
         {curriculum.subheading}
       </p>
 
-      {/* Overview */}
-      <div style={{ background: "rgba(255,255,255,0.5)", borderRadius: "10px", padding: "9px 13px", marginBottom: "12px", border: "1px solid rgba(196,146,58,0.3)" }}>
+      {/* Ms. Rose intro + overview */}
+      <div style={{ background: "rgba(255,255,255,0.5)", borderRadius: "10px", padding: "9px 13px", marginBottom: "12px", border: "1px solid rgba(196,146,58,0.3)", display: "flex", alignItems: "center", gap: "12px" }}>
+        <div style={{ flexShrink: 0 }}>
+          <Image
+            src="/images/Ms. Rose in vibrant cartoon style.png"
+            alt="Ms. Rose"
+            width={56}
+            height={70}
+            style={{ objectFit: "contain", display: "block" }}
+          />
+        </div>
         <p style={{ color: "#5c3d1e", fontSize: "0.78rem", lineHeight: 1.6, margin: 0 }}>{curriculum.overview}</p>
       </div>
 
@@ -127,6 +137,20 @@ export default function CurriculumPage() {
             </span>
           </a>
         ))}
+      </div>
+
+      {/* Safari Rules poster */}
+      <h2 style={{ fontFamily: "Georgia, serif", color: "#5c3d1e", fontSize: "0.95rem", fontWeight: 800, margin: "0 0 7px", borderBottom: "2px solid rgba(196,146,58,0.3)", paddingBottom: "4px" }}>
+        Safari Rules
+      </h2>
+      <div style={{ marginBottom: "14px", borderRadius: "10px", overflow: "hidden", border: "1px solid rgba(196,146,58,0.4)" }}>
+        <Image
+          src="/images/rules poster.png"
+          alt="Kingdom Kids Safari Rules"
+          width={800}
+          height={533}
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
       </div>
 
       <div style={{ textAlign: "center" }}>

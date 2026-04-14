@@ -153,7 +153,17 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
                 flexShrink:   0,
               }}
             />
-            <div style={{ padding: "14px 18px 18px" }}>{children}</div>
+            {/* Logo strip */}
+            <div style={{ display: "flex", justifyContent: "center", padding: "6px 0 4px", borderBottom: "1px solid rgba(196,146,58,0.25)" }}>
+              <Image
+                src="/images/circle logo.png"
+                alt="The Kingdom Kids"
+                width={52}
+                height={42}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+            <div style={{ padding: "10px 18px 18px" }}>{children}</div>
           </div>
         )}
 
