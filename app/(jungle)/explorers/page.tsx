@@ -25,7 +25,7 @@ export default function ExplorersPage() {
         {explorers.subheading}
       </p>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "9px" }}>
+      <div className="kk-grid-2">
         {explorers.explorers.map((explorer) => {
           const img = CHARACTER_IMAGES[explorer.id];
           return (

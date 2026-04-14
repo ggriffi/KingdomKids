@@ -36,7 +36,7 @@ export default function CurriculumPage() {
       <h2 style={{ fontFamily: "Georgia, serif", color: "#5c3d1e", fontSize: "0.95rem", fontWeight: 800, margin: "0 0 7px", borderBottom: "2px solid rgba(196,146,58,0.3)", paddingBottom: "4px" }}>
         What&apos;s Included
       </h2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "7px", marginBottom: "12px" }}>
+      <div className="kk-grid-2" style={{ marginBottom: "12px" }}>
         {curriculum.features.map((feature) => (
           <div
             key={feature.title}
@@ -77,7 +77,7 @@ export default function CurriculumPage() {
       <h2 style={{ fontFamily: "Georgia, serif", color: "#5c3d1e", fontSize: "0.95rem", fontWeight: 800, margin: "0 0 7px", borderBottom: "2px solid rgba(196,146,58,0.3)", paddingBottom: "4px" }}>
         Grade-Level Tracks
       </h2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "7px", marginBottom: "12px" }}>
+      <div className="kk-grid-2" style={{ marginBottom: "12px" }}>
         {curriculum.grades.map((grade) => (
           <div
             key={grade.id}
