@@ -28,7 +28,7 @@ export default function MissionsPage() {
       <h2 style={{ fontFamily: "Georgia, serif", color: "#5c3d1e", fontSize: "0.95rem", fontWeight: 800, margin: "0 0 7px", borderBottom: "2px solid rgba(196,146,58,0.3)", paddingBottom: "4px" }}>
         Mission Points
       </h2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "7px", marginBottom: "12px" }}>
+      <div className="kk-grid-2" style={{ marginBottom: "12px" }}>
         {missions.missionPoints.map((point, idx) => (
           <div
             key={point.id}
@@ -71,7 +71,7 @@ export default function MissionsPage() {
       <h2 style={{ fontFamily: "Georgia, serif", color: "#5c3d1e", fontSize: "0.95rem", fontWeight: 800, margin: "0 0 7px", borderBottom: "2px solid rgba(196,146,58,0.3)", paddingBottom: "4px" }}>
         Mission Challenges
       </h2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "7px", marginBottom: "14px" }}>
+      <div className="kk-grid-3" style={{ marginBottom: "14px" }}>
         {missions.challenges.map((challenge) => (
           <div
             key={challenge.id}

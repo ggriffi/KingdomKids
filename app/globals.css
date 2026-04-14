@@ -275,3 +275,22 @@
     .kk-nav-links a { text-align: center; padding: 12px; }
   }
 }
+
+/* ── Responsive grid helpers (jungle pages) ──────────── */
+@layer utilities {
+  .kk-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+  }
+  .kk-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+  }
+
+  @media (max-width: 479px) {
+    .kk-grid-2 { grid-template-columns: 1fr; }
+    .kk-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  }
+}
