@@ -58,8 +58,17 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-[#3d2008] px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div className="border-t border-[#3d2008] px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
         <span className="text-[#fdf6e3]/50 text-xs">{site.footer.copyright}</span>
+
+        {/* Portal login — prominent center link */}
+        <Link href="/admin"
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-full font-bold text-xs uppercase tracking-widest transition-all
+            text-[#3d2008] hover:text-[#1a0e05] hover:shadow-lg"
+          style={{ background: "linear-gradient(135deg, #f5c842, #e8a030)", border: "2px solid #c47028" }}>
+          🔐 Parent &amp; Teacher Portal Login
+        </Link>
+
         <div className="flex gap-4">
           {site.footer.links.map((link) => (
             <Link key={link.href} href={link.href}
