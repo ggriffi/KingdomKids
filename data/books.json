@@ -1,0 +1,64 @@
+{
+  "jungleNews": {
+    "heading": "Jungle News",
+    "subheading": "Latest book releases"
+  },
+  "books": [
+    {
+      "id": "kingdom-releases",
+      "title": "The Kingdom Releases",
+      "series": "Volume 1",
+      "description": "Join Ellie, Giraffy, Stripes, and Hippo as they discover God's plan for the Kingdom! Perfect for ages 4–8.",
+      "ageRange": "4–8",
+      "pages": 48,
+      "price": 14.99,
+      "coverColor": "#e8a030",
+      "tags": ["new", "featured"],
+      "available": true,
+      "shopLink": "/shop#kingdom-releases",
+      "previewLink": "/bookshelf/kingdom-releases"
+    },
+    {
+      "id": "preview-kingdom-kids",
+      "title": "Preview of Kingdom Kids",
+      "series": "Sampler",
+      "description": "A free sampler featuring the first chapter of each Kingdom Kids adventure. Great for new families!",
+      "ageRange": "4–12",
+      "pages": 24,
+      "price": 0,
+      "coverColor": "#3d9e56",
+      "tags": ["free", "sampler"],
+      "available": true,
+      "shopLink": "/shop#preview",
+      "previewLink": "/bookshelf/preview-kingdom-kids"
+    },
+    {
+      "id": "into-the-wild",
+      "title": "Into the Wild",
+      "series": "Volume 2",
+      "description": "The explorers venture deeper into the jungle, uncovering Bible stories about courage and trust.",
+      "ageRange": "6–10",
+      "pages": 56,
+      "price": 14.99,
+      "coverColor": "#5a7a3a",
+      "tags": ["coming-soon"],
+      "available": false,
+      "shopLink": "",
+      "previewLink": ""
+    },
+    {
+      "id": "rivers-of-life",
+      "title": "Rivers of Life",
+      "series": "Volume 3",
+      "description": "A journey through water-themed Bible miracles — the Nile, the Jordan, the Sea of Galilee.",
+      "ageRange": "6–10",
+      "pages": 52,
+      "price": 14.99,
+      "coverColor": "#3ab5e6",
+      "tags": ["coming-soon"],
+      "available": false,
+      "shopLink": "",
+      "previewLink": ""
+    }
+  ]
+}

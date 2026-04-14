@@ -1,0 +1,87 @@
+{
+  "heading": "Join the Mission",
+  "subheading": "Every lesson is a new adventure on God's mission map",
+  "mapDescription": "The Kingdom Kids mission map tracks your explorer's journey through the Bible. Each mission point unlocks a new Bible story, memory verse, and adventure challenge.",
+  "missionPoints": [
+    {
+      "id": "genesis-garden",
+      "label": "Genesis Garden",
+      "bibleRef": "Genesis 1–3",
+      "shortDesc": "Creation & the Fall",
+      "color": "#22c55e",
+      "x": 20,
+      "y": 65,
+      "completed": false
+    },
+    {
+      "id": "ark-adventure",
+      "label": "Ark Adventure",
+      "bibleRef": "Genesis 6–9",
+      "shortDesc": "Noah's Faithful Journey",
+      "color": "#3ab5e6",
+      "x": 35,
+      "y": 45,
+      "completed": false
+    },
+    {
+      "id": "promised-land",
+      "label": "Promised Land",
+      "bibleRef": "Joshua 1–4",
+      "shortDesc": "Crossing the Jordan",
+      "color": "#f5c842",
+      "x": 55,
+      "y": 30,
+      "completed": false
+    },
+    {
+      "id": "shepherd-hills",
+      "label": "Shepherd Hills",
+      "bibleRef": "Psalm 23",
+      "shortDesc": "The Lord is My Shepherd",
+      "color": "#f07c2a",
+      "x": 70,
+      "y": 50,
+      "completed": false
+    },
+    {
+      "id": "galilee-shores",
+      "label": "Galilee Shores",
+      "bibleRef": "Matthew 4:18–22",
+      "shortDesc": "Jesus Calls the Disciples",
+      "color": "#7b3fa0",
+      "x": 50,
+      "y": 70,
+      "completed": false
+    },
+    {
+      "id": "resurrection-ridge",
+      "label": "Resurrection Ridge",
+      "bibleRef": "Luke 24",
+      "shortDesc": "He Is Risen!",
+      "color": "#d94f2b",
+      "x": 80,
+      "y": 75,
+      "completed": false
+    }
+  ],
+  "challenges": [
+    {
+      "id": "memory-verse",
+      "title": "Memory Verse Challenge",
+      "description": "Memorize the weekly verse and earn a mission badge for your explorer passport!",
+      "icon": "BookMarked"
+    },
+    {
+      "id": "family-mission",
+      "title": "Family Mission",
+      "description": "Complete the at-home family activity and share what you discovered with your class.",
+      "icon": "Heart"
+    },
+    {
+      "id": "community-serve",
+      "title": "Community Service",
+      "description": "Each unit includes a real-world service project to put faith into action.",
+      "icon": "HandHeart"
+    }
+  ]
+}

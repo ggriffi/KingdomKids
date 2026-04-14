@@ -1,0 +1,81 @@
+{
+  "heading": "Kingdom Kids Curriculum",
+  "subheading": "Bible-based learning designed for every classroom and home",
+  "teacherResourcesHeading": "Teacher Resources",
+  "teacherResourcesSubheading": "Downloadable curriculum previews",
+  "overview": "The Kingdom Kids curriculum is a 36-week, fully-graded Bible program for children ages 4–12. Each lesson weaves adventure storytelling with Scripture memorization, craft activities, and family discussion guides.",
+  "grades": [
+    {
+      "id": "preschool",
+      "label": "Preschool (Ages 3–5)",
+      "color": "#f5c842",
+      "description": "Simple stories, sing-along songs, and hands-on crafts to introduce the biggest ideas of the Bible."
+    },
+    {
+      "id": "early",
+      "label": "Early Elementary (Grades K–2)",
+      "color": "#3ab5e6",
+      "description": "Engaging lessons with memory verse activities, discussion questions, and take-home pages."
+    },
+    {
+      "id": "upper",
+      "label": "Upper Elementary (Grades 3–5)",
+      "color": "#22c55e",
+      "description": "Deeper dives into Bible themes, character studies, and creative writing projects."
+    },
+    {
+      "id": "middle",
+      "label": "Middle School (Grades 6–8)",
+      "color": "#f07c2a",
+      "description": "Apologetics-ready lessons, worldview discussions, and Scripture journaling."
+    }
+  ],
+  "features": [
+    {
+      "icon": "BookOpen",
+      "title": "36-Week Scope & Sequence",
+      "description": "A complete school-year curriculum with teacher guides, student pages, and assessment tools."
+    },
+    {
+      "icon": "Download",
+      "title": "Downloadable Resources",
+      "description": "Printable worksheets, craft templates, and parent newsletters included with every unit."
+    },
+    {
+      "icon": "Users",
+      "title": "Multi-Age Adaptations",
+      "description": "Each lesson includes easy adaptations for younger and older learners so mixed-age classes can study together."
+    },
+    {
+      "icon": "Star",
+      "title": "Scripture Memory",
+      "description": "Every lesson highlights a key verse with memory aids, songs, and visual flashcards."
+    }
+  ],
+  "downloads": [
+    {
+      "id": "teacher-preview",
+      "title": "Teacher Curriculum Preview",
+      "description": "Download the full Teacher's Guide preview — 12 sample lessons, scope & sequence, and pacing guide.",
+      "fileLabel": "PDF · 4.2 MB",
+      "href": "/downloads/teacher-curriculum-preview.pdf",
+      "featured": true
+    },
+    {
+      "id": "student-preview",
+      "title": "Student Workbook Preview",
+      "description": "See the student experience: activity pages, memory verse cards, and mission challenges.",
+      "fileLabel": "PDF · 2.8 MB",
+      "href": "/downloads/student-workbook-preview.pdf",
+      "featured": true
+    },
+    {
+      "id": "scope-sequence",
+      "title": "Scope & Sequence Chart",
+      "description": "Full year overview of topics, Bible passages, and learning objectives by grade band.",
+      "fileLabel": "PDF · 0.9 MB",
+      "href": "/downloads/scope-sequence.pdf",
+      "featured": false
+    }
+  ]
+}
