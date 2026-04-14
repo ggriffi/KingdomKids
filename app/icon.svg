@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#2d8a1a"/>
+      <stop offset="100%" stop-color="#0d3a08"/>
+    </radialGradient>
+    <radialGradient id="face" cx="38%" cy="32%" r="72%">
+      <stop offset="0%" stop-color="#f5e8b0"/>
+      <stop offset="55%" stop-color="#d4b060"/>
+      <stop offset="100%" stop-color="#9a7028"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ffe878"/>
+      <stop offset="25%"  stop-color="#d4a030"/>
+      <stop offset="55%"  stop-color="#f5c842"/>
+      <stop offset="80%"  stop-color="#b87820"/>
+      <stop offset="100%" stop-color="#f5c842"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background jungle circle -->
+  <circle cx="50" cy="50" r="50" fill="url(#bg)"/>
+
+  <!-- Leaf accents (8 leaves radiating outward) -->
+  <ellipse cx="50" cy="7"  rx="5.5" ry="13" fill="#2a9020" transform="rotate(0   50 50)"/>
+  <ellipse cx="50" cy="7"  rx="5.5" ry="13" fill="#228018" transform="rotate(45  50 50)"/>
+  <ellipse cx="50" cy="7"  rx="5.5" ry="13" fill="#2a9020" transform="rotate(90  50 50)"/>
+  <ellipse cx="50" cy="7"  rx="5.5" ry="13" fill="#1e7012" transform="rotate(135 50 50)"/>
+  <ellipse cx="50" cy="7"  rx="5.5" ry="13" fill="#2a9020" transform="rotate(180 50 50)"/>
+  <ellipse cx="50" cy="7"  rx="5.5" ry="13" fill="#228018" transform="rotate(225 50 50)"/>
+  <ellipse cx="50" cy="7"  rx="5.5" ry="13" fill="#2a9020" transform="rotate(270 50 50)"/>
+  <ellipse cx="50" cy="7"  rx="5.5" ry="13" fill="#1e7012" transform="rotate(315 50 50)"/>
+
+  <!-- Dark outer border -->
+  <circle cx="50" cy="50" r="43" fill="#154d0e"/>
+
+  <!-- Gold outer ring -->
+  <circle cx="50" cy="50" r="43" fill="none" stroke="url(#gold)" stroke-width="5.5"/>
+
+  <!-- Dark separator ring -->
+  <circle cx="50" cy="50" r="39" fill="#0d3a08"/>
+
+  <!-- Thin gold separator -->
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#d4a030" stroke-width="1"/>
+
+  <!-- Compass face -->
+  <circle cx="50" cy="50" r="36" fill="url(#face)"/>
+
+  <!-- Compass face edge -->
+  <circle cx="50" cy="50" r="36" fill="none" stroke="#b08030" stroke-width="1"/>
+
+  <!-- Tick marks around compass edge (every 30°) -->
+  <g stroke="#7a5820" stroke-width="0.6" opacity="0.55">
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(30  50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(60  50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(90  50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(120 50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(150 50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(180 50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(210 50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(240 50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(270 50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(300 50 50)"/>
+    <line x1="50" y1="16" x2="50" y2="19" transform="rotate(330 50 50)"/>
+  </g>
+
+  <!-- Compass rose: N (red) -->
+  <path d="M50,20 L53,47 L50,43 L47,47Z" fill="#cc2200"/>
+  <!-- Compass rose: S (cream) -->
+  <path d="M50,80 L53,53 L50,57 L47,53Z" fill="#f0dca0"/>
+  <!-- Compass rose: E (cream) -->
+  <path d="M80,50 L53,47 L57,50 L53,53Z" fill="#f0dca0"/>
+  <!-- Compass rose: W (cream) -->
+  <path d="M20,50 L47,47 L43,50 L47,53Z" fill="#f0dca0"/>
+
+  <!-- Diagonal star points (small) -->
+  <path d="M72,28 L52,48 L53,51 L55,49Z" fill="#c49a30" opacity="0.6"/>
+  <path d="M28,72 L48,52 L47,49 L45,51Z" fill="#c49a30" opacity="0.6"/>
+  <path d="M72,72 L52,52 L49,53 L51,55Z" fill="#c49a30" opacity="0.6"/>
+  <path d="M28,28 L48,48 L51,47 L49,45Z" fill="#c49a30" opacity="0.6"/>
+
+  <!-- Center hub -->
+  <circle cx="50" cy="50" r="5"   fill="#d4a030" stroke="#8b6010" stroke-width="0.8"/>
+  <circle cx="50" cy="50" r="2.2" fill="#5c3a10"/>
+
+  <!-- KINGDOM text along top arc -->
+  <path id="kTop" d="M 21,50 a 29,29 0 0 1 58,0" fill="none"/>
+  <text font-size="7.2" font-weight="bold" fill="#5c3a10" font-family="Georgia,serif" letter-spacing="0.5">
+    <textPath href="#kTop" startOffset="8%">KINGDOM</textPath>
+  </text>
+
+  <!-- KIDS text along bottom arc -->
+  <path id="kBot" d="M 25,56 a 27,27 0 0 0 50,0" fill="none"/>
+  <text font-size="7.2" font-weight="bold" fill="#5c3a10" font-family="Georgia,serif" letter-spacing="2.5">
+    <textPath href="#kBot" startOffset="20%">KIDS</textPath>
+  </text>
+</svg>
