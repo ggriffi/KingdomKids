@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import NavConditional from "@/components/NavConditional";
+import FooterConditional from "@/components/FooterConditional";
 import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -26,9 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <Navigation />
+        <NavConditional />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <FooterConditional />
       </body>
     </html>
   );
