@@ -6,11 +6,11 @@ import { usePathname } from "next/navigation";
 const FB = "https://www.facebook.com/groups/kingdomkids";
 
 const TOP_NAV = [
-  { label: "Home",    href: "/",           cx: "5%",  cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "About",   href: FB,            cx: "12%", cy: "6%", w: "8%", h: "8%", ext: true  },
-  { label: "Games",   href: "/games",      cx: "19%", cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "Videos",  href: "/bookshelf",  cx: "26%", cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "Contact", href: "/curriculum", cx: "33%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "Home",    href: "/",           cx: "9%",  cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "About",   href: FB,            cx: "16%", cy: "6%", w: "8%", h: "8%", ext: true  },
+  { label: "Games",   href: "/games",      cx: "23%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "Videos",  href: "/bookshelf",  cx: "30%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "Contact", href: "/curriculum", cx: "37%", cy: "6%", w: "8%", h: "8%", ext: false },
 ];
 
 const CIRCLES = [
@@ -41,8 +41,8 @@ const circleStyle = (b: { cx: string; cy: string; d: string }) => ({
   background:  "transparent",
 });
 
-const PILL_CLASS   = "transition-all duration-150 cursor-pointer ring-2 ring-red-500 bg-red-500/30";
-const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer ring-4 ring-blue-500 bg-blue-500/30";
+const PILL_CLASS   = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
+const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer hover:ring-4 hover:ring-white/60 hover:bg-white/10 hover:scale-110";
 
 function NavLink({ b }: { b: typeof TOP_NAV[number] }) {
   if (b.ext) return (
