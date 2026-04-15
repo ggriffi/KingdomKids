@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
 
 const FB = "https://www.facebook.com/groups/kingdomkids";
 
@@ -45,7 +44,36 @@ const circleStyle = (b: { cx: string; cy: string; d: string }) => ({
 const PILL_CLASS   = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
 const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer hover:ring-4 hover:ring-white/60 hover:bg-white/10 hover:scale-110";
 
-/* ─── Shared panel header (logo + gold stripe) ──────── */
+function NavLink({ b }: { b: typeof TOP_NAV[number] }) {
+  if (b.ext) return (
+    <a href={b.href} target="_blank" rel="noopener noreferrer"
+      aria-label={b.label} title={b.label} style={pillStyle(b)} className={PILL_CLASS}>
+      <span className="sr-only">{b.label}</span>
+    </a>
+  );
+  return (
+    <Link href={b.href} aria-label={b.label} title={b.label}
+      style={pillStyle(b)} className={PILL_CLASS}>
+      <span className="sr-only">{b.label}</span>
+    </Link>
+  );
+}
+
+function CircleLink({ b }: { b: typeof CIRCLES[number] }) {
+  if (b.ext) return (
+    <a href={b.href} target="_blank" rel="noopener noreferrer"
+      aria-label={b.label} title={b.label} style={circleStyle(b)} className={CIRCLE_CLASS}>
+      <span className="sr-only">{b.label}</span>
+    </a>
+  );
+  return (
+    <Link href={b.href} aria-label={b.label} title={b.label}
+      style={circleStyle(b)} className={CIRCLE_CLASS}>
+      <span className="sr-only">{b.label}</span>
+    </Link>
+  );
+}
+
 function PanelHeader() {
   return (
     <>
@@ -57,180 +85,113 @@ function PanelHeader() {
   );
 }
 
-/* ─── Mobile nav link ────────────────────────────────── */
-const MOB_LINK_STYLE: React.CSSProperties = {
-  color:          "#f7d88d",
-  textDecoration: "none",
-  textTransform:  "uppercase",
-  fontWeight:     900,
-  fontSize:       "clamp(0.6rem, 3.2vw, 0.8rem)",
-  letterSpacing:  "0.02em",
-  padding:        "12px 4px",
-  whiteSpace:     "nowrap",
-  textShadow:     "0 1px 0 #5f3617, 0 2px 0 #5f3617",
-  fontFamily:     '"Trebuchet MS", Arial, sans-serif',
-  display:        "block",
-  textAlign:      "center",
+const MOB_LINK: React.CSSProperties = {
+  color: "#f7d88d", textDecoration: "none", textTransform: "uppercase",
+  fontWeight: 900, fontSize: "clamp(0.58rem, 3vw, 0.8rem)", letterSpacing: "0.02em",
+  padding: "12px 2px", whiteSpace: "nowrap",
+  textShadow: "0 1px 0 #5f3617, 0 2px 0 #5f3617",
+  fontFamily: '"Trebuchet MS", Arial, sans-serif',
+  display: "block", textAlign: "center", flex: 1,
 };
 
 export default function JungleLayout({ children }: { children: React.ReactNode }) {
-  const pathname  = usePathname();
-  const isHome    = pathname === "/";
-  const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
+  const isHome   = pathname === "/";
 
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 700);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
+  return (
+    <>
+      {/* ═══════════════════════════════════════════════
+          MOBILE  (visible ≤ 699 px, hidden on desktop)
+      ═══════════════════════════════════════════════ */}
+      <div className="kk-mobile" style={{ minHeight: "100dvh", flexDirection: "column", background: "#0a2c10" }}>
 
-  /* ── MOBILE LAYOUT ────────────────────────────────── */
-  if (isMobile) {
-    return (
-      <div style={{ minHeight: "100dvh", display: "flex", flexDirection: "column", background: "#0a2c10" }}>
-
-        {/* Image header — shows the character scene */}
+        {/* Image header */}
         <div style={{ position: "relative", height: "210px", flexShrink: 0, overflow: "hidden" }}>
-          <Image
-            src="/images/Jungle adventure with The Kingdom Kids.png"
-            alt="The Kingdom Kids – Jungle Adventure"
-            fill
-            style={{ objectFit: "cover", objectPosition: "50% 38%" }}
-            priority
-            sizes="100vw"
-          />
-          {/* Logo centred over home image */}
+          <Image src="/images/Jungle adventure with The Kingdom Kids.png"
+            alt="The Kingdom Kids" fill style={{ objectFit: "cover", objectPosition: "50% 38%" }}
+            priority sizes="100vw" />
           {isHome && (
-            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "6px", background: "rgba(0,0,0,0.12)" }}>
-              <Image src="/images/circle logo.png" alt="The Kingdom Kids" width={120} height={96} style={{ objectFit: "contain", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }} />
+            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.1)" }}>
+              <Image src="/images/circle logo.png" alt="The Kingdom Kids" width={120} height={96}
+                style={{ objectFit: "contain", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }} />
             </div>
           )}
         </div>
 
-        {/* Wooden nav bar */}
-        <nav
-          style={{
-            display:       "flex",
-            alignItems:    "stretch",
-            justifyContent:"space-around",
-            background:    "linear-gradient(180deg, #a86a36 0%, #8b5327 40%, #6e3f1d 100%)",
-            borderBottom:  "3px solid #3d2008",
-            borderTop:     "1px solid rgba(255,255,255,0.15)",
-            boxShadow:     "0 4px 12px rgba(0,0,0,0.5)",
-            flexShrink:    0,
-          }}
-        >
-          {TOP_NAV.map((b) =>
-            b.ext ? (
-              <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer" style={MOB_LINK_STYLE}>
-                {b.label}
-              </a>
-            ) : (
-              <Link key={b.label} href={b.href} style={MOB_LINK_STYLE}>
-                {b.label}
-              </Link>
-            )
+        {/* Wooden nav */}
+        <nav style={{ display: "flex", alignItems: "stretch", justifyContent: "space-around",
+          background: "linear-gradient(180deg, #a86a36 0%, #8b5327 40%, #6e3f1d 100%)",
+          borderBottom: "3px solid #3d2008", borderTop: "1px solid rgba(255,255,255,0.15)",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.5)", flexShrink: 0 }}>
+          {TOP_NAV.map((b) => b.ext
+            ? <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer" style={MOB_LINK}>{b.label}</a>
+            : <Link key={b.label} href={b.href} style={MOB_LINK}>{b.label}</Link>
           )}
         </nav>
 
-        {/* Content area */}
+        {/* Content */}
         {isHome ? (
-          /* Home — show circle nav buttons */
-          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", padding: "20px 16px" }}>
-            {CIRCLES.map((b) =>
-              b.ext ? (
-                <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer"
-                  style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", textDecoration: "none" }}>
-                  <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: "linear-gradient(135deg, #f5c842, #d4a853)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 16px rgba(0,0,0,0.4)", border: "3px solid rgba(255,255,255,0.3)" }}>
-                    <span style={{ fontSize: "1.5rem" }}>👥</span>
-                  </div>
-                  <span style={{ color: "#f7d88d", fontSize: "0.62rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center" }}>{b.label}</span>
-                </a>
-              ) : (
-                <Link key={b.label} href={b.href}
-                  style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", textDecoration: "none" }}>
-                  <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: "linear-gradient(135deg, #f5c842, #d4a853)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 16px rgba(0,0,0,0.4)", border: "3px solid rgba(255,255,255,0.3)" }}>
-                    <span style={{ fontSize: "1.5rem" }}>
-                      {b.label === "Latest Video" ? "📺" : b.label === "Fun Games" ? "🎮" : "👥"}
-                    </span>
-                  </div>
-                  <span style={{ color: "#f7d88d", fontSize: "0.62rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center" }}>{b.label}</span>
-                </Link>
-              )
-            )}
+          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", padding: "24px 16px" }}>
+            {CIRCLES.map((b) => {
+              const icon = b.label === "Latest Video" ? "📺" : b.label === "Fun Games" ? "🎮" : "👥";
+              const inner = (
+                <>
+                  <div style={{ width: "72px", height: "72px", borderRadius: "50%",
+                    background: "linear-gradient(135deg, #f5c842, #d4a853)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.4)", border: "3px solid rgba(255,255,255,0.3)",
+                    fontSize: "1.6rem" }}>{icon}</div>
+                  <span style={{ color: "#f7d88d", fontSize: "0.6rem", fontWeight: 800,
+                    textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center",
+                    marginTop: "4px" }}>{b.label}</span>
+                </>
+              );
+              return b.ext
+                ? <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer"
+                    style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</a>
+                : <Link key={b.label} href={b.href}
+                    style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</Link>;
+            })}
           </div>
         ) : (
-          /* Inner pages — scrollable parchment panel */
           <div style={{ flex: 1, overflowY: "auto", background: "rgba(253,246,227,0.98)", display: "flex", flexDirection: "column" }}>
             <PanelHeader />
             <div style={{ padding: "12px 14px 20px" }}>{children}</div>
           </div>
         )}
       </div>
-    );
-  }
 
-  /* ── DESKTOP LAYOUT (unchanged) ──────────────────── */
-  return (
-    <div className="w-full flex items-center justify-center bg-[#0a2c10]" style={{ minHeight: "100vh" }}>
-      <div className="relative" style={{ width: "min(100vw, calc(100vh * 1.5))", aspectRatio: "3 / 2" }}>
+      {/* ═══════════════════════════════════════════════
+          DESKTOP  (visible ≥ 700 px, hidden on mobile)
+      ═══════════════════════════════════════════════ */}
+      <div className="kk-desktop" style={{ width: "100%", alignItems: "center", justifyContent: "center", background: "#0a2c10", minHeight: "100vh" }}>
+        <div className="relative" style={{ width: "min(100vw, calc(100vh * 1.5))", aspectRatio: "3 / 2" }}>
 
-        {/* Scene */}
-        <Image
-          src="/images/Jungle adventure with The Kingdom Kids.png"
-          alt="The Kingdom Kids – Jungle Adventure"
-          fill className="object-fill" priority sizes="100vw"
-        />
+          <Image src="/images/Jungle adventure with The Kingdom Kids.png"
+            alt="The Kingdom Kids – Jungle Adventure"
+            fill className="object-fill" priority sizes="100vw" />
 
-        {/* Top nav overlays */}
-        {TOP_NAV.map((b) =>
-          b.ext ? (
-            <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer"
-              aria-label={b.label} title={b.label} style={pillStyle(b)} className={PILL_CLASS}>
-              <span className="sr-only">{b.label}</span>
-            </a>
-          ) : (
-            <Link key={b.label} href={b.href} aria-label={b.label} title={b.label}
-              style={pillStyle(b)} className={PILL_CLASS}>
-              <span className="sr-only">{b.label}</span>
-            </Link>
-          )
-        )}
+          {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
+          {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
 
-        {/* Circle overlays */}
-        {CIRCLES.map((b) =>
-          b.ext ? (
-            <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer"
-              aria-label={b.label} title={b.label} style={circleStyle(b)} className={CIRCLE_CLASS}>
-              <span className="sr-only">{b.label}</span>
-            </a>
-          ) : (
-            <Link key={b.label} href={b.href} aria-label={b.label} title={b.label}
-              style={circleStyle(b)} className={CIRCLE_CLASS}>
-              <span className="sr-only">{b.label}</span>
-            </Link>
-          )
-        )}
+          {!isHome && (
+            <div style={{
+              position: "absolute", top: "14%", left: "8%", right: "8%", bottom: "23%",
+              overflowY: "auto", borderRadius: "16px",
+              background: "rgba(253, 246, 227, 0.95)",
+              backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)",
+              border: "2px solid rgba(196, 146, 58, 0.65)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.85)",
+              zIndex: 10,
+            }}>
+              <PanelHeader />
+              <div style={{ padding: "10px 18px 18px" }}>{children}</div>
+            </div>
+          )}
 
-        {/* Midsection content panel */}
-        {!isHome && (
-          <div style={{
-            position: "absolute", top: "14%", left: "8%", right: "8%", bottom: "23%",
-            overflowY: "auto", borderRadius: "16px",
-            background: "rgba(253, 246, 227, 0.95)",
-            backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)",
-            border: "2px solid rgba(196, 146, 58, 0.65)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.85)",
-            zIndex: 10,
-          }}>
-            <PanelHeader />
-            <div style={{ padding: "10px 18px 18px" }}>{children}</div>
-          </div>
-        )}
-
-        {isHome && children}
+          {isHome && children}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

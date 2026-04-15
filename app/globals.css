@@ -276,6 +276,15 @@
   }
 }
 
+/* ── Mobile / desktop shell visibility ───────────────── */
+.kk-mobile  { display: none;  }
+.kk-desktop { display: flex;  }
+
+@media (max-width: 699px) {
+  .kk-mobile  { display: flex; }
+  .kk-desktop { display: none; }
+}
+
 /* ── Responsive grid helpers (jungle pages) ──────────── */
 @layer utilities {
   .kk-grid-2 {
