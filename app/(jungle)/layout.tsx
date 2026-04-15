@@ -11,7 +11,13 @@ const TOP_NAV = [
   { label: "About",   href: FB,            cx: "22%", cy: "4%", w: "8%", h: "4.5%", ext: true  },
   { label: "Games",   href: "/games",      cx: "30%", cy: "4%", w: "8%", h: "4.5%", ext: false },
   { label: "Videos",  href: "/bookshelf",  cx: "42%", cy: "4%", w: "8%", h: "4.5%", ext: false },
-  { label: "Contact", href: "/curriculum", cx: "54%", cy: "4%", w: "8%", h: "4.5%", ext: false },
+  { label: "Contact", href: "/contact",    cx: "54%", cy: "4%", w: "8%", h: "4.5%", ext: false },
+];
+
+// Extra nav buttons rendered as real styled orange pills (no artwork button underneath)
+const EXTRA_NAV = [
+  { label: "Rhino Corner", href: "/rhino-corner", ext: false },
+  { label: "Store",        href: "/store",         ext: false },
 ];
 
 const CIRCLES = [
@@ -166,17 +172,28 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             priority sizes="100vw" />
         </div>
 
-        {/* Wooden nav */}
+        {/* Wooden nav — row 1 */}
         <nav style={{
           display: "flex", alignItems: "stretch", justifyContent: "space-around",
           background: "linear-gradient(180deg, #a86a36 0%, #8b5327 40%, #6e3f1d 100%)",
-          borderBottom: "3px solid #3d2008", borderTop: "1px solid rgba(255,255,255,0.15)",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.5)", flexShrink: 0
+          borderTop: "1px solid rgba(255,255,255,0.15)",
+          boxShadow: "0 2px 6px rgba(0,0,0,0.4)", flexShrink: 0
         }}>
           {TOP_NAV.map((b) => b.ext
             ? <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer" style={MOB_LINK}>{b.label}</a>
             : <Link key={b.label} href={b.href} style={MOB_LINK}>{b.label}</Link>
           )}
+        </nav>
+        {/* Wooden nav — row 2 (Rhino Corner + Store) */}
+        <nav style={{
+          display: "flex", alignItems: "stretch", justifyContent: "center", gap: "0",
+          background: "linear-gradient(180deg, #8b5327 0%, #6e3f1d 60%, #5a3318 100%)",
+          borderBottom: "3px solid #3d2008",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.5)", flexShrink: 0
+        }}>
+          {EXTRA_NAV.map((b) => (
+            <Link key={b.label} href={b.href} style={MOB_LINK}>{b.label}</Link>
+          ))}
         </nav>
 
         {/* Content */}
@@ -256,6 +273,30 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
 
           {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
           {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
+
+          {/* Extra orange pill buttons — Rhino Corner & Store (right side, below main nav) */}
+          <div style={{ position: "absolute", top: "11%", right: "2%", display: "flex", flexDirection: "column", gap: "1.5%", zIndex: 5, alignItems: "flex-end" }}>
+            {EXTRA_NAV.map((b) => (
+              <Link key={b.label} href={b.href} style={{
+                display: "block",
+                background: "linear-gradient(180deg, #ffde5a 0%, #f5b020 35%, #e8871a 70%, #c96b12 100%)",
+                color: "#3d2008",
+                fontWeight: 900,
+                fontSize: "clamp(0.45rem, 1.1vw, 0.8rem)",
+                padding: "0.35em 1em",
+                borderRadius: "999px",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+                border: "2px solid rgba(80,35,0,0.45)",
+                boxShadow: "0 3px 10px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.5)",
+                textShadow: "0 1px 0 rgba(255,255,255,0.35)",
+                fontFamily: '"Trebuchet MS", Arial, sans-serif',
+                letterSpacing: "0.02em",
+              }}>
+                {b.label}
+              </Link>
+            ))}
+          </div>
 
           {/* VBS Announcement — left jungle edge, styled panel, click to enlarge */}
           <button
