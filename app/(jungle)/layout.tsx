@@ -43,7 +43,7 @@ const circleStyle = (b: { cx: string; cy: string; d: string }) => ({
 });
 
 // DEBUG: visible overlays — remove ring-* and bg-* before final deploy
-const PILL_CLASS   = "transition-all duration-150 cursor-pointer ring-2 ring-red-500 bg-red-500/30";
+const PILL_CLASS   = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
 const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer hover:ring-4 hover:ring-white/60 hover:bg-white/10 hover:scale-110";
 
 function NavLink({ b }: { b: typeof TOP_NAV[number] }) {
