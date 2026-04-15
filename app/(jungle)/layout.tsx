@@ -304,7 +304,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             aria-label="View VBS Announcement"
             style={{
               position: "absolute", left: "1%", top: "30%",
-              width: "10%", zIndex: 15,
+              width: "10%", zIndex: 5,
               background: "none", border: "none", cursor: "pointer", padding: 0,
             }}
           >
