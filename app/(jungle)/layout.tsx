@@ -7,11 +7,11 @@ import { usePathname } from "next/navigation";
 const FB = "https://www.facebook.com/";
 
 const TOP_NAV = [
-  { label: "Home",    href: "/",           cx: "10%",   cy: "4.3%", w: "5%", h: "4%", ext: false },
-  { label: "About",   href: FB,            cx: "21.9%", cy: "4.3%", w: "5%", h: "4%", ext: true  },
-  { label: "Games",   href: "/games",      cx: "30.2%", cy: "4.3%", w: "5%", h: "4%", ext: false },
-  { label: "Videos",  href: "/bookshelf",  cx: "42.1%", cy: "4.3%", w: "5%", h: "4%", ext: false },
-  { label: "Contact", href: "/contact",    cx: "53.1%", cy: "4.3%", w: "5%", h: "4%", ext: false },
+  { label: "Home", href: "/", cx: "10%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "About", href: FB, cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: true },
+  { label: "Games", href: "/games", cx: "30.8%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Videos", href: "/bookshelf", cx: "42.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Contact", href: "/contact", cx: "53.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
 ];
 
 // Extra nav buttons rendered as real styled orange pills (no artwork button underneath)
