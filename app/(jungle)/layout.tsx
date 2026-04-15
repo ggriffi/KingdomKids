@@ -105,17 +105,11 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
       ═══════════════════════════════════════════════ */}
       <div className="kk-mobile" style={{ minHeight: "100dvh", flexDirection: "column", background: "#0a2c10" }}>
 
-        {/* Image header */}
-        <div style={{ position: "relative", height: "210px", flexShrink: 0, overflow: "hidden" }}>
+        {/* Image header — cropped to show characters only, no bottom circles */}
+        <div style={{ position: "relative", height: "195px", flexShrink: 0, overflow: "hidden" }}>
           <Image src="/images/Jungle adventure with The Kingdom Kids.png"
-            alt="The Kingdom Kids" fill style={{ objectFit: "cover", objectPosition: "50% 38%" }}
+            alt="The Kingdom Kids" fill style={{ objectFit: "cover", objectPosition: "50% 0%" }}
             priority sizes="100vw" />
-          {isHome && (
-            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.1)" }}>
-              <Image src="/images/circle logo.png" alt="The Kingdom Kids" width={120} height={96}
-                style={{ objectFit: "contain", filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }} />
-            </div>
-          )}
         </div>
 
         {/* Wooden nav */}
@@ -131,19 +125,19 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
 
         {/* Content */}
         {isHome ? (
-          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", padding: "24px 16px" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "20px", padding: "22px 16px 28px" }}>
             {CIRCLES.map((b) => {
               const icon = b.label === "Latest Video" ? "📺" : b.label === "Fun Games" ? "🎮" : "👥";
               const inner = (
                 <>
-                  <div style={{ width: "72px", height: "72px", borderRadius: "50%",
+                  <div style={{ width: "76px", height: "76px", borderRadius: "50%",
                     background: "linear-gradient(135deg, #f5c842, #d4a853)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     boxShadow: "0 4px 16px rgba(0,0,0,0.4)", border: "3px solid rgba(255,255,255,0.3)",
-                    fontSize: "1.6rem" }}>{icon}</div>
-                  <span style={{ color: "#f7d88d", fontSize: "0.6rem", fontWeight: 800,
+                    fontSize: "1.7rem" }}>{icon}</div>
+                  <span style={{ color: "#f7d88d", fontSize: "0.62rem", fontWeight: 800,
                     textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center",
-                    marginTop: "4px" }}>{b.label}</span>
+                    marginTop: "6px" }}>{b.label}</span>
                 </>
               );
               return b.ext
