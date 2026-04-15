@@ -4,46 +4,46 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-const FB = "https://www.facebook.com/groups/kingdomkids";
+const FB = "https://www.facebook.com/";
 
 const TOP_NAV = [
-  { label: "Home",    href: "/",           cx: "14%", cy: "6%", w: "10%", h: "8%", ext: false },
-  { label: "About",   href: FB,            cx: "27%", cy: "6%", w: "10%", h: "8%", ext: true  },
-  { label: "Games",   href: "/games",      cx: "41%", cy: "6%", w: "10%", h: "8%", ext: false },
-  { label: "Videos",  href: "/bookshelf",  cx: "55%", cy: "6%", w: "10%", h: "8%", ext: false },
-  { label: "Contact", href: "/curriculum", cx: "69%", cy: "6%", w: "10%", h: "8%", ext: false },
+  { label: "Home", href: "/", cx: "10%", cy: "6%", w: "11%", h: "7.5%", ext: false },
+  { label: "About", href: FB, cx: "22%", cy: "6%", w: "11%", h: "7.5%", ext: true },
+  { label: "Games", href: "/games", cx: "34%", cy: "6%", w: "11%", h: "7.5%", ext: false },
+  { label: "Videos", href: "/bookshelf", cx: "46%", cy: "6%", w: "11%", h: "7.5%", ext: false },
+  { label: "Contact", href: "/curriculum", cx: "58%", cy: "6%", w: "11%", h: "7.5%", ext: false },
 ];
 
 const CIRCLES = [
   { label: "Latest Video", href: "/bookshelf", cx: "26%", cy: "87%", d: "14%", ext: false },
-  { label: "Fun Games",    href: "/games",      cx: "50%", cy: "87%", d: "14%", ext: false },
-  { label: "About Us",     href: FB,            cx: "74%", cy: "87%", d: "14%", ext: true  },
+  { label: "Fun Games", href: "/games", cx: "50%", cy: "87%", d: "14%", ext: false },
+  { label: "About Us", href: FB, cx: "74%", cy: "87%", d: "14%", ext: true },
 ];
 
 const pillStyle = (b: { cx: string; cy: string; w: string; h: string }) => ({
-  position:     "absolute" as const,
-  left:         b.cx,
-  top:          b.cy,
-  width:        b.w,
-  height:       b.h,
-  transform:    "translate(-50%, -50%)",
+  position: "absolute" as const,
+  left: b.cx,
+  top: b.cy,
+  width: b.w,
+  height: b.h,
+  transform: "translate(-50%, -50%)",
   borderRadius: "999px",
-  background:   "transparent",
+  background: "transparent",
 });
 
 const circleStyle = (b: { cx: string; cy: string; d: string }) => ({
-  position:    "absolute" as const,
-  left:        b.cx,
-  top:         b.cy,
-  width:       b.d,
+  position: "absolute" as const,
+  left: b.cx,
+  top: b.cy,
+  width: b.d,
   aspectRatio: "1 / 1",
-  transform:   "translate(-50%, -50%)",
-  borderRadius:"50%",
-  background:  "transparent",
+  transform: "translate(-50%, -50%)",
+  borderRadius: "50%",
+  background: "transparent",
 });
 
 // DEBUG: visible overlays — remove ring-* and bg-* before final deploy
-const PILL_CLASS   = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
+const PILL_CLASS = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
 const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer hover:ring-4 hover:ring-white/60 hover:bg-white/10 hover:scale-110";
 
 function NavLink({ b }: { b: typeof TOP_NAV[number] }) {
@@ -146,8 +146,8 @@ function VbsLightbox({ onClose }: { onClose: () => void }) {
 }
 
 export default function JungleLayout({ children }: { children: React.ReactNode }) {
-  const pathname      = usePathname();
-  const isHome        = pathname === "/";
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [lightbox, setLightbox] = useState(false);
 
   return (
@@ -167,10 +167,12 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
         </div>
 
         {/* Wooden nav */}
-        <nav style={{ display: "flex", alignItems: "stretch", justifyContent: "space-around",
+        <nav style={{
+          display: "flex", alignItems: "stretch", justifyContent: "space-around",
           background: "linear-gradient(180deg, #a86a36 0%, #8b5327 40%, #6e3f1d 100%)",
           borderBottom: "3px solid #3d2008", borderTop: "1px solid rgba(255,255,255,0.15)",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.5)", flexShrink: 0 }}>
+          boxShadow: "0 4px 12px rgba(0,0,0,0.5)", flexShrink: 0
+        }}>
           {TOP_NAV.map((b) => b.ext
             ? <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer" style={MOB_LINK}>{b.label}</a>
             : <Link key={b.label} href={b.href} style={MOB_LINK}>{b.label}</Link>
@@ -186,21 +188,25 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
                 const icon = b.label === "Latest Video" ? "📺" : b.label === "Fun Games" ? "🎮" : "👥";
                 const inner = (
                   <>
-                    <div style={{ width: "76px", height: "76px", borderRadius: "50%",
+                    <div style={{
+                      width: "76px", height: "76px", borderRadius: "50%",
                       background: "linear-gradient(135deg, #f5c842, #d4a853)",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       boxShadow: "0 4px 16px rgba(0,0,0,0.4)", border: "3px solid rgba(255,255,255,0.3)",
-                      fontSize: "1.7rem" }}>{icon}</div>
-                    <span style={{ color: "#f7d88d", fontSize: "0.62rem", fontWeight: 800,
+                      fontSize: "1.7rem"
+                    }}>{icon}</div>
+                    <span style={{
+                      color: "#f7d88d", fontSize: "0.62rem", fontWeight: 800,
                       textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center",
-                      marginTop: "6px" }}>{b.label}</span>
+                      marginTop: "6px"
+                    }}>{b.label}</span>
                   </>
                 );
                 return b.ext
                   ? <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer"
-                      style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</a>
+                    style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</a>
                   : <Link key={b.label} href={b.href}
-                      style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</Link>;
+                    style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</Link>;
               })}
             </div>
 
@@ -271,9 +277,11 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
                 background: "linear-gradient(90deg, #7a4520, #c4923a, #f5c842, #c4923a, #7a4520)",
                 padding: "2px 4px", textAlign: "center",
               }}>
-                <span style={{ fontSize: "0.42rem", fontWeight: 900, color: "#3d2008",
+                <span style={{
+                  fontSize: "0.42rem", fontWeight: 900, color: "#3d2008",
                   textTransform: "uppercase", letterSpacing: "0.06em",
-                  fontFamily: '"Trebuchet MS", Arial, sans-serif' }}>
+                  fontFamily: '"Trebuchet MS", Arial, sans-serif'
+                }}>
                   📢 Announcements
                 </span>
               </div>
