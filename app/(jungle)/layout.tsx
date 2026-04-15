@@ -108,17 +108,27 @@ function VbsLightbox({ onClose }: { onClose: () => void }) {
       }}
     >
       <div
-        style={{ position: "relative", maxWidth: "90vw", maxHeight: "90vh" }}
+        style={{ position: "relative" }}
         onClick={(e) => e.stopPropagation()}
       >
-        <Image
-          src="/images/VBS Annoucement.png"
-          alt="VBS Announcement"
-          width={900}
-          height={900}
-          style={{ width: "auto", height: "auto", maxWidth: "90vw", maxHeight: "85vh",
-            borderRadius: "14px", boxShadow: "0 12px 48px rgba(0,0,0,0.6)" }}
-        />
+        {/* Crop white borders: landscape 940×788 image has white padding on sides.
+            A 3:4 portrait container + object-fit:cover trims ~170px off each side. */}
+        <div style={{
+          position: "relative",
+          width: "min(68vw, 400px)",
+          aspectRatio: "3 / 4",
+          overflow: "hidden",
+          borderRadius: "14px",
+          boxShadow: "0 12px 48px rgba(0,0,0,0.6)",
+        }}>
+          <Image
+            src="/images/VBS Annoucement.png"
+            alt="VBS Announcement"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="400px"
+          />
+        </div>
         <button
           onClick={onClose}
           aria-label="Close"
@@ -206,13 +216,16 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
                     📢 Announcements
                   </span>
                 </div>
-                <Image
-                  src="/images/VBS Annoucement.png"
-                  alt="VBS Announcement — tap to enlarge"
-                  width={560}
-                  height={560}
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+                {/* Crop white borders with 3:4 portrait crop */}
+                <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 4", overflow: "hidden" }}>
+                  <Image
+                    src="/images/VBS Annoucement.png"
+                    alt="VBS Announcement — tap to enlarge"
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                    sizes="280px"
+                  />
+                </div>
               </div>
               <p style={{ color: "#f7d88d", fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", textAlign: "center", marginTop: "4px", letterSpacing: "0.06em" }}>Tap to enlarge</p>
             </button>
@@ -264,13 +277,16 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
                   📢 Announcements
                 </span>
               </div>
-              <Image
-                src="/images/VBS Annoucement.png"
-                alt="VBS Announcement"
-                width={200}
-                height={200}
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
+              {/* Crop white borders with same 3:4 technique */}
+              <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 4", overflow: "hidden" }}>
+                <Image
+                  src="/images/VBS Annoucement.png"
+                  alt="VBS Announcement"
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  sizes="10vw"
+                />
+              </div>
             </div>
           </button>
 
