@@ -7,17 +7,17 @@ import { usePathname } from "next/navigation";
 const FB = "https://www.facebook.com/";
 
 const TOP_NAV = [
-  { label: "Home",    href: "/",           cx: "10%", cy: "4%", w: "8%", h: "4.5%", ext: false },
-  { label: "About",   href: FB,            cx: "22%", cy: "4%", w: "8%", h: "4.5%", ext: true  },
-  { label: "Games",   href: "/games",      cx: "30%", cy: "4%", w: "8%", h: "4.5%", ext: false },
-  { label: "Videos",  href: "/bookshelf",  cx: "42%", cy: "4%", w: "8%", h: "4.5%", ext: false },
-  { label: "Contact", href: "/contact",    cx: "54%", cy: "4%", w: "8%", h: "4.5%", ext: false },
+  { label: "Home", href: "/", cx: "10%", cy: "4%", w: "8%", h: "6%", ext: false },
+  { label: "About", href: FB, cx: "20%", cy: "4%", w: "8%", h: "6%", ext: true },
+  { label: "Games", href: "/games", cx: "36%", cy: "4%", w: "8%", h: "6%", ext: false },
+  { label: "Videos", href: "/bookshelf", cx: "46%", cy: "4%", w: "8%", h: "6%", ext: false },
+  { label: "Contact", href: "/contact", cx: "56%", cy: "4%", w: "8%", h: "6%", ext: false },
 ];
 
 // Extra nav buttons rendered as real styled orange pills (no artwork button underneath)
 const EXTRA_NAV = [
   { label: "Rhino Corner", href: "/rhino-corner", ext: false },
-  { label: "Store",        href: "/store",         ext: false },
+  { label: "Store", href: "/store", ext: false },
 ];
 
 const CIRCLES = [
