@@ -7,11 +7,11 @@ import { usePathname } from "next/navigation";
 const FB = "https://www.facebook.com/groups/kingdomkids";
 
 const TOP_NAV = [
-  { label: "Home",    href: "/",           cx: "9%",  cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "About",   href: FB,            cx: "14%", cy: "6%", w: "8%", h: "8%", ext: true  },
-  { label: "Games",   href: "/games",      cx: "19%", cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "Videos",  href: "/bookshelf",  cx: "24%", cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "Contact", href: "/curriculum", cx: "29%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "Home",    href: "/",           cx: "14%", cy: "6%", w: "10%", h: "8%", ext: false },
+  { label: "About",   href: FB,            cx: "27%", cy: "6%", w: "10%", h: "8%", ext: true  },
+  { label: "Games",   href: "/games",      cx: "41%", cy: "6%", w: "10%", h: "8%", ext: false },
+  { label: "Videos",  href: "/bookshelf",  cx: "55%", cy: "6%", w: "10%", h: "8%", ext: false },
+  { label: "Contact", href: "/curriculum", cx: "69%", cy: "6%", w: "10%", h: "8%", ext: false },
 ];
 
 const CIRCLES = [
@@ -194,26 +194,27 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
               })}
             </div>
 
-            {/* VBS Announcement — small tap-to-enlarge strip */}
+            {/* VBS Announcement — tap-to-enlarge styled panel */}
             <button
               onClick={() => setLightbox(true)}
-              style={{
-                background: "none", border: "none", cursor: "pointer", padding: 0,
-                width: "min(280px, 80vw)",
-              }}
+              style={{ background: "none", border: "none", cursor: "pointer", padding: 0, width: "min(280px, 80vw)" }}
               aria-label="View VBS Announcement"
             >
-              <Image
-                src="/images/VBS Annoucement.png"
-                alt="VBS Announcement — tap to enlarge"
-                width={560}
-                height={560}
-                style={{ width: "100%", height: "auto", borderRadius: "10px",
-                  boxShadow: "0 4px 18px rgba(0,0,0,0.5)", opacity: 0.92 }}
-              />
-              <p style={{ color: "#f7d88d", fontSize: "0.6rem", fontWeight: 700,
-                textTransform: "uppercase", textAlign: "center", marginTop: "4px",
-                letterSpacing: "0.06em" }}>Tap to enlarge</p>
+              <div style={{ borderRadius: "10px", overflow: "hidden", border: "2px solid #f5c842", boxShadow: "0 4px 18px rgba(0,0,0,0.5)" }}>
+                <div style={{ background: "linear-gradient(90deg, #7a4520, #c4923a, #f5c842, #c4923a, #7a4520)", padding: "4px 8px", textAlign: "center" }}>
+                  <span style={{ fontSize: "0.7rem", fontWeight: 900, color: "#3d2008", textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: '"Trebuchet MS", Arial, sans-serif' }}>
+                    📢 Announcements
+                  </span>
+                </div>
+                <Image
+                  src="/images/VBS Annoucement.png"
+                  alt="VBS Announcement — tap to enlarge"
+                  width={560}
+                  height={560}
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+              </div>
+              <p style={{ color: "#f7d88d", fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", textAlign: "center", marginTop: "4px", letterSpacing: "0.06em" }}>Tap to enlarge</p>
             </button>
           </div>
         ) : (
@@ -237,24 +238,40 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
           {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
           {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
 
-          {/* VBS Announcement — left jungle edge, subtle, click to enlarge */}
+          {/* VBS Announcement — left jungle edge, styled panel, click to enlarge */}
           <button
             onClick={() => setLightbox(true)}
             aria-label="View VBS Announcement"
             style={{
-              position: "absolute", left: "1%", top: "28%",
-              width: "9%", zIndex: 15,
+              position: "absolute", left: "1%", top: "30%",
+              width: "10%", zIndex: 15,
               background: "none", border: "none", cursor: "pointer", padding: 0,
             }}
           >
-            <Image
-              src="/images/VBS Annoucement.png"
-              alt="VBS Announcement"
-              width={200}
-              height={200}
-              style={{ width: "100%", height: "auto", borderRadius: "8px",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.55)", opacity: 0.88 }}
-            />
+            <div style={{
+              borderRadius: "8px", overflow: "hidden",
+              border: "2px solid #f5c842",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.6)",
+            }}>
+              {/* Header bar */}
+              <div style={{
+                background: "linear-gradient(90deg, #7a4520, #c4923a, #f5c842, #c4923a, #7a4520)",
+                padding: "2px 4px", textAlign: "center",
+              }}>
+                <span style={{ fontSize: "0.42rem", fontWeight: 900, color: "#3d2008",
+                  textTransform: "uppercase", letterSpacing: "0.06em",
+                  fontFamily: '"Trebuchet MS", Arial, sans-serif' }}>
+                  📢 Announcements
+                </span>
+              </div>
+              <Image
+                src="/images/VBS Annoucement.png"
+                alt="VBS Announcement"
+                width={200}
+                height={200}
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
           </button>
 
           {!isHome && (
