@@ -117,24 +117,18 @@ function VbsLightbox({ onClose }: { onClose: () => void }) {
         style={{ position: "relative" }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Crop white borders: landscape 940×788 image has white padding on sides.
-            A 3:4 portrait container + object-fit:cover trims ~170px off each side. */}
-        <div style={{
-          position: "relative",
-          width: "min(68vw, 400px)",
-          aspectRatio: "3 / 4",
-          overflow: "hidden",
-          borderRadius: "14px",
-          boxShadow: "0 12px 48px rgba(0,0,0,0.6)",
-        }}>
-          <Image
-            src="/images/VBS Annoucement.png"
-            alt="VBS Announcement"
-            fill
-            style={{ objectFit: "cover", objectPosition: "center" }}
-            sizes="400px"
-          />
-        </div>
+        <Image
+          src="/images/Announcements.png"
+          alt="Announcements"
+          width={1536}
+          height={1024}
+          style={{
+            width: "auto", height: "auto",
+            maxWidth: "92vw", maxHeight: "88vh",
+            borderRadius: "12px",
+            boxShadow: "0 12px 48px rgba(0,0,0,0.6)",
+          }}
+        />
         <button
           onClick={onClose}
           aria-label="Close"
@@ -227,31 +221,33 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
               })}
             </div>
 
-            {/* VBS Announcement — tap-to-enlarge styled panel */}
+            {/* Announcements — no border, tap to enlarge */}
             <button
               onClick={() => setLightbox(true)}
-              style={{ background: "none", border: "none", cursor: "pointer", padding: 0, width: "min(280px, 80vw)" }}
-              aria-label="View VBS Announcement"
+              style={{ background: "none", border: "none", cursor: "pointer", padding: 0, width: "min(300px, 85vw)" }}
+              aria-label="View Announcements"
             >
-              <div style={{ borderRadius: "10px", overflow: "hidden", border: "2px solid #f5c842", boxShadow: "0 4px 18px rgba(0,0,0,0.5)" }}>
-                <div style={{ background: "linear-gradient(90deg, #7a4520, #c4923a, #f5c842, #c4923a, #7a4520)", padding: "4px 8px", textAlign: "center" }}>
-                  <span style={{ fontSize: "0.7rem", fontWeight: 900, color: "#3d2008", textTransform: "uppercase", letterSpacing: "0.06em", fontFamily: '"Trebuchet MS", Arial, sans-serif' }}>
-                    📢 Announcements
-                  </span>
-                </div>
-                {/* Crop white borders with 3:4 portrait crop */}
-                <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 4", overflow: "hidden" }}>
-                  <Image
-                    src="/images/VBS Annoucement.png"
-                    alt="VBS Announcement — tap to enlarge"
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "center" }}
-                    sizes="280px"
-                  />
-                </div>
-              </div>
-              <p style={{ color: "#f7d88d", fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", textAlign: "center", marginTop: "4px", letterSpacing: "0.06em" }}>Tap to enlarge</p>
+              <Image
+                src="/images/Announcements.png"
+                alt="Announcements — tap to enlarge"
+                width={1536}
+                height={1024}
+                style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px", boxShadow: "0 4px 18px rgba(0,0,0,0.5)" }}
+                sizes="300px"
+              />
             </button>
+
+            {/* Life of Faith watermark */}
+            <a href="https://lifeoffaith.net/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+              <Image
+                src="/images/LifeofFaithlogo.png"
+                alt="Life of Faith"
+                width={1536}
+                height={1024}
+                style={{ width: "min(120px, 34vw)", height: "auto", display: "block", opacity: 0.55 }}
+                sizes="120px"
+              />
+            </a>
           </div>
         ) : (
           <div style={{ flex: 1, overflowY: "auto", background: "rgba(253,246,227,0.98)", display: "flex", flexDirection: "column" }}>
@@ -274,70 +270,83 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
           {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
           {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
 
-          {/* Extra orange pill buttons — Rhino Corner & Store (right side, below main nav) */}
-          <div style={{ position: "absolute", top: "11%", right: "2%", display: "flex", flexDirection: "column", gap: "1.5%", zIndex: 5, alignItems: "flex-end" }}>
-            {EXTRA_NAV.map((b) => (
-              <Link key={b.label} href={b.href} style={{
-                display: "block",
-                background: "linear-gradient(180deg, #ffde5a 0%, #f5b020 35%, #e8871a 70%, #c96b12 100%)",
-                color: "#3d2008",
-                fontWeight: 900,
-                fontSize: "clamp(0.45rem, 1.1vw, 0.8rem)",
-                padding: "0.35em 1em",
-                borderRadius: "999px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-                border: "2px solid rgba(80,35,0,0.45)",
-                boxShadow: "0 3px 10px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.5)",
-                textShadow: "0 1px 0 rgba(255,255,255,0.35)",
-                fontFamily: '"Trebuchet MS", Arial, sans-serif',
-                letterSpacing: "0.02em",
-              }}>
-                {b.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* VBS Announcement — left jungle edge, styled panel, click to enlarge */}
+          {/* Announcements — top-right corner, no border, click to enlarge */}
           <button
             onClick={() => setLightbox(true)}
-            aria-label="View VBS Announcement"
+            aria-label="View Announcements"
             style={{
-              position: "absolute", left: "1%", top: "30%",
-              width: "10%", zIndex: 5,
+              position: "absolute", right: "1%", top: "8%",
+              width: "12%", zIndex: 5,
               background: "none", border: "none", cursor: "pointer", padding: 0,
             }}
           >
-            <div style={{
-              borderRadius: "8px", overflow: "hidden",
-              border: "2px solid #f5c842",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.6)",
-            }}>
-              {/* Header bar */}
-              <div style={{
-                background: "linear-gradient(90deg, #7a4520, #c4923a, #f5c842, #c4923a, #7a4520)",
-                padding: "2px 4px", textAlign: "center",
-              }}>
-                <span style={{
-                  fontSize: "0.42rem", fontWeight: 900, color: "#3d2008",
-                  textTransform: "uppercase", letterSpacing: "0.06em",
-                  fontFamily: '"Trebuchet MS", Arial, sans-serif'
-                }}>
-                  📢 Announcements
-                </span>
-              </div>
-              {/* Crop white borders with same 3:4 technique */}
-              <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 4", overflow: "hidden" }}>
-                <Image
-                  src="/images/VBS Annoucement.png"
-                  alt="VBS Announcement"
-                  fill
-                  style={{ objectFit: "cover", objectPosition: "center" }}
-                  sizes="10vw"
-                />
-              </div>
-            </div>
+            <Image
+              src="/images/Announcements.png"
+              alt="Announcements"
+              width={1536}
+              height={1024}
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", boxShadow: "0 3px 14px rgba(0,0,0,0.45)" }}
+              sizes="12vw"
+            />
           </button>
+
+          {/* Life of Faith watermark — bottom-left, links to lifeoffaith.net */}
+          <a
+            href="https://lifeoffaith.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Life of Faith"
+            style={{
+              position: "absolute", left: "1%", bottom: "2%",
+              width: "7%", zIndex: 5, display: "block",
+            }}
+          >
+            <Image
+              src="/images/LifeofFaithlogo.png"
+              alt="Life of Faith"
+              width={1536}
+              height={1024}
+              style={{ width: "100%", height: "auto", display: "block", opacity: 0.55, borderRadius: "4px" }}
+              sizes="7vw"
+            />
+          </a>
+
+          {/* Extra Buttons image — lower-middle-right, split into two clickable halves */}
+          <div style={{
+            position: "absolute", right: "2%", bottom: "24%",
+            width: "14%", zIndex: 5,
+          }}>
+            <div style={{ position: "relative" }}>
+              <Image
+                src="/images/Extra buttons.png"
+                alt="Rhino Corner and Store"
+                width={1536}
+                height={1024}
+                style={{ width: "100%", height: "auto", display: "block" }}
+                sizes="14vw"
+              />
+              {/* Left half → Rhino Corner */}
+              <Link
+                href="/rhino-corner"
+                aria-label="Rhino Corner"
+                style={{
+                  position: "absolute", inset: 0,
+                  width: "50%", height: "100%",
+                  display: "block",
+                }}
+              />
+              {/* Right half → Store */}
+              <Link
+                href="/store"
+                aria-label="Store"
+                style={{
+                  position: "absolute", top: 0, right: 0,
+                  width: "50%", height: "100%",
+                  display: "block",
+                }}
+              />
+            </div>
+          </div>
 
           {!isHome && (
             <div style={{
