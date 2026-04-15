@@ -7,11 +7,11 @@ import { usePathname } from "next/navigation";
 const FB = "https://www.facebook.com/";
 
 const TOP_NAV = [
-  { label: "Home", href: "/", cx: "10%", cy: "4%", w: "8", h: "4.5%", ext: false },
-  { label: "About", href: FB, cx: "22%", cy: "4%", w: "8", h: "4.5%", ext: true },
-  { label: "Games", href: "/games", cx: "30%", cy: "4%", w: "8", h: "4.5", ext: false },
-  { label: "Videos", href: "/bookshelf", cx: "42%", cy: "4%", w: "8", h: "4.5%", ext: false },
-  { label: "Contact", href: "/curriculum", cx: "54%", cy: "4", w: "8", h: "4.5%", ext: false },
+  { label: "Home",    href: "/",           cx: "10%", cy: "4%", w: "8%", h: "4.5%", ext: false },
+  { label: "About",   href: FB,            cx: "22%", cy: "4%", w: "8%", h: "4.5%", ext: true  },
+  { label: "Games",   href: "/games",      cx: "30%", cy: "4%", w: "8%", h: "4.5%", ext: false },
+  { label: "Videos",  href: "/bookshelf",  cx: "42%", cy: "4%", w: "8%", h: "4.5%", ext: false },
+  { label: "Contact", href: "/curriculum", cx: "54%", cy: "4%", w: "8%", h: "4.5%", ext: false },
 ];
 
 const CIRCLES = [
