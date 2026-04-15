@@ -7,11 +7,11 @@ import { useState, useEffect } from "react";
 const FB = "https://www.facebook.com/groups/kingdomkids";
 
 const TOP_NAV = [
-  { label: "Home",    href: "/",           cx: "6%",  cy: "7%", w: "8%", h: "8%", ext: false },
-  { label: "About",   href: FB,            cx: "14%", cy: "7%", w: "8%", h: "8%", ext: true  },
-  { label: "Games",   href: "/games",      cx: "22%", cy: "7%", w: "8%", h: "8%", ext: false },
-  { label: "Videos",  href: "/bookshelf",  cx: "30%", cy: "7%", w: "8%", h: "8%", ext: false },
-  { label: "Contact", href: "/curriculum", cx: "38%", cy: "7%", w: "8%", h: "8%", ext: false },
+  { label: "Home",    href: "/",           cx: "5%",  cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "About",   href: FB,            cx: "12%", cy: "6%", w: "8%", h: "8%", ext: true  },
+  { label: "Games",   href: "/games",      cx: "19%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "Videos",  href: "/bookshelf",  cx: "26%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "Contact", href: "/curriculum", cx: "33%", cy: "6%", w: "8%", h: "8%", ext: false },
 ];
 
 const CIRCLES = [
