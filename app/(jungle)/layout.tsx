@@ -1,16 +1,17 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 const FB = "https://www.facebook.com/groups/kingdomkids";
 
 const TOP_NAV = [
   { label: "Home",    href: "/",           cx: "9%",  cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "About",   href: FB,            cx: "16%", cy: "6%", w: "8%", h: "8%", ext: true  },
-  { label: "Games",   href: "/games",      cx: "23%", cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "Videos",  href: "/bookshelf",  cx: "30%", cy: "6%", w: "8%", h: "8%", ext: false },
-  { label: "Contact", href: "/curriculum", cx: "37%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "About",   href: FB,            cx: "14%", cy: "6%", w: "8%", h: "8%", ext: true  },
+  { label: "Games",   href: "/games",      cx: "19%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "Videos",  href: "/bookshelf",  cx: "24%", cy: "6%", w: "8%", h: "8%", ext: false },
+  { label: "Contact", href: "/curriculum", cx: "29%", cy: "6%", w: "8%", h: "8%", ext: false },
 ];
 
 const CIRCLES = [
@@ -41,7 +42,8 @@ const circleStyle = (b: { cx: string; cy: string; d: string }) => ({
   background:  "transparent",
 });
 
-const PILL_CLASS   = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
+// DEBUG: visible overlays — remove ring-* and bg-* before final deploy
+const PILL_CLASS   = "transition-all duration-150 cursor-pointer ring-2 ring-red-500 bg-red-500/30";
 const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer hover:ring-4 hover:ring-white/60 hover:bg-white/10 hover:scale-110";
 
 function NavLink({ b }: { b: typeof TOP_NAV[number] }) {
@@ -94,12 +96,54 @@ const MOB_LINK: React.CSSProperties = {
   display: "block", textAlign: "center", flex: 1,
 };
 
+function VbsLightbox({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: "fixed", inset: 0, zIndex: 2000,
+        background: "rgba(0,0,0,0.88)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        cursor: "pointer",
+      }}
+    >
+      <div
+        style={{ position: "relative", maxWidth: "90vw", maxHeight: "90vh" }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Image
+          src="/images/VBS Annoucement.png"
+          alt="VBS Announcement"
+          width={900}
+          height={900}
+          style={{ width: "auto", height: "auto", maxWidth: "90vw", maxHeight: "85vh",
+            borderRadius: "14px", boxShadow: "0 12px 48px rgba(0,0,0,0.6)" }}
+        />
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          style={{
+            position: "absolute", top: "-14px", right: "-14px",
+            width: "34px", height: "34px", borderRadius: "50%",
+            background: "#f07c2a", color: "white", border: "none",
+            cursor: "pointer", fontSize: "1.1rem", fontWeight: 900,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.4)",
+          }}
+        >✕</button>
+      </div>
+    </div>
+  );
+}
+
 export default function JungleLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isHome   = pathname === "/";
+  const pathname      = usePathname();
+  const isHome        = pathname === "/";
+  const [lightbox, setLightbox] = useState(false);
 
   return (
     <>
+      {lightbox && <VbsLightbox onClose={() => setLightbox(false)} />}
+
       {/* ═══════════════════════════════════════════════
           MOBILE  (visible ≤ 699 px, hidden on desktop)
       ═══════════════════════════════════════════════ */}
@@ -125,27 +169,52 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
 
         {/* Content */}
         {isHome ? (
-          <div style={{ display: "flex", justifyContent: "center", gap: "20px", padding: "22px 16px 28px" }}>
-            {CIRCLES.map((b) => {
-              const icon = b.label === "Latest Video" ? "📺" : b.label === "Fun Games" ? "🎮" : "👥";
-              const inner = (
-                <>
-                  <div style={{ width: "76px", height: "76px", borderRadius: "50%",
-                    background: "linear-gradient(135deg, #f5c842, #d4a853)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.4)", border: "3px solid rgba(255,255,255,0.3)",
-                    fontSize: "1.7rem" }}>{icon}</div>
-                  <span style={{ color: "#f7d88d", fontSize: "0.62rem", fontWeight: 800,
-                    textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center",
-                    marginTop: "6px" }}>{b.label}</span>
-                </>
-              );
-              return b.ext
-                ? <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer"
-                    style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</a>
-                : <Link key={b.label} href={b.href}
-                    style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</Link>;
-            })}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "18px 16px 28px", gap: "16px" }}>
+            {/* Quick-links row */}
+            <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+              {CIRCLES.map((b) => {
+                const icon = b.label === "Latest Video" ? "📺" : b.label === "Fun Games" ? "🎮" : "👥";
+                const inner = (
+                  <>
+                    <div style={{ width: "76px", height: "76px", borderRadius: "50%",
+                      background: "linear-gradient(135deg, #f5c842, #d4a853)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      boxShadow: "0 4px 16px rgba(0,0,0,0.4)", border: "3px solid rgba(255,255,255,0.3)",
+                      fontSize: "1.7rem" }}>{icon}</div>
+                    <span style={{ color: "#f7d88d", fontSize: "0.62rem", fontWeight: 800,
+                      textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center",
+                      marginTop: "6px" }}>{b.label}</span>
+                  </>
+                );
+                return b.ext
+                  ? <a key={b.label} href={b.href} target="_blank" rel="noopener noreferrer"
+                      style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</a>
+                  : <Link key={b.label} href={b.href}
+                      style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none" }}>{inner}</Link>;
+              })}
+            </div>
+
+            {/* VBS Announcement — small tap-to-enlarge strip */}
+            <button
+              onClick={() => setLightbox(true)}
+              style={{
+                background: "none", border: "none", cursor: "pointer", padding: 0,
+                width: "min(280px, 80vw)",
+              }}
+              aria-label="View VBS Announcement"
+            >
+              <Image
+                src="/images/VBS Annoucement.png"
+                alt="VBS Announcement — tap to enlarge"
+                width={560}
+                height={560}
+                style={{ width: "100%", height: "auto", borderRadius: "10px",
+                  boxShadow: "0 4px 18px rgba(0,0,0,0.5)", opacity: 0.92 }}
+              />
+              <p style={{ color: "#f7d88d", fontSize: "0.6rem", fontWeight: 700,
+                textTransform: "uppercase", textAlign: "center", marginTop: "4px",
+                letterSpacing: "0.06em" }}>Tap to enlarge</p>
+            </button>
           </div>
         ) : (
           <div style={{ flex: 1, overflowY: "auto", background: "rgba(253,246,227,0.98)", display: "flex", flexDirection: "column" }}>
@@ -167,6 +236,26 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
 
           {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
           {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
+
+          {/* VBS Announcement — left jungle edge, subtle, click to enlarge */}
+          <button
+            onClick={() => setLightbox(true)}
+            aria-label="View VBS Announcement"
+            style={{
+              position: "absolute", left: "1%", top: "28%",
+              width: "9%", zIndex: 15,
+              background: "none", border: "none", cursor: "pointer", padding: 0,
+            }}
+          >
+            <Image
+              src="/images/VBS Annoucement.png"
+              alt="VBS Announcement"
+              width={200}
+              height={200}
+              style={{ width: "100%", height: "auto", borderRadius: "8px",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.55)", opacity: 0.88 }}
+            />
+          </button>
 
           {!isHome && (
             <div style={{
