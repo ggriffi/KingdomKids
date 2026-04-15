@@ -41,8 +41,8 @@ const circleStyle = (b: { cx: string; cy: string; d: string }) => ({
   background:  "transparent",
 });
 
-const PILL_CLASS   = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
-const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer hover:ring-4 hover:ring-white/60 hover:bg-white/10 hover:scale-110";
+const PILL_CLASS   = "transition-all duration-150 cursor-pointer ring-2 ring-red-500 bg-red-500/30";
+const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer ring-4 ring-blue-500 bg-blue-500/30";
 
 function NavLink({ b }: { b: typeof TOP_NAV[number] }) {
   if (b.ext) return (
