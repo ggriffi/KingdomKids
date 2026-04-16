@@ -117,18 +117,19 @@ function VbsLightbox({ onClose }: { onClose: () => void }) {
         style={{ position: "relative" }}
         onClick={(e) => e.stopPropagation()}
       >
-        <Image
-          src="/images/Announcements.png"
-          alt="Announcements"
-          width={1536}
-          height={1024}
-          style={{
-            width: "auto", height: "auto",
-            maxWidth: "92vw", maxHeight: "88vh",
-            borderRadius: "12px",
-            boxShadow: "0 12px 48px rgba(0,0,0,0.6)",
-          }}
-        />
+        {/* 940×788 PNG has white side margins — 3:4 portrait crop removes them */}
+        <div style={{
+          position: "relative", width: "min(68vw, 400px)", aspectRatio: "3 / 4",
+          overflow: "hidden", borderRadius: "14px", boxShadow: "0 12px 48px rgba(0,0,0,0.6)",
+        }}>
+          <Image
+            src="/images/VBS Annoucement.png"
+            alt="VBS Announcement"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="400px"
+          />
+        </div>
         <button
           onClick={onClose}
           aria-label="Close"
@@ -270,25 +271,33 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
           {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
           {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
 
-          {/* Announcements — top-right corner, no border, click to enlarge */}
-          <button
-            onClick={() => setLightbox(true)}
-            aria-label="View Announcements"
-            style={{
-              position: "absolute", right: "1%", top: "8%",
-              width: "12%", zIndex: 5,
-              background: "none", border: "none", cursor: "pointer", padding: 0,
-            }}
-          >
+          {/* Announcements banner — top-right, blends with background, not clickable */}
+          <div style={{ position: "absolute", right: "1%", top: "8%", width: "12%", zIndex: 5 }}>
             <Image
               src="/images/Announcements.png"
               alt="Announcements"
               width={1536}
               height={1024}
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", boxShadow: "0 3px 14px rgba(0,0,0,0.45)" }}
+              style={{ width: "100%", height: "auto", display: "block" }}
               sizes="12vw"
             />
-          </button>
+            {/* VBS flyer below the banner — cropped, click to enlarge */}
+            <button
+              onClick={() => setLightbox(true)}
+              aria-label="View VBS Announcement"
+              style={{ background: "none", border: "none", cursor: "pointer", padding: 0, width: "100%", marginTop: "3%" }}
+            >
+              <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 4", overflow: "hidden", borderRadius: "6px", boxShadow: "0 3px 12px rgba(0,0,0,0.4)" }}>
+                <Image
+                  src="/images/VBS Annoucement.png"
+                  alt="VBS Announcement"
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  sizes="12vw"
+                />
+              </div>
+            </button>
+          </div>
 
           {/* Life of Faith watermark — bottom-left, links to lifeoffaith.net */}
           <a
@@ -306,14 +315,14 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
               alt="Life of Faith"
               width={1536}
               height={1024}
-              style={{ width: "100%", height: "auto", display: "block", opacity: 0.55, borderRadius: "4px" }}
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: "4px" }}
               sizes="7vw"
             />
           </a>
 
           {/* Extra Buttons image — lower-middle-right, split into two clickable halves */}
           <div style={{
-            position: "absolute", right: "2%", bottom: "24%",
+            position: "absolute", right: "2%", bottom: "14%",
             width: "14%", zIndex: 5,
           }}>
             <div style={{ position: "relative" }}>
