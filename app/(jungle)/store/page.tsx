@@ -47,7 +47,7 @@ export default function StorePage() {
           <div key={book.id} style={{
             borderRadius: "12px", overflow: "hidden",
             border: "1px solid rgba(196,146,58,0.4)",
-            background: "rgba(255,255,255,0.6)",
+            background: "rgba(196,146,58,0.13)",
             borderTop: `4px solid ${book.color}`,
           }}>
             <div style={{
@@ -73,7 +73,7 @@ export default function StorePage() {
 
       {/* Bottom note */}
       <div style={{
-        background: "rgba(255,255,255,0.5)", border: "1px solid rgba(196,146,58,0.3)",
+        background: "rgba(196,146,58,0.10)", border: "1px solid rgba(196,146,58,0.4)",
         borderRadius: "12px", padding: "12px 14px", textAlign: "center",
       }}>
         <p style={{ color: "#3d2008", fontWeight: 800, fontSize: "0.8rem", margin: "0 0 4px" }}>

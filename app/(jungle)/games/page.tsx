@@ -53,8 +53,8 @@ export default function GamesPage() {
       <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
         {TEASER_GAMES.map((game) => (
           <div key={game.title} style={{
-            background: "rgba(255,255,255,0.6)", borderRadius: "12px",
-            border: "1px solid rgba(196,146,58,0.35)", padding: "10px 12px",
+            background: "rgba(196,146,58,0.13)", borderRadius: "12px",
+            border: "1px solid rgba(196,146,58,0.45)", padding: "10px 12px",
             display: "flex", gap: "10px", alignItems: "flex-start",
           }}>
             <span style={{ fontSize: "1.6rem", flexShrink: 0 }}>{game.emoji}</span>

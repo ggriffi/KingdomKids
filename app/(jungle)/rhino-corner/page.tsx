@@ -30,8 +30,8 @@ export default function RhinoCornerPage() {
 
       {/* Ms. Rose intro */}
       <div style={{
-        background: "linear-gradient(135deg, rgba(245,200,66,0.18), rgba(255,255,255,0.6))",
-        border: "2px solid rgba(196,146,58,0.45)", borderRadius: "16px",
+        background: "linear-gradient(135deg, rgba(245,200,66,0.22), rgba(196,146,58,0.1))",
+        border: "2px solid rgba(196,146,58,0.5)", borderRadius: "16px",
         padding: "14px", marginBottom: "14px",
       }}>
         <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
@@ -97,9 +97,9 @@ export default function RhinoCornerPage() {
         {RULES.map((rule, i) => (
           <div key={i} style={{
             display: "flex", gap: "10px", alignItems: "center",
-            background: "rgba(255,255,255,0.5)", borderRadius: "10px",
+            background: "rgba(196,146,58,0.13)", borderRadius: "10px",
             padding: "8px 10px", marginBottom: i < RULES.length - 1 ? "6px" : 0,
-            border: "1px solid rgba(196,146,58,0.25)",
+            border: "1px solid rgba(196,146,58,0.4)",
           }}>
             <span style={{ fontSize: "1.2rem", flexShrink: 0 }}>{rule.emoji}</span>
             <p style={{ color: "#3d2008", fontSize: "0.78rem", fontWeight: 600, lineHeight: 1.4, margin: 0 }}>{rule.text}</p>

@@ -37,7 +37,7 @@ export default function ContactPage() {
 
       {/* Facebook CTA */}
       <div style={{
-        background: "rgba(255,255,255,0.6)", border: "1px solid rgba(196,146,58,0.4)",
+        background: "rgba(196,146,58,0.13)", border: "1px solid rgba(196,146,58,0.45)",
         borderRadius: "14px", padding: "14px 16px", textAlign: "center",
         borderTop: "4px solid #1877F2",
       }}>
@@ -66,9 +66,6 @@ export default function ContactPage() {
         </a>
       </div>
 
-      <p style={{ color: "#8b5e3c", fontSize: "0.7rem", textAlign: "center", marginTop: "14px", fontStyle: "italic" }}>
-        Full contact info coming very soon — thanks for your patience, brave explorer! 🌿
-      </p>
     </div>
   );
 }

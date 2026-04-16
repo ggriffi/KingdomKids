@@ -38,8 +38,8 @@ export default function MissionsPage() {
 
       {/* Map intro */}
       <div style={{
-        background: "linear-gradient(135deg, rgba(245,200,66,0.18), rgba(255,255,255,0.6))",
-        border: "2px solid rgba(196,146,58,0.4)", borderRadius: "16px",
+        background: "linear-gradient(135deg, rgba(245,200,66,0.22), rgba(196,146,58,0.1))",
+        border: "2px solid rgba(196,146,58,0.45)", borderRadius: "16px",
         padding: "12px 16px", marginBottom: "16px", textAlign: "center",
       }}>
         <p style={{ color: "#5c3d1e", fontSize: "0.82rem", lineHeight: 1.7, margin: 0 }}>
@@ -59,8 +59,8 @@ export default function MissionsPage() {
       <div className="kk-grid-2" style={{ marginBottom: "16px" }}>
         {MISSION_STOPS.map((stop) => (
           <div key={stop.id} style={{
-            background: "rgba(255,255,255,0.6)", borderRadius: "12px",
-            border: "1px solid rgba(196,146,58,0.3)",
+            background: "rgba(196,146,58,0.13)", borderRadius: "12px",
+            border: "1px solid rgba(196,146,58,0.45)",
             borderLeft: `4px solid ${stop.color}`,
             padding: "10px 12px",
             display: "flex", gap: "10px", alignItems: "flex-start",

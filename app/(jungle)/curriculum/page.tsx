@@ -44,8 +44,8 @@ export default function CurriculumPage() {
 
       {/* Ms. Rose intro */}
       <div style={{
-        background: "linear-gradient(135deg, rgba(245,200,66,0.18), rgba(255,255,255,0.6))",
-        border: "2px solid rgba(196,146,58,0.45)", borderRadius: "16px",
+        background: "linear-gradient(135deg, rgba(245,200,66,0.22), rgba(196,146,58,0.1))",
+        border: "2px solid rgba(196,146,58,0.5)", borderRadius: "16px",
         padding: "14px", marginBottom: "14px",
       }}>
         <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
@@ -80,8 +80,8 @@ export default function CurriculumPage() {
       <div className="kk-grid-2" style={{ marginBottom: "14px" }}>
         {FEATURES.map((f) => (
           <div key={f.title} style={{
-            background: "rgba(255,255,255,0.6)", borderRadius: "12px",
-            border: "1px solid rgba(196,146,58,0.3)",
+            background: "rgba(196,146,58,0.13)", borderRadius: "12px",
+            border: "1px solid rgba(196,146,58,0.45)",
             padding: "10px 12px", display: "flex", gap: "8px", alignItems: "flex-start",
           }}>
             <div style={{
@@ -107,8 +107,8 @@ export default function CurriculumPage() {
       <div style={{ display: "flex", flexDirection: "column", gap: "7px", marginBottom: "14px" }}>
         {GRADES.map((g) => (
           <div key={g.label} style={{
-            background: "rgba(255,255,255,0.6)", borderRadius: "12px",
-            border: "1px solid rgba(196,146,58,0.3)",
+            background: "rgba(196,146,58,0.13)", borderRadius: "12px",
+            border: "1px solid rgba(196,146,58,0.45)",
             borderLeft: `4px solid ${g.color}`,
             padding: "10px 14px", display: "flex", gap: "10px", alignItems: "center",
           }}>
@@ -135,8 +135,8 @@ export default function CurriculumPage() {
       <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "14px" }}>
         {DOWNLOADS.map((dl) => (
           <a key={dl.title} href={dl.href} style={{
-            background: "rgba(255,255,255,0.6)", borderRadius: "12px",
-            border: "1px solid rgba(196,146,58,0.35)",
+            background: "rgba(196,146,58,0.13)", borderRadius: "12px",
+            border: "1px solid rgba(196,146,58,0.45)",
             padding: "10px 14px", textDecoration: "none",
             display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px",
           }}>
