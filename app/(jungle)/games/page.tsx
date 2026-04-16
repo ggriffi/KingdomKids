@@ -68,4 +68,51 @@ export default function GamesPage() {
               <span style={{
                 background: "rgba(245,200,66,0.15)", color: "#f5c842", fontSize: "0.75rem", fontWeight: 800,
                 padding: "8px 16px", borderRadius: "999px", textTransform: "uppercase", letterSpacing: "0.08em",
-                border: "1px solid rgba(245,200,66,0
+                border: "1px solid rgba(245,200,66,0.4)"
+              }}>
+                Releasing Soon
+              </span>
+            </div>
+          </article>
+        </section>
+
+        {/* ── COLUMN 2: SNEAK PEEKS ─────────────────────────────── */}
+        <section style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <header style={{ display: "flex", alignItems: "center", gap: "10px", borderBottom: "2px solid #3d2008", paddingBottom: "8px" }}>
+            <h2 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1.15rem", fontWeight: 900, margin: 0, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              Field Guide Previews
+            </h2>
+          </header>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", flex: 1 }}>
+            {TEASER_GAMES.map((game) => (
+              <article key={game.title} style={{
+                display: "flex", gap: "16px", alignItems: "center",
+                background: "rgba(196,146,58,0.05)",
+                border: "1px solid rgba(196,146,58,0.3)",
+                padding: "16px", borderRadius: "8px"
+              }}>
+                <div style={{
+                  fontSize: "1.8rem", flexShrink: 0, width: "48px", height: "48px",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  background: "rgba(196,146,58,0.15)", borderRadius: "8px"
+                }}>
+                  {game.icon}
+                </div>
+                <div>
+                  <h3 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1rem", fontWeight: 900, margin: "0 0 4px" }}>
+                    {game.title}
+                  </h3>
+                  <p style={{ color: "#5c3d1e", fontSize: "0.85rem", lineHeight: 1.5, margin: 0 }}>
+                    {game.desc}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+      </div>
+    </div>
+  );
+}
