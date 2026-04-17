@@ -5,110 +5,50 @@ export const metadata: Metadata = {
   description: "Interactive Kingdom Kids games to help children explore God's Word.",
 };
 
-const TEASER_GAMES = [
-  {
-    icon: "🗺️",
-    title: "Bible Trivia Trek",
-    desc: "Navigate through scripture-based questions and earn badges as you cross the safari."
-  },
-  {
-    icon: "🔍",
-    title: "Verse Finder Quest",
-    desc: "Search the jungle map to uncover hidden scriptures and practice memorizing God's promises."
-  },
-  {
-    icon: "🦁",
-    title: "Character Match-Up",
-    desc: "Learn about the Kingdom Kids explorers, their favorite Bible heroes, and the animals they study."
-  },
+const PREVIEWS = [
+  { icon: "🗺️", title: "Bible Trivia Trek",   color: "#f07c2a", desc: "Navigate the safari with scripture questions and earn explorer badges along the way!" },
+  { icon: "🔍", title: "Verse Finder Quest",  color: "#3ab5e6", desc: "Hunt through the jungle map to uncover hidden scriptures and lock them in your heart." },
+  { icon: "🦁", title: "Character Match-Up", color: "#22c55e", desc: "Match the Kingdom Kids explorers with their favorite Bible heroes — can you get them all?" },
 ];
 
 export default function GamesPage() {
   return (
-    <div style={{ padding: "16px 0", maxWidth: "1200px", margin: "0 auto" }}>
+    <div style={{ padding: "16px 0 8px", maxWidth: "1200px", margin: "0 auto" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", alignItems: "start" }}>
 
-      {/* ── EDITORIAL HEADER ────────────────────────────────────────── */}
-      <header style={{ marginBottom: "40px", textAlign: "center" }}>
-        <h1 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "2.2rem", fontWeight: 900, margin: "0 0 12px", textTransform: "uppercase", letterSpacing: "0.02em" }}>
-          Jungle Games
-        </h1>
-        <p style={{ color: "#8b5e3c", fontSize: "0.95rem", maxWidth: "600px", margin: "0 auto", lineHeight: 1.6 }}>
-          Get ready for an adventure through God&apos;s Word! Our interactive games are designed to help kids engage with scripture and grow in their faith while exploring the safari.
-        </p>
-      </header>
-
-      {/* ── EDITORIAL GRID LAYOUT ────────────────────────────────────────── */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-        gap: "32px",
-        alignItems: "stretch"
-      }}>
-
-        {/* ── COLUMN 1: DEVELOPMENT UPDATE ─────────────────────────────────── */}
-        <section style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <header style={{ display: "flex", alignItems: "center", gap: "10px", borderBottom: "2px solid #3d2008", paddingBottom: "8px" }}>
-            <h2 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1.15rem", fontWeight: 900, margin: 0, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-              Basecamp Update
-            </h2>
-          </header>
-
-          <article style={{
-            flex: 1, display: "flex", flexDirection: "column", justifyContent: "center",
-            background: "#0a2c10", border: "1px solid rgba(196,146,58,0.5)",
-            padding: "32px 24px", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
-          }}>
-            <h3 style={{ fontFamily: "Georgia, serif", color: "#f5c842", fontSize: "1.2rem", fontWeight: 900, margin: "0 0 12px" }}>
-              Games in Development
-            </h3>
-            <p style={{ color: "rgba(253,246,227,0.9)", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: "24px" }}>
-              Our guides are hard at work clearing the trails! We are building interactive, Bible-based games that will be completely free for families and children&apos;s ministries to use. Check back soon as we prepare these new tools for your kids.
+        <section>
+          <div style={{ background: "linear-gradient(135deg, #1a5c22, #0a2c10)", borderRadius: "12px 12px 0 0", padding: "10px 18px" }}>
+            <h2 style={{ color: "#f5c842", fontFamily: "Georgia, serif", fontSize: "1.05rem", fontWeight: 900, margin: 0, textTransform: "uppercase", letterSpacing: "0.06em" }}>🏕️ Base Camp Update</h2>
+          </div>
+          <div style={{ background: "linear-gradient(135deg, #0a2c10, #1a4a18)", border: "2px solid #f5c842", borderTop: "none", borderRadius: "0 0 12px 12px", padding: "28px 24px", boxShadow: "0 4px 16px rgba(0,0,0,0.2)" }}>
+            <p style={{ color: "#f5c842", fontFamily: "Georgia, serif", fontSize: "1.2rem", fontWeight: 900, margin: "0 0 12px", lineHeight: 1.3 }}>The guides are clearing the trails!</p>
+            <p style={{ color: "rgba(253,246,227,0.9)", fontSize: "0.92rem", lineHeight: 1.7, marginBottom: "12px" }}>
+              We&apos;re building fun, totally FREE Bible games for families and kids&apos; ministries. Every game is designed to help explorers fall in love with God&apos;s Word — no boring stuff, we promise! 🌟
             </p>
-            <div>
-              <span style={{
-                background: "rgba(245,200,66,0.15)", color: "#f5c842", fontSize: "0.75rem", fontWeight: 800,
-                padding: "8px 16px", borderRadius: "999px", textTransform: "uppercase", letterSpacing: "0.08em",
-                border: "1px solid rgba(245,200,66,0.4)"
-              }}>
-                Releasing Soon
-              </span>
-            </div>
-          </article>
+            <p style={{ color: "rgba(253,246,227,0.65)", fontSize: "0.82rem", lineHeight: 1.6, marginBottom: "20px" }}>Check back soon and get ready to play!</p>
+            <span style={{ display: "inline-block", background: "rgba(245,200,66,0.15)", color: "#f5c842", fontSize: "0.75rem", fontWeight: 800, padding: "8px 18px", borderRadius: "999px", textTransform: "uppercase", letterSpacing: "0.08em", border: "1px solid rgba(245,200,66,0.4)" }}>Releasing Soon 🎮</span>
+          </div>
         </section>
 
-        {/* ── COLUMN 2: SNEAK PEEKS ─────────────────────────────── */}
-        <section style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <header style={{ display: "flex", alignItems: "center", gap: "10px", borderBottom: "2px solid #3d2008", paddingBottom: "8px" }}>
-            <h2 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1.15rem", fontWeight: 900, margin: 0, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-              Field Guide Previews
-            </h2>
-          </header>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px", flex: 1 }}>
-            {TEASER_GAMES.map((game) => (
-              <article key={game.title} style={{
-                display: "flex", gap: "16px", alignItems: "center",
-                background: "rgba(196,146,58,0.05)",
-                border: "1px solid rgba(196,146,58,0.3)",
-                padding: "16px", borderRadius: "8px"
-              }}>
-                <div style={{
-                  fontSize: "1.8rem", flexShrink: 0, width: "48px", height: "48px",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  background: "rgba(196,146,58,0.15)", borderRadius: "8px"
-                }}>
-                  {game.icon}
+        <section>
+          <div style={{ background: "linear-gradient(135deg, #6b3f1f, #3d2008)", borderRadius: "12px 12px 0 0", padding: "10px 18px" }}>
+            <h2 style={{ color: "#f5c842", fontFamily: "Georgia, serif", fontSize: "1.05rem", fontWeight: 900, margin: 0, textTransform: "uppercase", letterSpacing: "0.06em" }}>🗺️ Coming Attractions</h2>
+          </div>
+          <div style={{ background: "linear-gradient(160deg, #fffdf5, #fef5da)", border: "2px solid #c4923a", borderTop: "none", borderRadius: "0 0 12px 12px", padding: "16px", boxShadow: "0 4px 16px rgba(0,0,0,0.12)" }}>
+            <p style={{ color: "#5c3d1e", fontSize: "0.88rem", lineHeight: 1.6, margin: "0 0 14px" }}>
+              Here&apos;s a sneak peek at what&apos;s coming — each game is packed with Bible adventure! 👀
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              {PREVIEWS.map((game) => (
+                <div key={game.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start", background: "linear-gradient(135deg, #fffdf5, #fff8e8)", border: "1.5px solid #d4a853", borderLeft: `4px solid ${game.color}`, borderRadius: "8px", padding: "12px 14px", boxShadow: "0 2px 6px rgba(0,0,0,0.06)" }}>
+                  <div style={{ fontSize: "1.8rem", flexShrink: 0, width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", background: `${game.color}20`, border: `1.5px solid ${game.color}50`, borderRadius: "8px" }}>{game.icon}</div>
+                  <div>
+                    <h3 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "0.95rem", fontWeight: 900, margin: "0 0 4px" }}>{game.title}</h3>
+                    <p style={{ color: "#5c3d1e", fontSize: "0.82rem", lineHeight: 1.5, margin: 0 }}>{game.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1rem", fontWeight: 900, margin: "0 0 4px" }}>
-                    {game.title}
-                  </h3>
-                  <p style={{ color: "#5c3d1e", fontSize: "0.85rem", lineHeight: 1.5, margin: 0 }}>
-                    {game.desc}
-                  </p>
-                </div>
-              </article>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 

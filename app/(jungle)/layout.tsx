@@ -19,9 +19,9 @@ const EXTRA_NAV = [
 ];
 
 const CIRCLES = [
-  { label: "Latest Video", href: "/bookshelf", cx: "26%", cy: "87%", d: "14%", ext: false },
-  { label: "Fun Games",    href: "/games",     cx: "50%", cy: "87%", d: "14%", ext: false },
-  { label: "About Us",     href: FB,           cx: "74%", cy: "87%", d: "14%", ext: true  },
+  { label: "Latest Video", href: "/bookshelf", cx: "26%", cy: "87%", d: "11%", ext: false },
+  { label: "Fun Games",    href: "/games",     cx: "50%", cy: "87%", d: "11%", ext: false },
+  { label: "About Us",     href: FB,           cx: "74%", cy: "87%", d: "11%", ext: true  },
 ];
 
 const pillStyle = (b: { cx: string; cy: string; w: string; h: string }) => ({
@@ -188,7 +188,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
 
           {/* VBS Zone — upper right corner → Rhino Corner */}
           <Link href="/rhino-corner" aria-label="VBS Zone" title="VBS Zone" style={{
-            position: "absolute", right: "1%", top: "1%", width: "13%",
+            position: "absolute", right: "1%", top: "1%", width: "10%",
             aspectRatio: "1 / 1" as const, display: "block", borderRadius: "10px",
           }} className={CIRCLE_CLASS}>
             <span className="sr-only">VBS Zone</span>
