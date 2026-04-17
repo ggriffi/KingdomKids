@@ -74,14 +74,14 @@ function CircleLink({ b }: { b: typeof CIRCLES[number] }) {
 
 function PanelHeader() {
   return (
-    <div style={{ overflow: "hidden", lineHeight: 0 }}>
+    <div style={{ display: "flex", justifyContent: "center", lineHeight: 0, padding: "4px 0 0" }}>
       <Image
         src="/images/page banner template.png"
         alt=""
         width={900}
         height={350}
-        style={{ width: "100%", height: "auto", display: "block", mixBlendMode: "multiply" }}
-        sizes="900px"
+        style={{ width: "50%", height: "auto", display: "block", mixBlendMode: "multiply" }}
+        sizes="450px"
       />
     </div>
   );
@@ -186,9 +186,9 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
           {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
           {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
 
-          {/* VBS Zone — upper right corner → Rhino Corner */}
+          {/* VBS Zone — badge in upper-right area of v3 image */}
           <Link href="/rhino-corner" aria-label="VBS Zone" title="VBS Zone" style={{
-            position: "absolute", right: "1%", top: "1%", width: "10%",
+            position: "absolute", right: "5%", top: "6%", width: "9%",
             aspectRatio: "1 / 1" as const, display: "block", borderRadius: "10px",
           }} className={CIRCLE_CLASS}>
             <span className="sr-only">VBS Zone</span>
