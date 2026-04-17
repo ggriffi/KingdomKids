@@ -7,7 +7,7 @@ const FB = "https://www.facebook.com/";
 
 const TOP_NAV = [
   { label: "Home",    href: "/",           cx: "10%",   cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "About",   href: FB,            cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: true  },
+  { label: "Store",   href: "/store",       cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Games",   href: "/games",      cx: "30.8%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Videos",  href: "/bookshelf",  cx: "42.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Contact", href: "/contact",    cx: "53.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
@@ -80,7 +80,7 @@ function PanelHeader() {
         alt=""
         width={900}
         height={350}
-        style={{ width: "80%", height: "auto", display: "block", mixBlendMode: "multiply" }}
+        style={{ width: "45%", height: "auto", display: "block", mixBlendMode: "multiply" }}
         sizes="380px"
       />
     </div>
@@ -108,7 +108,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
       <div className="kk-mobile" style={{ minHeight: "100dvh", flexDirection: "column", background: "#0a2c10" }}>
 
         <div style={{ position: "relative", height: "195px", flexShrink: 0, overflow: "hidden" }}>
-          <Image src="/images/Jungle adventure with The Kingdom Kids.png"
+          <Image src="/images/The Kingdom Kids Jungle Adventures Page v3.png"
             alt="The Kingdom Kids" fill style={{ objectFit: "cover", objectPosition: "50% 0%" }}
             priority sizes="100vw" />
         </div>
@@ -179,26 +179,20 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
       <div className="kk-desktop" style={{ width: "100%", alignItems: "center", justifyContent: "center", background: "#0a2c10", minHeight: "100vh" }}>
         <div className="relative" style={{ width: "min(100vw, calc(100vh * 1.5))", aspectRatio: "3 / 2" }}>
 
-          <Image src="/images/Jungle adventure with The Kingdom Kids.png"
+          <Image src="/images/The Kingdom Kids Jungle Adventures Page v3.png"
             alt="The Kingdom Kids – Jungle Adventure"
             fill className="object-fill" priority sizes="100vw" />
 
           {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
           {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
 
-          {/* Rhino Stop + Store buttons */}
-          <div style={{ position: "absolute", right: "2%", bottom: "10%", width: "12%", zIndex: 5, display: "flex", flexDirection: "column", gap: "5%" }}>
-            <Link href="/rhino-corner" style={{ display: "block" }}>
-              <Image src="/images/rstop.png" alt="Rhino Stop" width={400} height={134}
-                style={{ width: "100%", height: "auto", display: "block", filter: "drop-shadow(0 3px 8px rgba(0,0,0,0.6))" }}
-                sizes="12vw" />
-            </Link>
-            <Link href="/store" style={{ display: "block" }}>
-              <Image src="/images/store.png" alt="Store" width={400} height={134}
-                style={{ width: "100%", height: "auto", display: "block", filter: "drop-shadow(0 3px 8px rgba(0,0,0,0.6))" }}
-                sizes="12vw" />
-            </Link>
-          </div>
+          {/* VBS Zone — upper right corner → Rhino Corner */}
+          <Link href="/rhino-corner" aria-label="VBS Zone" title="VBS Zone" style={{
+            position: "absolute", right: "1%", top: "1%", width: "13%",
+            aspectRatio: "1 / 1" as const, display: "block", borderRadius: "10px",
+          }} className={CIRCLE_CLASS}>
+            <span className="sr-only">VBS Zone</span>
+          </Link>
 
           {!isHome && (
             <div style={{
