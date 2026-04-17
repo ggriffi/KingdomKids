@@ -7,80 +7,24 @@ import { usePathname } from "next/navigation";
 const FB = "https://www.facebook.com/";
 
 const TOP_NAV = [
-  { label: "Home", href: "/", cx: "10%", cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "About", href: FB, cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: true },
-  { label: "Games", href: "/games", cx: "30.8%", cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "Videos", href: "/bookshelf", cx: "42.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "Contact", href: "/contact", cx: "53.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Home",    href: "/",           ext: false },
+  { label: "About",   href: FB,            ext: true  },
+  { label: "Games",   href: "/games",      ext: false },
+  { label: "Videos",  href: "/bookshelf",  ext: false },
+  { label: "Contact", href: "/contact",    ext: false },
 ];
 
-// Extra nav buttons rendered as real styled orange pills (no artwork button underneath)
 const EXTRA_NAV = [
   { label: "Rhino Corner", href: "/rhino-corner", ext: false },
-  { label: "Store", href: "/store", ext: false },
+  { label: "Store",        href: "/store",         ext: false },
 ];
 
 const CIRCLES = [
-  { label: "Latest Video", href: "/bookshelf", cx: "26%", cy: "87%", d: "14%", ext: false },
-  { label: "Fun Games", href: "/games", cx: "50%", cy: "87%", d: "14%", ext: false },
-  { label: "About Us", href: FB, cx: "74%", cy: "87%", d: "14%", ext: true },
+  { label: "Latest Video", href: "/bookshelf", ext: false },
+  { label: "Fun Games",    href: "/games",     ext: false },
+  { label: "About Us",     href: FB,           ext: true  },
 ];
 
-const pillStyle = (b: { cx: string; cy: string; w: string; h: string }) => ({
-  position: "absolute" as const,
-  left: b.cx,
-  top: b.cy,
-  width: b.w,
-  height: b.h,
-  transform: "translate(-50%, -50%)",
-  borderRadius: "999px",
-  background: "transparent",
-});
-
-const circleStyle = (b: { cx: string; cy: string; d: string }) => ({
-  position: "absolute" as const,
-  left: b.cx,
-  top: b.cy,
-  width: b.d,
-  aspectRatio: "1 / 1",
-  transform: "translate(-50%, -50%)",
-  borderRadius: "50%",
-  background: "transparent",
-});
-
-// DEBUG: visible overlays — remove ring-* and bg-* before final deploy
-const PILL_CLASS = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
-const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer hover:ring-4 hover:ring-white/60 hover:bg-white/10 hover:scale-110";
-
-function NavLink({ b }: { b: typeof TOP_NAV[number] }) {
-  if (b.ext) return (
-    <a href={b.href} target="_blank" rel="noopener noreferrer"
-      aria-label={b.label} title={b.label} style={pillStyle(b)} className={PILL_CLASS}>
-      <span className="sr-only">{b.label}</span>
-    </a>
-  );
-  return (
-    <Link href={b.href} aria-label={b.label} title={b.label}
-      style={pillStyle(b)} className={PILL_CLASS}>
-      <span className="sr-only">{b.label}</span>
-    </Link>
-  );
-}
-
-function CircleLink({ b }: { b: typeof CIRCLES[number] }) {
-  if (b.ext) return (
-    <a href={b.href} target="_blank" rel="noopener noreferrer"
-      aria-label={b.label} title={b.label} style={circleStyle(b)} className={CIRCLE_CLASS}>
-      <span className="sr-only">{b.label}</span>
-    </a>
-  );
-  return (
-    <Link href={b.href} aria-label={b.label} title={b.label}
-      style={circleStyle(b)} className={CIRCLE_CLASS}>
-      <span className="sr-only">{b.label}</span>
-    </Link>
-  );
-}
 
 function PanelHeader() {
   return (
@@ -155,10 +99,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
     <>
       {lightbox && <VbsLightbox onClose={() => setLightbox(false)} />}
 
-      {/* ═══════════════════════════════════════════════
-          MOBILE  (visible ≤ 699 px, hidden on desktop)
-      ═══════════════════════════════════════════════ */}
-      <div className="kk-mobile" style={{ minHeight: "100dvh", flexDirection: "column", background: "#0a2c10" }}>
+      <div style={{ minHeight: "100dvh", display: "flex", flexDirection: "column", background: "#0a2c10" }}>
 
         {/* Image header — cropped to show characters only, no bottom circles */}
         <div style={{ position: "relative", height: "195px", flexShrink: 0, overflow: "hidden" }}>
@@ -256,124 +197,6 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             <div style={{ padding: "12px 14px 20px" }}>{children}</div>
           </div>
         )}
-      </div>
-
-      {/* ═══════════════════════════════════════════════
-          DESKTOP  (visible ≥ 700 px, hidden on mobile)
-      ═══════════════════════════════════════════════ */}
-      <div className="kk-desktop" style={{ width: "100%", alignItems: "center", justifyContent: "center", background: "#0a2c10", minHeight: "100vh" }}>
-        <div className="relative" style={{ width: "min(100vw, calc(100vh * 1.5))", aspectRatio: "3 / 2" }}>
-
-          <Image src="/images/Jungle adventure with The Kingdom Kids.png"
-            alt="The Kingdom Kids – Jungle Adventure"
-            fill className="object-fill" priority sizes="100vw" />
-
-          {TOP_NAV.map((b) => <NavLink key={b.label} b={b} />)}
-          {CIRCLES.map((b) => <CircleLink key={b.label} b={b} />)}
-
-          {/* Announcements banner — top-right, blends with background, not clickable */}
-          <div style={{ position: "absolute", right: "1%", top: "8%", width: "12%", zIndex: 5 }}>
-            <Image
-              src="/images/Announcements.png"
-              alt="Announcements"
-              width={1536}
-              height={1024}
-              style={{ width: "100%", height: "auto", display: "block" }}
-              sizes="12vw"
-            />
-            {/* VBS flyer below the banner — cropped, click to enlarge */}
-            <button
-              onClick={() => setLightbox(true)}
-              aria-label="View VBS Announcement"
-              style={{ background: "none", border: "none", cursor: "pointer", padding: 0, width: "100%", marginTop: "3%" }}
-            >
-              <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 4", overflow: "hidden", borderRadius: "6px", boxShadow: "0 3px 12px rgba(0,0,0,0.4)" }}>
-                <Image
-                  src="/images/VBS Annoucement.png"
-                  alt="VBS Announcement"
-                  fill
-                  style={{ objectFit: "cover", objectPosition: "center" }}
-                  sizes="12vw"
-                />
-              </div>
-            </button>
-          </div>
-
-          {/* Life of Faith watermark — bottom-left, links to lifeoffaith.net */}
-          <a
-            href="https://lifeoffaith.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Life of Faith"
-            style={{
-              position: "absolute", left: "1%", bottom: "2%",
-              width: "7%", zIndex: 5, display: "block",
-            }}
-          >
-            <Image
-              src="/images/LifeofFaithlogo.png"
-              alt="Life of Faith"
-              width={1536}
-              height={1024}
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: "4px" }}
-              sizes="7vw"
-            />
-          </a>
-
-          {/* Extra Buttons image — lower-middle-right, split into two clickable halves */}
-          <div style={{
-            position: "absolute", right: "2%", bottom: "14%",
-            width: "14%", zIndex: 5,
-          }}>
-            <div style={{ position: "relative" }}>
-              <Image
-                src="/images/Extra buttons.png"
-                alt="Rhino Corner and Store"
-                width={1536}
-                height={1024}
-                style={{ width: "100%", height: "auto", display: "block" }}
-                sizes="14vw"
-              />
-              {/* Left half → Rhino Corner */}
-              <Link
-                href="/rhino-corner"
-                aria-label="Rhino Corner"
-                style={{
-                  position: "absolute", inset: 0,
-                  width: "50%", height: "100%",
-                  display: "block",
-                }}
-              />
-              {/* Right half → Store */}
-              <Link
-                href="/store"
-                aria-label="Store"
-                style={{
-                  position: "absolute", top: 0, right: 0,
-                  width: "50%", height: "100%",
-                  display: "block",
-                }}
-              />
-            </div>
-          </div>
-
-          {!isHome && (
-            <div style={{
-              position: "absolute", top: "14%", left: "8%", right: "8%", bottom: "23%",
-              overflowY: "auto", borderRadius: "16px",
-              background: "rgba(253, 246, 227, 0.95)",
-              backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)",
-              border: "2px solid rgba(196, 146, 58, 0.65)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.85)",
-              zIndex: 10,
-            }}>
-              <PanelHeader />
-              <div style={{ padding: "10px 18px 18px" }}>{children}</div>
-            </div>
-          )}
-
-          {isHome && children}
-        </div>
       </div>
     </>
   );
