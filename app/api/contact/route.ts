@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   const { name, email, message } = await req.json();
@@ -8,24 +7,26 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT ?? 587),
-    secure: process.env.SMTP_SECURE === "true",
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      from: "Kingdom Kids <noreply@kingdomkidssafari.com>",
+      to: ["info@kingdomkidssafari.com"],
+      reply_to: email,
+      subject: `New message from ${name}`,
+      html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p>${message.replace(/\n/g, "<br>")}</p>`,
+    }),
   });
 
-  await transporter.sendMail({
-    from: `"Kingdom Kids Contact" <${process.env.SMTP_USER}>`,
-    to: "info@kingdomkidssafari.com",
-    replyTo: email,
-    subject: `New message from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p>${message.replace(/\n/g, "<br>")}</p>`,
-  });
+  if (!res.ok) {
+    const err = await res.text();
+    console.error("Resend error:", err);
+    return NextResponse.json({ error: "Failed to send" }, { status: 500 });
+  }
 
   return NextResponse.json({ ok: true });
 }
