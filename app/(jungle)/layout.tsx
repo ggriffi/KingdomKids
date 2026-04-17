@@ -3,25 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const FB = "https://www.facebook.com/";
 
 const TOP_NAV = [
-  { label: "Home",    href: "/",           cx: "10%",   cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "Store",   href: "/store",       cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "Games",   href: "/games",      cx: "30.8%", cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "Videos",  href: "/bookshelf",  cx: "42.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "Contact", href: "/contact",    cx: "53.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Home", href: "/", cx: "10%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Store", href: "/store", cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Games", href: "/games", cx: "30.8%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Videos", href: "/bookshelf", cx: "42.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Contact", href: "/contact", cx: "53.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
 ];
 
 const EXTRA_NAV = [
-  { label: "About",        href: "/about"        },
+  { label: "About", href: "/about" },
   { label: "Rhino Corner", href: "/rhino-corner" },
-  { label: "Store",        href: "/store"        },
+  { label: "Store", href: "/store" },
 ];
 
 const CIRCLES = [
   { label: "Latest Video", href: "/bookshelf", cx: "26%", cy: "87%", d: "11%", ext: false },
-  { label: "Fun Games",    href: "/games",     cx: "50%", cy: "87%", d: "11%", ext: false },
+  { label: "Fun Games", href: "/games", cx: "50%", cy: "87%", d: "11%", ext: false },
   { label: "About Us", href: "/about", cx: "74%", cy: "87%", d: "11%", ext: false },
 ];
 
@@ -40,7 +39,7 @@ const circleStyle = (b: { cx: string; cy: string; d: string }) => ({
   borderRadius: "50%", background: "transparent",
 });
 
-const PILL_CLASS   = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
+const PILL_CLASS = "transition-all duration-150 cursor-pointer hover:ring-2 hover:ring-white/70 hover:bg-white/10";
 const CIRCLE_CLASS = "transition-all duration-200 cursor-pointer hover:ring-4 hover:ring-white/60 hover:bg-white/10 hover:scale-110";
 
 function NavLink({ b }: { b: typeof TOP_NAV[number] }) {
