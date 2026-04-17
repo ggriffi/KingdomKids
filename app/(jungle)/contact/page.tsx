@@ -9,19 +9,6 @@ export default function ContactPage() {
   return (
     <div style={{ padding: "16px 0", maxWidth: "1200px", margin: "0 auto" }}>
 
-      {/* ── EDITORIAL HEADER ────────────────────────────────────────── */}
-      <header style={{ marginBottom: "40px", textAlign: "center" }}>
-        <div style={{ fontSize: "2.8rem", marginBottom: "8px" }}>👋</div>
-        <h1 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "2.2rem", fontWeight: 900, margin: "0 0 12px", textTransform: "uppercase", letterSpacing: "0.02em" }}>
-          Get In Touch
-        </h1>
-        <p style={{ color: "#8b5e3c", fontSize: "0.95rem", maxWidth: "600px", margin: "0 auto", lineHeight: 1.6 }}>
-          Got a question? A big idea? Just want to say hi? <br />
-          <strong>We love hearing from families!</strong>
-        </p>
-      </header>
-
-      {/* ── EDITORIAL GRID LAYOUT ────────────────────────────────────────── */}
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",

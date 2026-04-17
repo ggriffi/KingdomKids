@@ -5,84 +5,116 @@ export const metadata: Metadata = {
   description: "Kingdom Kids books, curriculum & resources — grab your safari gear!",
 };
 
-const PLACEHOLDER_BOOKS = [
-  { id: 1, color: "#f07c2a", emoji: "📖" },
-  { id: 2, color: "#f5c842", emoji: "📚" },
-  { id: 3, color: "#5a9e4e", emoji: "✝️" },
-  { id: 4, color: "#4a90d9", emoji: "🗺️" },
+const SLOTS = [
+  { color: "#f07c2a", label: "Kingdom Kids Curriculum" },
+  { color: "#f5c842", label: "Student Activity Book"   },
+  { color: "#5a9e4e", label: "Family Devotional Guide" },
+  { color: "#4a90d9", label: "Explorer Verse Cards"    },
 ];
 
 export default function StorePage() {
   return (
-    <div style={{ padding: "4px 0" }}>
-      {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: "16px" }}>
-        <div style={{ fontSize: "2.8rem", marginBottom: "6px" }}>🛒</div>
-        <h1 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1.4rem", fontWeight: 900, margin: "0 0 6px" }}>
-          The Safari Trading Post
-        </h1>
-        <p style={{ color: "#8b5e3c", fontSize: "0.85rem", lineHeight: 1.5, margin: 0 }}>
-          Load up on Kingdom Kids books &amp; resources —<br />
-          <strong>every explorer needs great gear!</strong>
-        </p>
-      </div>
+    <div style={{ padding: "16px 0", maxWidth: "1200px", margin: "0 auto" }}>
 
-      {/* Treasure incoming banner */}
       <div style={{
-        background: "linear-gradient(135deg, rgba(245,200,66,0.25), rgba(240,124,42,0.15))",
-        border: "2px dashed #f5c842", borderRadius: "14px",
-        padding: "12px 16px", marginBottom: "14px", textAlign: "center",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        gap: "32px",
+        alignItems: "start"
       }}>
-        <p style={{ color: "#3d2008", fontWeight: 900, fontSize: "0.88rem", margin: "0 0 3px" }}>
-          🎁 Treasure is on its way!
-        </p>
-        <p style={{ color: "#5c3d1e", fontSize: "0.75rem", margin: 0 }}>
-          Our books and resources are being loaded into the safari store. Check back soon!
-        </p>
-      </div>
 
-      {/* Placeholder book grid */}
-      <div className="kk-grid-2" style={{ marginBottom: "14px" }}>
-        {PLACEHOLDER_BOOKS.map((book) => (
-          <div key={book.id} style={{
-            borderRadius: "12px", overflow: "hidden",
-            border: "1px solid rgba(196,146,58,0.4)",
-            background: "rgba(196,146,58,0.13)",
-            borderTop: `4px solid ${book.color}`,
+        {/* ── COLUMN 1: STATUS ───────────────────────────────── */}
+        <section style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <header style={{ display: "flex", alignItems: "center", gap: "10px", borderBottom: "2px solid #3d2008", paddingBottom: "8px" }}>
+            <h2 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1.15rem", fontWeight: 900, margin: 0, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              The Safari Trading Post
+            </h2>
+            <span style={{
+              background: "#f5c842",
+              color: "#3d2008", fontSize: "0.6rem", fontWeight: 900,
+              padding: "3px 10px", borderRadius: "999px", textTransform: "uppercase", letterSpacing: "0.08em",
+            }}>Coming Soon</span>
+          </header>
+
+          <article style={{
+            flex: 1, display: "flex", flexDirection: "column", justifyContent: "center",
+            background: "#0a2c10", border: "1px solid rgba(196,146,58,0.5)",
+            padding: "32px 24px", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
           }}>
-            <div style={{
-              height: "90px",
-              background: `linear-gradient(135deg, ${book.color}40, ${book.color}18)`,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "2.2rem",
-            }}>
-              {book.emoji}
+            <h3 style={{ fontFamily: "Georgia, serif", color: "#f5c842", fontSize: "1.2rem", fontWeight: 900, margin: "0 0 12px" }}>
+              Loading the Carts
+            </h3>
+            <p style={{ color: "rgba(253,246,227,0.9)", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: "16px" }}>
+              Our books, curriculum packs, and printable resources are on their way!
+              We&apos;re hand-packing every item before the trading post opens its doors.
+              Check back soon — it&apos;s going to be worth the wait.
+            </p>
+            <p style={{ color: "rgba(253,246,227,0.65)", fontSize: "0.8rem", lineHeight: 1.5, marginBottom: "24px" }}>
+              In the meantime, follow us on Facebook to be the first to know when new resources drop.
+            </p>
+            <div>
+              <span style={{
+                background: "rgba(245,200,66,0.15)", color: "#f5c842", fontSize: "0.75rem", fontWeight: 800,
+                padding: "8px 16px", borderRadius: "999px", textTransform: "uppercase", letterSpacing: "0.08em",
+                border: "1px solid rgba(245,200,66,0.4)"
+              }}>
+                Opening Soon
+              </span>
             </div>
-            <div style={{ padding: "8px 10px", textAlign: "center" }}>
-              <div style={{
-                display: "inline-block", background: `${book.color}22`,
-                border: `1px solid ${book.color}55`,
-                borderRadius: "999px", padding: "3px 12px",
-                fontSize: "0.65rem", color: book.color, fontWeight: 800,
-                textTransform: "uppercase", letterSpacing: "0.04em",
-              }}>Coming Soon!</div>
-            </div>
-          </div>
-        ))}
-      </div>
+          </article>
+        </section>
 
-      {/* Bottom note */}
-      <div style={{
-        background: "rgba(196,146,58,0.10)", border: "1px solid rgba(196,146,58,0.4)",
-        borderRadius: "12px", padding: "12px 14px", textAlign: "center",
-      }}>
-        <p style={{ color: "#3d2008", fontWeight: 800, fontSize: "0.8rem", margin: "0 0 4px" }}>
-          📬 Want to be first to know?
-        </p>
-        <p style={{ color: "#5c3d1e", fontSize: "0.73rem", lineHeight: 1.55, margin: 0 }}>
-          Join our Facebook community and we&apos;ll let you know the moment new
-          books and resources land in the trading post!
-        </p>
+        {/* ── COLUMN 2: PRODUCT SLOTS ────────────────────────── */}
+        <section style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <header style={{ display: "flex", alignItems: "center", gap: "10px", borderBottom: "2px solid #3d2008", paddingBottom: "8px" }}>
+            <h2 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1.15rem", fontWeight: 900, margin: 0, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              Coming to the Shelves
+            </h2>
+          </header>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+            {SLOTS.map((slot) => (
+              <div key={slot.label} style={{
+                borderRadius: "8px", overflow: "hidden",
+                border: "1px solid rgba(196,146,58,0.3)",
+                borderTop: `3px solid ${slot.color}`,
+              }}>
+                <div style={{
+                  height: "80px",
+                  background: `linear-gradient(135deg, ${slot.color}30, ${slot.color}10)`,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  <span style={{
+                    background: `${slot.color}20`, border: `1px solid ${slot.color}50`,
+                    color: slot.color, fontSize: "0.6rem", fontWeight: 800,
+                    padding: "4px 10px", borderRadius: "999px",
+                    textTransform: "uppercase", letterSpacing: "0.05em",
+                  }}>Coming Soon</span>
+                </div>
+                <div style={{ padding: "8px 10px", background: "rgba(196,146,58,0.05)" }}>
+                  <p style={{ color: "#3d2008", fontWeight: 800, fontSize: "0.72rem", margin: 0, fontFamily: "Georgia, serif", lineHeight: 1.3 }}>
+                    {slot.label}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <article style={{
+            background: "rgba(196,146,58,0.07)",
+            border: "1px solid rgba(196,146,58,0.25)", borderRadius: "8px",
+            padding: "16px 18px",
+          }}>
+            <p style={{ color: "#3d2008", fontWeight: 800, fontSize: "0.8rem", margin: "0 0 6px" }}>
+              📬 Want first access?
+            </p>
+            <p style={{ color: "#5c3d1e", fontSize: "0.78rem", lineHeight: 1.6, margin: 0 }}>
+              Join our Facebook community and we&apos;ll let you know the moment new
+              books and resources are ready!
+            </p>
+          </article>
+        </section>
+
       </div>
     </div>
   );
