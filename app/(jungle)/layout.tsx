@@ -14,6 +14,7 @@ const TOP_NAV = [
 ];
 
 const EXTRA_NAV = [
+  { label: "About",        href: "/about"        },
   { label: "Rhino Corner", href: "/rhino-corner" },
   { label: "Store",        href: "/store"        },
 ];
@@ -21,7 +22,7 @@ const EXTRA_NAV = [
 const CIRCLES = [
   { label: "Latest Video", href: "/bookshelf", cx: "26%", cy: "87%", d: "11%", ext: false },
   { label: "Fun Games",    href: "/games",     cx: "50%", cy: "87%", d: "11%", ext: false },
-  { label: "About Us",     href: FB,           cx: "74%", cy: "87%", d: "11%", ext: true  },
+  { label: "About Us", href: "/about", cx: "74%", cy: "87%", d: "11%", ext: false },
 ];
 
 const pillStyle = (b: { cx: string; cy: string; w: string; h: string }) => ({
@@ -74,14 +75,14 @@ function CircleLink({ b }: { b: typeof CIRCLES[number] }) {
 
 function PanelHeader() {
   return (
-    <div style={{ display: "flex", justifyContent: "center", padding: "2px 12px 0", overflow: "hidden" }}>
+    <div style={{ overflow: "hidden", lineHeight: 0 }}>
       <Image
         src="/images/page banner template.png"
         alt=""
         width={900}
         height={350}
-        style={{ width: "45%", height: "auto", display: "block", mixBlendMode: "multiply" }}
-        sizes="380px"
+        style={{ width: "100%", height: "auto", display: "block", mixBlendMode: "multiply" }}
+        sizes="900px"
       />
     </div>
   );
@@ -166,7 +167,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             </div>
           </div>
         ) : (
-          <div style={{ flex: 1, overflowY: "auto", background: "rgba(253,246,227,0.98)", display: "flex", flexDirection: "column" }}>
+          <div style={{ flex: 1, overflowY: "auto", background: "rgba(192,148,58,0.97)", display: "flex", flexDirection: "column" }}>
             <PanelHeader />
             <div style={{ padding: "0 14px 20px" }}>{children}</div>
           </div>
@@ -198,10 +199,10 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             <div style={{
               position: "absolute", top: "14%", left: "8%", right: "8%", bottom: "23%",
               overflowY: "auto", borderRadius: "16px",
-              background: "rgba(253,246,227,0.95)",
+              background: "rgba(192,148,58,0.97)",
               backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)",
-              border: "2px solid rgba(196,146,58,0.65)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.85)",
+              border: "2px solid rgba(140,100,20,0.8)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,220,100,0.3)",
               zIndex: 10,
             }}>
               <PanelHeader />
