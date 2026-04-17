@@ -72,11 +72,21 @@ function CircleLink({ b }: { b: typeof CIRCLES[number] }) {
   );
 }
 
-function PanelHeader() {
+const PAGE_BANNERS: Record<string, string> = {
+  "/store":        "/images/store-banner.png",
+  "/bookshelf":    "/images/video-banner.png",
+  "/contact":      "/images/contact-banner.png",
+  "/about":        "/images/about-banner.png",
+  "/games":        "/images/games-banner.png",
+  "/rhino-corner": "/images/vbs-banner.png",
+};
+
+function PanelHeader({ pathname }: { pathname: string }) {
+  const src = PAGE_BANNERS[pathname] ?? "/images/page banner template.png";
   return (
     <div style={{ display: "flex", justifyContent: "center", lineHeight: 0, padding: "4px 0 0" }}>
       <Image
-        src="/images/page banner template.png"
+        src={src}
         alt=""
         width={900}
         height={350}
@@ -167,7 +177,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
           </div>
         ) : (
           <div style={{ flex: 1, overflowY: "auto", background: "rgba(192,148,58,0.97)", display: "flex", flexDirection: "column" }}>
-            <PanelHeader />
+            <PanelHeader pathname={pathname} />
             <div style={{ padding: "0 14px 20px" }}>{children}</div>
           </div>
         )}
@@ -204,7 +214,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
               boxShadow: "0 8px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,220,100,0.3)",
               zIndex: 10,
             }}>
-              <PanelHeader />
+              <PanelHeader pathname={pathname} />
               <div style={{ padding: "0 18px 18px" }}>{children}</div>
             </div>
           )}
