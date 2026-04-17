@@ -18,18 +18,6 @@ export default function RhinoCornerPage() {
   return (
     <div style={{ padding: "16px 0", maxWidth: "1200px", margin: "0 auto" }}>
 
-      {/* ── EDITORIAL HEADER ────────────────────────────────────────── */}
-      <header style={{ marginBottom: "40px", textAlign: "center" }}>
-        <div style={{ fontSize: "2.8rem", marginBottom: "8px" }}>🦏</div>
-        <h1 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "2.2rem", fontWeight: 900, margin: "0 0 12px", textTransform: "uppercase", letterSpacing: "0.02em" }}>
-          Rhino Corner
-        </h1>
-        <p style={{ color: "#8b5e3c", fontSize: "0.95rem", maxWidth: "600px", margin: "0 auto", lineHeight: 1.6 }}>
-          Your teacher&apos;s home base — where faith &amp; fun come together!
-        </p>
-      </header>
-
-      {/* ── EDITORIAL GRID LAYOUT ────────────────────────────────────────── */}
       <div style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
@@ -95,7 +83,6 @@ export default function RhinoCornerPage() {
             </h2>
           </header>
 
-          {/* Safari Rules poster */}
           <div style={{ borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(196,146,58,0.4)", boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
             <Image
               src="/images/rules poster.png"
@@ -106,13 +93,12 @@ export default function RhinoCornerPage() {
             />
           </div>
 
-          {/* Explorer's Promise */}
           <article style={{
             background: "rgba(26,92,34,0.05)",
             border: "1px solid rgba(90,158,78,0.3)", borderRadius: "8px", padding: "20px",
           }}>
             <h3 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1.05rem", fontWeight: 900, margin: "0 0 16px", textAlign: "center", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-              🌟 The Explorer&apos;s Promise
+              The Explorer&apos;s Promise
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               {RULES.map((rule, i) => (
