@@ -90,7 +90,7 @@ function PanelHeader({ pathname }: { pathname: string }) {
         alt=""
         width={900}
         height={350}
-        style={{ width: "50%", height: "auto", display: "block", mixBlendMode: "multiply" }}
+        style={{ width: "45%", height: "auto", display: "block" }}
         sizes="450px"
       />
     </div>
