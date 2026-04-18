@@ -4,6 +4,17 @@
   "categories": ["All", "Books", "Curriculum", "Gifts"],
   "products": [
     {
+      "id": "vbs-curriculum-kit",
+      "name": "Complete VBS Curriculum Kit",
+      "category": "Curriculum",
+      "price": 89.00,
+      "description": "Everything done for you — Director Guide, Skits & Bible Lessons, Games, Crafts & Snacks, Worship & Daily Schedule, and Decorations & Setup. 5-Day Safari Adventure covering Fear Not, Be Humble, Victory in Jesus, Give Thanks, and Live for Jesus.",
+      "badge": "Launch Price",
+      "inStock": true,
+      "coverColor": "#1a5c22",
+      "image": "/images/1000030669.png"
+    },
+    {
       "id": "book-vol1",
       "name": "The Kingdom Releases — Vol. 1",
       "category": "Books",

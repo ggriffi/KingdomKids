@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { shop } from "@/lib/data";
 
 export default function ShopPage() {
@@ -69,25 +70,35 @@ export default function ShopPage() {
           >
             {/* Cover */}
             <div style={{
-              height: "64px", display: "flex", alignItems: "center",
+              height: "120px", display: "flex", alignItems: "center",
               justifyContent: "center",
               background: `linear-gradient(135deg, ${product.coverColor}cc, ${product.coverColor}88)`,
-              position: "relative",
+              position: "relative", overflow: "hidden",
             }}>
-              <svg viewBox="0 0 40 50" style={{ width: "22px", height: "28px", opacity: 0.85 }} fill="none">
-                <rect x="16" y="0" width="8" height="50" rx="2" fill="rgba(255,255,255,0.9)" />
-                <rect x="0" y="14" width="40" height="8" rx="2" fill="rgba(255,255,255,0.9)" />
-              </svg>
+              {"image" in product && product.image ? (
+                <Image
+                  src={product.image as string}
+                  alt={product.name}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="160px"
+                />
+              ) : (
+                <svg viewBox="0 0 40 50" style={{ width: "22px", height: "28px", opacity: 0.85 }} fill="none">
+                  <rect x="16" y="0" width="8" height="50" rx="2" fill="rgba(255,255,255,0.9)" />
+                  <rect x="0" y="14" width="40" height="8" rx="2" fill="rgba(255,255,255,0.9)" />
+                </svg>
+              )}
               {product.badge && (
                 <span style={{
-                  position: "absolute", top: "3px", right: "3px",
+                  position: "absolute", top: "3px", right: "3px", zIndex: 1,
                   background: "linear-gradient(135deg, #f5c842, #f07c2a)",
                   color: "#3d2008", fontSize: "0.52rem", fontWeight: 700,
                   padding: "1px 5px", borderRadius: "999px", textTransform: "uppercase",
                 }}>{product.badge}</span>
               )}
               {!product.inStock && (
-                <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.35)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.35)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1 }}>
                   <span style={{ color: "white", fontSize: "0.52rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em" }}>
                     Out of Stock
                   </span>
