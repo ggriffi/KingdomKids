@@ -1,7 +1,7 @@
 {
   "heading": "Kingdom Kids Shop",
-  "subheading": "Books, curriculum packs, and adventure gear",
-  "categories": ["All", "Books", "Curriculum", "Gifts"],
+  "subheading": "Bible lessons, leader guides, and safari curriculum",
+  "categories": ["All", "Bible Lessons", "Curriculum", "Gifts"],
   "products": [
     {
       "id": "vbs-curriculum-digital",
@@ -12,8 +12,7 @@
       "badge": "Digital",
       "inStock": true,
       "coverColor": "#1a5c22",
-      "image": "/images/vbs-digital-copy.png",
-      "downloadFiles": ["vbs-curriculum-digital.pdf"]
+      "image": "/images/vbs-digital-copy.png"
     },
     {
       "id": "vbs-curriculum-print",
@@ -27,66 +26,44 @@
       "image": "/images/vbs-print-copy.png"
     },
     {
-      "id": "book-vol1",
-      "name": "The Kingdom Releases — Vol. 1",
-      "category": "Books",
-      "price": 14.99,
-      "description": "The first Kingdom Kids adventure storybook. Ages 4–8.",
-      "badge": "Bestseller",
+      "id": "fear-not-daniel",
+      "name": "Fear Not: Daniel & the Lions' Den",
+      "category": "Bible Lessons",
+      "price": 3.99,
+      "description": "A complete Bible lesson exploring Daniel's courage and God's protection. Great for any age group.",
+      "badge": "PDF",
       "inStock": true,
-      "coverColor": "#e8a030",
-      "downloadFiles": ["kingdom-releases-vol1.pdf"]
+      "coverColor": "#d94f2b",
+      "downloadFiles": ["fear-not-daniel.pdf"]
     },
     {
-      "id": "curriculum-preschool",
-      "name": "Preschool Curriculum Pack",
-      "category": "Curriculum",
+      "id": "god-leads-humble",
+      "name": "God Leads the Humble",
+      "category": "Bible Lessons",
       "price": 3.99,
-      "description": "Full 36-week teacher & student bundle for preschool ages.",
-      "badge": "Popular",
+      "description": "Discover what it truly means to walk humbly before God in this powerful lesson for kids.",
+      "badge": "PDF",
       "inStock": true,
-      "coverColor": "#f5c842",
-      "downloadFiles": ["preschool-curriculum.pdf"]
+      "coverColor": "#9b8db0",
+      "downloadFiles": ["god-leads-humble.pdf"]
     },
     {
-      "id": "curriculum-early",
-      "name": "Early Elementary Pack (K–2)",
-      "category": "Curriculum",
+      "id": "lord-gives-victory",
+      "name": "It is the Lord Who Gives the Victory",
+      "category": "Bible Lessons",
       "price": 3.99,
-      "description": "Complete curriculum for Kindergarten through Grade 2.",
-      "badge": "",
+      "description": "Help kids understand that true victory comes from trusting God, not their own strength.",
+      "badge": "PDF",
       "inStock": true,
       "coverColor": "#3ab5e6",
-      "downloadFiles": ["early-elementary-curriculum.pdf"]
-    },
-    {
-      "id": "curriculum-upper",
-      "name": "Upper Elementary Pack (3–5)",
-      "category": "Curriculum",
-      "price": 3.99,
-      "description": "Complete curriculum for Grades 3 through 5.",
-      "badge": "",
-      "inStock": true,
-      "coverColor": "#22c55e",
-      "downloadFiles": ["upper-elementary-curriculum.pdf"]
-    },
-    {
-      "id": "explorer-passport",
-      "name": "Explorer Passport Journal",
-      "category": "Gifts",
-      "price": 3.99,
-      "description": "A beautifully illustrated personal journal for collecting mission badges and writing prayers.",
-      "badge": "Fan Favorite",
-      "inStock": true,
-      "coverColor": "#d4a853",
-      "downloadFiles": ["explorer-passport-journal.pdf"]
+      "downloadFiles": ["lord-gives-victory.pdf"]
     },
     {
       "id": "snack-guide",
-      "name": "VBS Snack Guide",
+      "name": "Jungle Snack Shack Leader Guide",
       "category": "Curriculum",
       "price": 0,
-      "description": "Safari-themed snack ideas for every day of VBS — free with your email!",
+      "description": "Safari-themed VBS snack ideas for every day — free with your email!",
       "badge": "Free",
       "inStock": true,
       "coverColor": "#f07c2a",
@@ -95,15 +72,25 @@
     },
     {
       "id": "leader-guide",
-      "name": "VBS Leader Guide",
+      "name": "Creation Station Leader Guide",
       "category": "Curriculum",
       "price": 0,
-      "description": "Essential guide for VBS leaders — daily schedule, tips, and how-to's. Free with your email!",
+      "description": "Essential VBS leader guide — daily schedule, tips, and everything you need to run the show. Free with your email!",
       "badge": "Free",
       "inStock": true,
-      "coverColor": "#3ab5e6",
+      "coverColor": "#22c55e",
       "freeDownload": true,
       "downloadFiles": ["leader-guide.pdf"]
+    },
+    {
+      "id": "explorer-passport",
+      "name": "Explorer Passport Journal",
+      "category": "Gifts",
+      "price": 9.99,
+      "description": "A beautifully illustrated personal journal for collecting mission badges and writing prayers.",
+      "badge": "Fan Favorite",
+      "inStock": true,
+      "coverColor": "#d4a853"
     },
     {
       "id": "character-plushies",
@@ -114,16 +101,6 @@
       "badge": "New",
       "inStock": false,
       "coverColor": "#9b8db0"
-    },
-    {
-      "id": "preview-sampler",
-      "name": "Kingdom Kids Sampler (Free)",
-      "category": "Books",
-      "price": 0,
-      "description": "A free preview book featuring the first chapter of each adventure. Download instantly.",
-      "badge": "Free",
-      "inStock": true,
-      "coverColor": "#3d9e56"
     }
   ]
 }
