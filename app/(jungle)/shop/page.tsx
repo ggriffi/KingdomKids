@@ -30,10 +30,10 @@ export default function ShopPage() {
 
   return (
     <div>
-      <h1 style={{ fontFamily: "Georgia, serif", color: "#3d2008", fontSize: "1.35rem", fontWeight: 900, margin: "0 0 3px", textAlign: "center" }}>
+      <h1 style={{ fontFamily: "Georgia, serif", color: "#fff8e7", fontSize: "1.35rem", fontWeight: 900, margin: "0 0 3px", textAlign: "center", textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}>
         🛒 {shop.heading}
       </h1>
-      <p style={{ color: "#8b5e3c", fontSize: "0.78rem", textAlign: "center", margin: "0 0 10px" }}>
+      <p style={{ color: "#f5e4b0", fontSize: "0.78rem", textAlign: "center", margin: "0 0 10px", textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}>
         {shop.subheading}
       </p>
 
@@ -47,8 +47,8 @@ export default function ShopPage() {
               padding: "4px 13px", borderRadius: "999px", fontWeight: 700,
               fontSize: "0.68rem", textTransform: "uppercase", letterSpacing: "0.04em",
               border: "2px solid #d4a853", cursor: "pointer", transition: "all 0.2s",
-              background: activeCategory === cat ? "#f5c842" : "transparent",
-              color: activeCategory === cat ? "#3d2008" : "#8b5e3c",
+              background: activeCategory === cat ? "#f5c842" : "rgba(0,0,0,0.45)",
+              color: activeCategory === cat ? "#3d2008" : "#f5e4b0",
             }}
           >
             {cat}
@@ -63,9 +63,10 @@ export default function ShopPage() {
             key={product.id}
             style={{
               borderRadius: "10px", overflow: "hidden",
-              border: "1px solid rgba(196,146,58,0.4)",
-              background: "rgba(255,255,255,0.55)",
+              border: "1px solid rgba(196,146,58,0.6)",
+              background: "#fffdf5",
               opacity: product.inStock ? 1 : 0.65,
+              boxShadow: "0 2px 8px rgba(0,0,0,0.35)",
             }}
           >
             {/* Cover */}
