@@ -85,15 +85,29 @@ const PAGE_BANNERS: Record<string, string> = {
 function PanelHeader({ pathname }: { pathname: string }) {
   const src = PAGE_BANNERS[pathname] ?? "/images/page banner template.png";
   return (
-    <div style={{ display: "flex", justifyContent: "center", lineHeight: 0, padding: "4px 0 0" }}>
+    <div style={{ display: "flex", justifyContent: "flex-start", lineHeight: 0, padding: "8px 0 0 14px" }}>
       <Image
         src={src}
         alt=""
         width={900}
         height={350}
-        style={{ width: "45%", height: "auto", display: "block" }}
-        sizes="450px"
+        style={{ width: "28%", height: "auto", display: "block" }}
+        sizes="250px"
       />
+    </div>
+  );
+}
+
+function PanelFooter() {
+  return (
+    <div style={{ marginTop: "auto", padding: "14px 18px 10px", borderTop: "1px solid rgba(245,200,66,0.2)", textAlign: "center" }}>
+      <div style={{ display: "flex", gap: "18px", justifyContent: "center", marginBottom: "5px" }}>
+        <Link href="/terms"   style={{ color: "rgba(245,200,66,0.75)", fontSize: "0.72rem", textDecoration: "none" }}>Terms of Use</Link>
+        <Link href="/privacy" style={{ color: "rgba(245,200,66,0.75)", fontSize: "0.72rem", textDecoration: "none" }}>Privacy Policy</Link>
+      </div>
+      <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.66rem", margin: 0 }}>
+        © {new Date().getFullYear()} Kingdom Kids Safari. All rights reserved.
+      </p>
     </div>
   );
 }
@@ -181,6 +195,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "rgba(10,44,16,0.45)" }}>
               <PanelHeader pathname={pathname} />
               <div style={{ padding: "0 14px 20px" }}>{children}</div>
+              <PanelFooter />
             </div>
           </div>
         )}
@@ -219,6 +234,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             }}>
               <PanelHeader pathname={pathname} />
               <div style={{ padding: "0 18px 18px" }}>{children}</div>
+              <PanelFooter />
             </div>
           )}
 
