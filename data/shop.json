@@ -4,6 +4,29 @@
   "categories": ["All", "Books", "Curriculum", "Gifts"],
   "products": [
     {
+      "id": "vbs-curriculum-digital",
+      "name": "VBS Curriculum Kit — Digital",
+      "category": "Curriculum",
+      "price": 89.00,
+      "description": "Instant download. Everything done for you — Director Guide, Skits & Bible Lessons, Games, Crafts & Snacks, Worship & Daily Schedule, and Decorations & Setup. 5-Day Safari Adventure.",
+      "badge": "Digital",
+      "inStock": true,
+      "coverColor": "#1a5c22",
+      "image": "/images/vbs-digital-copy.png",
+      "downloadFiles": ["vbs-curriculum-digital.pdf"]
+    },
+    {
+      "id": "vbs-curriculum-print",
+      "name": "VBS Curriculum Kit — Print",
+      "category": "Curriculum",
+      "price": 129.00,
+      "description": "Printed & shipped to your door. Director Guide, Skits & Bible Lessons, Games, Crafts & Snacks, Worship & Daily Schedule, and Decorations & Setup. 5-Day Safari Adventure.",
+      "badge": "Print",
+      "inStock": true,
+      "coverColor": "#3d2008",
+      "image": "/images/vbs-print-copy.png"
+    },
+    {
       "id": "book-vol1",
       "name": "The Kingdom Releases — Vol. 1",
       "category": "Books",
@@ -11,7 +34,8 @@
       "description": "The first Kingdom Kids adventure storybook. Ages 4–8.",
       "badge": "Bestseller",
       "inStock": true,
-      "coverColor": "#e8a030"
+      "coverColor": "#e8a030",
+      "downloadFiles": ["kingdom-releases-vol1.pdf"]
     },
     {
       "id": "curriculum-preschool",
@@ -21,7 +45,8 @@
       "description": "Full 36-week teacher & student bundle for preschool ages.",
       "badge": "Popular",
       "inStock": true,
-      "coverColor": "#f5c842"
+      "coverColor": "#f5c842",
+      "downloadFiles": ["preschool-curriculum.pdf"]
     },
     {
       "id": "curriculum-early",
@@ -31,7 +56,8 @@
       "description": "Complete curriculum for Kindergarten through Grade 2.",
       "badge": "",
       "inStock": true,
-      "coverColor": "#3ab5e6"
+      "coverColor": "#3ab5e6",
+      "downloadFiles": ["early-elementary-curriculum.pdf"]
     },
     {
       "id": "curriculum-upper",
@@ -41,7 +67,8 @@
       "description": "Complete curriculum for Grades 3 through 5.",
       "badge": "",
       "inStock": true,
-      "coverColor": "#22c55e"
+      "coverColor": "#22c55e",
+      "downloadFiles": ["upper-elementary-curriculum.pdf"]
     },
     {
       "id": "explorer-passport",
@@ -51,7 +78,8 @@
       "description": "A beautifully illustrated personal journal for collecting mission badges and writing prayers.",
       "badge": "Fan Favorite",
       "inStock": true,
-      "coverColor": "#d4a853"
+      "coverColor": "#d4a853",
+      "downloadFiles": ["explorer-passport-journal.pdf"]
     },
     {
       "id": "character-plushies",
