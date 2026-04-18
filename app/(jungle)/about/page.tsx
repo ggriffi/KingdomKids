@@ -6,21 +6,21 @@ const MAIN_CREW = [
     role: "The Leader",
     color: "#f07c2a",
     img: "/images/timmy and drums.png",
-    bio: "Timmy is brave, curious, and always ready for the next adventure. He leads the crew with heart and a big love for God.",
+    bio: "Brave, loud, and the first one to jump into any adventure — Timmy leads with his whole heart. He doesn't always get it right, but he never gives up. Sound familiar? 🥁",
   },
   {
     name: "Ian & Sophie",
     role: "The Dynamic Duo",
     color: "#3ab5e6",
     img: "/images/Ian Sophie.png",
-    bio: "Ian and Sophie bring energy and teamwork to every mission. Together they always find a way through.",
+    bio: "Ian overthinks everything. Sophie acts before she thinks. Together? Pure chaos — and the best kind of teamwork. These two prove that opposites really do make the best friends.",
   },
   {
     name: "Ms. Rose",
     role: "Lead Explorer",
     color: "#22c55e",
     img: "/images/Ms. Rose in vibrant cartoon style.png",
-    bio: "Ms. Rose is the heart and soul of Kingdom Kids! She brings the Bible alive with energy, creativity, and a whole lot of love.",
+    bio: "She shows up with snacks, a Bible, and more energy than anyone in the room. Ms. Rose has a gift for making God&apos;s Word feel like it was written specifically for YOU — because it was. ❤️",
   },
 ];
 
@@ -35,48 +35,46 @@ export default function AboutPage() {
   return (
     <div style={{ padding: "40px 20px", maxWidth: "1100px", margin: "0 auto", color: "#fff8e7" }}>
 
-      {/* ── HERO SECTION ── */}
-      <div style={{ textAlign: "center", marginBottom: "60px", position: "relative" }}>
+      {/* ── HERO ── */}
+      <div style={{ textAlign: "center", marginBottom: "50px" }}>
         <h1 style={{ fontSize: "2.5rem", marginBottom: "16px", color: "#f5c842", textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
           🌿 Welcome to the Kingdom
         </h1>
-        <p style={{ maxWidth: "700px", margin: "0 auto", fontSize: "1.1rem", lineHeight: 1.6, fontStyle: "italic", textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
-          &ldquo;Join Timmy and his colorful crew as they explore, play, and learn together.
-          Every grand adventure brings a new challenge &mdash; and a lesson from God&apos;s Word.&rdquo;
+        <p style={{ maxWidth: "680px", margin: "0 auto", fontSize: "1.05rem", lineHeight: 1.7, fontStyle: "italic", textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
+          &ldquo;Every trail in the Kingdom starts with one question: what does God say about THIS?&rdquo;
         </p>
-        <div style={{ fontSize: "24px", marginTop: "20px" }}>✨ ••• 🐾 ••• ✨</div>
+        <div style={{ fontSize: "22px", marginTop: "16px" }}>✨ ••• 🐾 ••• ✨</div>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "40px" }}>
 
         {/* ── CHARACTER CARDS ── */}
         <section>
-          <h2 style={{ fontSize: "1.5rem", marginBottom: "24px", borderBottom: "3px solid #f5c842", display: "inline-block", color: "#f5c842", textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}>
+          <h2 style={{ fontSize: "1.4rem", marginBottom: "24px", display: "inline-block", color: "#f5c842", borderBottom: "3px solid #f5c842", textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
             The Main Adventurers
           </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
-            {MAIN_CREW.map((char, index) => (
+          <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+            {MAIN_CREW.map((char, i) => (
               <div key={char.name} style={{
-                position: "relative",
-                background: "#fff",
+                background: "#fffdf5",
                 padding: "20px",
-                borderRadius: index % 2 === 0 ? "30px 10px 30px 10px" : "10px 30px 10px 30px",
-                boxShadow: "10px 10px 0px rgba(0,0,0,0.3)",
+                borderRadius: i % 2 === 0 ? "30px 8px 30px 8px" : "8px 30px 8px 30px",
+                boxShadow: "8px 8px 0px rgba(0,0,0,0.3)",
                 border: "2px solid #3d2008",
-                transform: `rotate(${index % 2 === 0 ? "1" : "-1"}deg)`,
-                display: "flex",
-                gap: "20px",
-                color: "#3d2008",
+                transform: `rotate(${i % 2 === 0 ? "1" : "-1"}deg)`,
+                display: "flex", gap: "18px", color: "#3d2008",
               }}>
-                <div style={{ width: "80px", flexShrink: 0 }}>
-                  <Image src={char.img} alt={char.name} width={80} height={100} style={{ borderRadius: "12px", objectFit: "cover" }} />
+                <div style={{ width: "76px", flexShrink: 0 }}>
+                  <Image src={char.img} alt={char.name} width={80} height={100}
+                    style={{ width: "100%", height: "auto", borderRadius: "10px", objectFit: "cover" }} />
                 </div>
                 <div>
-                  <h3 style={{ margin: "0 0 5px", fontSize: "1.2rem" }}>{char.name}</h3>
-                  <span style={{ fontSize: "0.7rem", fontWeight: "bold", background: char.color, color: "white", padding: "2px 8px", borderRadius: "4px", textTransform: "uppercase" }}>
+                  <h3 style={{ margin: "0 0 4px", fontSize: "1.15rem", fontFamily: "Georgia, serif", fontWeight: 900 }}>{char.name}</h3>
+                  <span style={{ fontSize: "0.68rem", fontWeight: 900, background: char.color, color: "white", padding: "2px 10px", borderRadius: "4px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                     {char.role}
                   </span>
-                  <p style={{ fontSize: "0.9rem", marginTop: "10px", lineHeight: 1.5 }}>{char.bio}</p>
+                  <p style={{ fontSize: "0.88rem", marginTop: "10px", lineHeight: 1.6, margin: "10px 0 0" }}
+                    dangerouslySetInnerHTML={{ __html: char.bio }} />
                 </div>
               </div>
             ))}
@@ -84,31 +82,49 @@ export default function AboutPage() {
         </section>
 
         {/* ── RIGHT COLUMN ── */}
-        <section style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+        <section style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
 
+          {/* Mission card — specific, real, NOT generic */}
           <div style={{
             background: "#1a5c22",
             color: "#fff",
-            padding: "30px",
-            borderRadius: "50px 5px",
-            backgroundImage: "radial-gradient(#ffffff20 2px, transparent 2px)",
+            padding: "28px",
+            borderRadius: "40px 8px",
+            border: "2px solid #f5c842",
+            boxShadow: "8px 8px 0px rgba(0,0,0,0.35)",
+            backgroundImage: "radial-gradient(#ffffff18 2px, transparent 2px)",
             backgroundSize: "20px 20px",
+            transform: "rotate(-0.5deg)",
           }}>
-            <h3 style={{ color: "#f5c842", fontSize: "1.4rem", marginBottom: "15px" }}>🌍 Our Mission</h3>
-            <p style={{ lineHeight: 1.7, fontSize: "1rem" }}>
-              Through the wisdom of Ms. Rose, children learn alongside Timmy and his friends
-              how to apply God&apos;s Word to their own lives.
+            <h3 style={{ color: "#f5c842", fontSize: "1.3rem", marginBottom: "14px", fontFamily: "Georgia, serif", fontWeight: 900 }}>🌍 Why We Do This</h3>
+            <p style={{ lineHeight: 1.75, fontSize: "0.95rem", marginBottom: "12px" }}>
+              Ms. Rose always says the jungle has answers to ALL of life&apos;s questions — you just have to look in the right Book.
+            </p>
+            <p style={{ lineHeight: 1.75, fontSize: "0.95rem", marginBottom: "12px" }}>
+              Kingdom Kids is built on one big idea: every child deserves to know that God&apos;s Word is <em>alive</em>, exciting, and written with <strong>them</strong> in mind.
+            </p>
+            <p style={{ lineHeight: 1.75, fontSize: "0.95rem", color: "#f5c842", fontWeight: 800, margin: 0 }}>
+              Five days. Five big truths. One adventure you won&apos;t forget. 🦁
             </p>
           </div>
 
-          <div style={{ background: "#fffdf5", padding: "25px", borderRadius: "20px", border: "2px dashed #c4923a", color: "#3d2008" }}>
-            <h3 style={{ marginBottom: "20px" }}>👋 More Friends</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "15px" }}>
+          {/* Friends card */}
+          <div style={{
+            background: "#fffdf5",
+            padding: "24px",
+            borderRadius: "8px 30px 8px 30px",
+            border: "2px dashed #c4923a",
+            boxShadow: "8px 8px 0px rgba(0,0,0,0.2)",
+            transform: "rotate(0.8deg)",
+            color: "#3d2008",
+          }}>
+            <h3 style={{ marginBottom: "18px", fontFamily: "Georgia, serif", fontWeight: 900, fontSize: "1.1rem" }}>👋 More Friends in the Crew</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
               {FRIENDS.map((f) => (
                 <div key={f.name} style={{ textAlign: "center" }}>
-                  <div style={{ width: "12px", height: "12px", background: f.color, borderRadius: "50%", margin: "0 auto 5px" }} />
-                  <p style={{ fontWeight: "bold", fontSize: "0.85rem", margin: 0 }}>{f.name}</p>
-                  <p style={{ fontSize: "0.7rem", opacity: 0.8, margin: 0 }}>{f.role}</p>
+                  <div style={{ width: "14px", height: "14px", background: f.color, borderRadius: "50%", margin: "0 auto 6px", border: "2px solid #3d2008" }} />
+                  <p style={{ fontWeight: 900, fontSize: "0.9rem", margin: "0 0 2px", fontFamily: "Georgia, serif" }}>{f.name}</p>
+                  <p style={{ fontSize: "0.72rem", opacity: 0.75, margin: 0 }}>{f.role}</p>
                 </div>
               ))}
             </div>
