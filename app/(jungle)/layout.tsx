@@ -177,9 +177,11 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             </div>
           </div>
         ) : (
-          <div style={{ flex: 1, overflowY: "auto", backgroundImage: "url('/images/The Kingdom Kids Jungle Adventures Page v3.png')", backgroundSize: "cover", backgroundPosition: "center top", display: "flex", flexDirection: "column" }}>
-            <PanelHeader pathname={pathname} />
-            <div style={{ padding: "0 14px 20px" }}>{children}</div>
+          <div style={{ flex: 1, overflowY: "auto", backgroundImage: "url('/images/The Kingdom Kids Jungle Adventures Page v3.png')", backgroundSize: "cover", backgroundPosition: "center top", display: "flex", flexDirection: "column", backdropFilter: "blur(2px)", WebkitBackdropFilter: "blur(2px)" }}>
+            <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "rgba(10,44,16,0.45)" }}>
+              <PanelHeader pathname={pathname} />
+              <div style={{ padding: "0 14px 20px" }}>{children}</div>
+            </div>
           </div>
         )}
       </div>
@@ -209,7 +211,8 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             <div style={{
               position: "absolute", top: "14%", left: "8%", right: "8%", bottom: "23%",
               overflowY: "auto", borderRadius: "16px",
-              background: "transparent",
+              background: "rgba(10,44,16,0.45)",
+              backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)",
               border: "2px solid rgba(140,100,20,0.6)",
               boxShadow: "0 8px 32px rgba(0,0,0,0.55)",
               zIndex: 10,
