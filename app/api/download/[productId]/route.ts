@@ -27,22 +27,22 @@ function verifyFreeToken(token: string, productId: string): boolean {
 
 export async function GET(
   req: Request,
-  { params }: { params: { productId: string } }
+  { params }: { params: Promise<{ productId: string }> }
 ) {
+  const { productId } = await params;
   const { searchParams } = new URL(req.url);
   const sessionId = searchParams.get("session_id");
   const token = searchParams.get("token");
   const fileIndex = Math.max(0, parseInt(searchParams.get("file") ?? "0", 10));
 
-  const product = shopData.products.find((p) => p.id === params.productId) as Product | undefined;
-
+  const product = shopData.products.find((p) => p.id === productId) as Product | undefined;
   if (!product) {
     return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
 
   // ── Free download: verify HMAC token ──
   if (product.freeDownload) {
-    if (!token || !verifyFreeToken(token, params.productId)) {
+    if (!token || !verifyFreeToken(token, productId)) {
       return NextResponse.json({ error: "Invalid or expired download link" }, { status: 403 });
     }
   }
@@ -61,7 +61,7 @@ export async function GET(
     if (session.payment_status !== "paid") {
       return NextResponse.json({ error: "Payment not completed" }, { status: 403 });
     }
-    if (session.metadata?.productId !== params.productId) {
+    if (session.metadata?.productId !== productId) {
       return NextResponse.json({ error: "Product mismatch" }, { status: 403 });
     }
   }

@@ -20,9 +20,10 @@ async function getSessionProduct(sessionId: string) {
 export default async function ShopSuccessPage({
   searchParams,
 }: {
-  searchParams: { session_id?: string };
+  searchParams: Promise<{ session_id?: string }>;
 }) {
-  const sessionId = searchParams.session_id ?? "";
+  const { session_id } = await searchParams;
+  const sessionId = session_id ?? "";
   const result = sessionId ? await getSessionProduct(sessionId) : null;
 
   const product = result

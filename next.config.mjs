@@ -3,9 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
-  experimental: {
-    serverComponentsExternalPackages: ["stripe"],
-  },
+  serverExternalPackages: ["stripe"],
 };
 
 export default nextConfig;
