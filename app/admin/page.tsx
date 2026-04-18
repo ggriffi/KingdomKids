@@ -24,12 +24,16 @@ export default function AdminPage() {
   const [statusMsg,   setStatusMsg]   = useState("");
   const [jsonError,   setJsonError]   = useState("");
 
+  const authHeaders = useCallback(() => ({
+    "Authorization": `Bearer ${password}`,
+    "Content-Type": "application/json",
+  }), [password]);
+
   const login = useCallback(async () => {
     setAuthError("");
-    const res = await fetch(`/api/admin/read?password=${encodeURIComponent(password)}&file=site`);
+    const res = await fetch("/api/admin/read?file=site", { headers: authHeaders() });
     if (res.ok) {
       setAuthed(true);
-      // Pass password directly since loadFile reads it from closure
       const data = await res.json() as { content: string };
       try {
         setContent(JSON.stringify(JSON.parse(data.content), null, 2));
@@ -40,17 +44,14 @@ export default function AdminPage() {
     } else {
       setAuthError("Incorrect password. Please try again.");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [password]);
+  }, [password, authHeaders]);
 
-  const loadFile = useCallback(async (file: FileKey, pw?: string) => {
+  const loadFile = useCallback(async (file: FileKey) => {
     setStatus("loading");
     setJsonError("");
-    const usePw = pw ?? password;
-    const res = await fetch(`/api/admin/read?password=${encodeURIComponent(usePw)}&file=${file}`);
+    const res = await fetch(`/api/admin/read?file=${file}`, { headers: authHeaders() });
     if (res.ok) {
       const data = await res.json() as { content: string };
-      // Pretty-print the JSON
       try {
         setContent(JSON.stringify(JSON.parse(data.content), null, 2));
       } catch {
@@ -61,7 +62,7 @@ export default function AdminPage() {
       setStatus("error");
       setStatusMsg("Failed to load file.");
     }
-  }, [password]);
+  }, [authHeaders]);
 
   const switchFile = (file: FileKey) => {
     setActiveFile(file);
@@ -84,8 +85,8 @@ export default function AdminPage() {
     setStatus("saving");
     const res = await fetch("/api/admin/write", {
       method:  "POST",
-      headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify({ password, file: activeFile, content }),
+      headers: authHeaders(),
+      body:    JSON.stringify({ file: activeFile, content }),
     });
     const data = await res.json() as { success?: boolean; error?: string };
     if (data.success) {
@@ -132,8 +133,7 @@ export default function AdminPage() {
           </button>
 
           <p className="text-[#8b5e3c]/60 text-xs mt-6">
-            Default password: <code className="bg-[#f5c842]/20 px-1 rounded">kingdomkids-admin</code>
-            <br />Set <code className="bg-[#f5c842]/20 px-1 rounded">ADMIN_PASSWORD</code> env var in production.
+            Set via <code className="bg-[#f5c842]/20 px-1 rounded">ADMIN_PASSWORD</code> environment variable.
           </p>
         </div>
       </div>

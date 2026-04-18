@@ -11,7 +11,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid product" }, { status: 400 });
   }
 
-  const origin = req.headers.get("origin") ?? process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  // Prefer the configured site URL; never blindly trust the Origin header
+  const origin = (process.env.NEXT_PUBLIC_SITE_URL ?? "").replace(/\/$/, "") || "http://localhost:3535";
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],

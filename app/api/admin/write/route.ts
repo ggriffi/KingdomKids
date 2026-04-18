@@ -2,17 +2,23 @@ import { NextRequest, NextResponse } from "next/server";
 import { writeFileSync } from "fs";
 import { join } from "path";
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "kingdomkids-admin";
 const DATA_DIR = join(process.cwd(), "data");
 const ALLOWED_FILES = ["site", "books", "curriculum", "explorers", "missions", "shop"];
 
 export async function POST(req: NextRequest) {
-  const body = await req.json() as { password?: string; file?: string; content?: string };
-  const { password, file, content } = body;
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  if (!adminPassword) {
+    return NextResponse.json({ error: "Admin not configured" }, { status: 503 });
+  }
 
-  if (password !== ADMIN_PASSWORD) {
+  const auth = req.headers.get("authorization") ?? "";
+  const token = auth.startsWith("Bearer ") ? auth.slice(7) : "";
+  if (token !== adminPassword) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  const body = await req.json() as { file?: string; content?: string };
+  const { file, content } = body;
 
   if (!file || !ALLOWED_FILES.includes(file)) {
     return NextResponse.json({ error: "Invalid file" }, { status: 400 });
@@ -22,7 +28,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing content" }, { status: 400 });
   }
 
-  // Validate JSON before saving
   try {
     JSON.parse(content);
   } catch {
