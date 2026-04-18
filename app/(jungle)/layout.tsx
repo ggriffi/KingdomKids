@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const TOP_NAV = [
   { label: "Home", href: "/", cx: "10%", cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "Store", href: "/store", cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Store", href: "/shop", cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Games", href: "/games", cx: "30.9%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Videos", href: "/bookshelf", cx: "42.4%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Contact", href: "/contact", cx: "53.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
@@ -15,7 +15,7 @@ const TOP_NAV = [
 const EXTRA_NAV = [
   { label: "About", href: "/about" },
   { label: "Rhino Corner", href: "/rhino-corner" },
-  { label: "Store", href: "/store" },
+  { label: "Store", href: "/shop" },
 ];
 
 const CIRCLES = [
@@ -74,6 +74,7 @@ function CircleLink({ b }: { b: typeof CIRCLES[number] }) {
 
 const PAGE_BANNERS: Record<string, string> = {
   "/store":        "/images/store-banner.png",
+  "/shop":         "/images/store-banner.png",
   "/bookshelf":    "/images/video-banner.png",
   "/contact":      "/images/contact-banner.png",
   "/about":        "/images/about-banner.png",
