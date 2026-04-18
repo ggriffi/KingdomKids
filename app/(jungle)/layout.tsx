@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const TOP_NAV = [
   { label: "Home", href: "/", cx: "10%", cy: "4.8%", w: "5%", h: "4%", ext: false },
-  { label: "Store", href: "/store", cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: false },
+  { label: "Store", href: "/shop", cx: "21.7%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Games", href: "/games", cx: "30.9%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Videos", href: "/bookshelf", cx: "42.4%", cy: "4.8%", w: "5%", h: "4%", ext: false },
   { label: "Contact", href: "/contact", cx: "53.3%", cy: "4.8%", w: "5%", h: "4%", ext: false },
@@ -15,7 +15,7 @@ const TOP_NAV = [
 const EXTRA_NAV = [
   { label: "About", href: "/about" },
   { label: "Rhino Corner", href: "/rhino-corner" },
-  { label: "Store", href: "/store" },
+  { label: "Store", href: "/shop" },
 ];
 
 const CIRCLES = [
@@ -72,15 +72,26 @@ function CircleLink({ b }: { b: typeof CIRCLES[number] }) {
   );
 }
 
-function PanelHeader() {
+const PAGE_BANNERS: Record<string, string> = {
+  "/store":        "/images/store-banner.png",
+  "/shop":         "/images/store-banner.png",
+  "/bookshelf":    "/images/video-banner.png",
+  "/contact":      "/images/contact-banner.png",
+  "/about":        "/images/about-banner.png",
+  "/games":        "/images/games-banner.png",
+  "/rhino-corner": "/images/vbs-banner.png",
+};
+
+function PanelHeader({ pathname }: { pathname: string }) {
+  const src = PAGE_BANNERS[pathname] ?? "/images/page banner template.png";
   return (
     <div style={{ display: "flex", justifyContent: "center", lineHeight: 0, padding: "4px 0 0" }}>
       <Image
-        src="/images/page banner template.png"
+        src={src}
         alt=""
         width={900}
         height={350}
-        style={{ width: "50%", height: "auto", display: "block", mixBlendMode: "multiply" }}
+        style={{ width: "45%", height: "auto", display: "block" }}
         sizes="450px"
       />
     </div>
@@ -166,9 +177,11 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             </div>
           </div>
         ) : (
-          <div style={{ flex: 1, overflowY: "auto", background: "rgba(192,148,58,0.97)", display: "flex", flexDirection: "column" }}>
-            <PanelHeader />
-            <div style={{ padding: "0 14px 20px" }}>{children}</div>
+          <div style={{ flex: 1, overflowY: "auto", backgroundImage: "url('/images/The Kingdom Kids Jungle Adventures Page v3.png')", backgroundSize: "cover", backgroundPosition: "center top", display: "flex", flexDirection: "column", backdropFilter: "blur(2px)", WebkitBackdropFilter: "blur(2px)" }}>
+            <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "rgba(10,44,16,0.45)" }}>
+              <PanelHeader pathname={pathname} />
+              <div style={{ padding: "0 14px 20px" }}>{children}</div>
+            </div>
           </div>
         )}
       </div>
@@ -198,13 +211,13 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             <div style={{
               position: "absolute", top: "14%", left: "8%", right: "8%", bottom: "23%",
               overflowY: "auto", borderRadius: "16px",
-              background: "rgba(192,148,58,0.97)",
-              backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)",
-              border: "2px solid rgba(140,100,20,0.8)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,220,100,0.3)",
+              background: "rgba(10,44,16,0.45)",
+              backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)",
+              border: "2px solid rgba(140,100,20,0.6)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.55)",
               zIndex: 10,
             }}>
-              <PanelHeader />
+              <PanelHeader pathname={pathname} />
               <div style={{ padding: "0 18px 18px" }}>{children}</div>
             </div>
           )}
