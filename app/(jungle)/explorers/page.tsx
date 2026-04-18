@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 // Map explorer IDs to their character images
 const CHARACTER_IMAGES: Record<string, { src: string; label: string }> = {
   ellie:   { src: "/images/timmy and drums.png",                    label: "Ellie the Elephant" },
-  giraffy: { src: "/images/Ian Sophie.png",                         label: "Ian & Sophie" },
-  stripes: { src: "/images/Ian Sophie.png",                         label: "Ian & Sophie" },
-  hippo:   { src: "/images/Ms. Rose in vibrant cartoon style.png",  label: "Ms. Rose" },
+  giraffy: { src: "/images/Ian Sophie Transparent.png",                         label: "Ian & Sophie" },
+  stripes: { src: "/images/Ian Sophie Transparent.png",                         label: "Ian & Sophie" },
+  hippo:   { src: "/images/Ms Rose Transparent.png",  label: "Ms. Rose" },
 };
 
 export default function ExplorersPage() {

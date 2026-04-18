@@ -4,15 +4,26 @@
   "categories": ["All", "Books", "Curriculum", "Gifts"],
   "products": [
     {
-      "id": "vbs-curriculum-kit",
-      "name": "Complete VBS Curriculum Kit",
+      "id": "vbs-curriculum-digital",
+      "name": "VBS Curriculum Kit — Digital",
       "category": "Curriculum",
       "price": 89.00,
-      "description": "Everything done for you — Director Guide, Skits & Bible Lessons, Games, Crafts & Snacks, Worship & Daily Schedule, and Decorations & Setup. 5-Day Safari Adventure covering Fear Not, Be Humble, Victory in Jesus, Give Thanks, and Live for Jesus.",
-      "badge": "Launch Price",
+      "description": "Instant download. Everything done for you — Director Guide, Skits & Bible Lessons, Games, Crafts & Snacks, Worship & Daily Schedule, and Decorations & Setup. 5-Day Safari Adventure.",
+      "badge": "Digital",
       "inStock": true,
       "coverColor": "#1a5c22",
-      "image": "/images/1000030669.png"
+      "image": "/images/vbs-digital-copy.png"
+    },
+    {
+      "id": "vbs-curriculum-print",
+      "name": "VBS Curriculum Kit — Print",
+      "category": "Curriculum",
+      "price": 129.00,
+      "description": "Printed & shipped to your door. Director Guide, Skits & Bible Lessons, Games, Crafts & Snacks, Worship & Daily Schedule, and Decorations & Setup. 5-Day Safari Adventure.",
+      "badge": "Print",
+      "inStock": true,
+      "coverColor": "#3d2008",
+      "image": "/images/vbs-print-copy.png"
     },
     {
       "id": "book-vol1",

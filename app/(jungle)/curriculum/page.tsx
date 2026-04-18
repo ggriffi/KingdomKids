@@ -40,7 +40,7 @@ export default function CurriculumPage() {
             <div style={{ background: "linear-gradient(160deg, #fffdf5, #fef5da)", border: "2px solid #c4923a", borderTop: "none", borderRadius: "0 0 12px 12px", padding: "18px", boxShadow: "0 4px 16px rgba(0,0,0,0.12)" }}>
               <div style={{ display: "flex", gap: "14px", alignItems: "flex-start", marginBottom: "14px" }}>
                 <div style={{ flexShrink: 0, width: "64px", height: "80px", position: "relative", borderRadius: "10px", overflow: "hidden", border: "2px solid #c4923a" }}>
-                  <Image src="/images/Ms. Rose in vibrant cartoon style.png" alt="Ms. Rose" fill style={{ objectFit: "cover", objectPosition: "center top" }} sizes="64px" />
+                  <Image src="/images/Ms Rose Transparent.png" alt="Ms. Rose" fill style={{ objectFit: "cover", objectPosition: "center top" }} sizes="64px" />
                 </div>
                 <p style={{ color: "#5c3d1e", fontSize: "0.88rem", lineHeight: 1.75, margin: 0 }}>
                   The <strong style={{ color: "#3d2008" }}>Kingdom Kids Curriculum</strong> is Ms. Rose&apos;s pride and joy! 🌺 A 36-week, fully-graded Bible program for ages 4–12 — packed with adventure storytelling, Scripture memory, crafts, and family guides. Every lesson is a new expedition!

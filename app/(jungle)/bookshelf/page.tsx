@@ -47,7 +47,7 @@ export default function BookshelfPage() {
             style={{ width: "100%", maxHeight: "240px", display: "block", objectFit: "contain", background: "#0a2c10" }} />
           <div style={{ padding: "16px 18px", display: "flex", gap: "14px", alignItems: "flex-start" }}>
             <div style={{ flexShrink: 0, width: "72px" }}>
-              <Image src="/images/Ian Sophie.png" alt="Ian and Sophie" width={200} height={265}
+              <Image src="/images/Ian Sophie Transparent.png" alt="Ian and Sophie" width={200} height={265}
                 style={{ width: "100%", height: "auto", display: "block", filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.2))" }} />
             </div>
             <div>

@@ -12,14 +12,14 @@ const MAIN_CREW = [
     name: "Ian & Sophie",
     role: "The Dynamic Duo",
     color: "#3ab5e6",
-    img: "/images/Ian Sophie.png",
+    img: "/images/Ian Sophie Transparent.png",
     bio: "Ian overthinks everything. Sophie acts before she thinks. Together? Pure chaos — and the best kind of teamwork. These two prove that opposites really do make the best friends.",
   },
   {
     name: "Ms. Rose",
     role: "Lead Explorer",
     color: "#22c55e",
-    img: "/images/Ms. Rose in vibrant cartoon style.png",
+    img: "/images/Ms Rose Transparent.png",
     bio: "She shows up with snacks, a Bible, and more energy than anyone in the room. Ms. Rose has a gift for making God&apos;s Word feel like it was written specifically for YOU — because it was. ❤️",
   },
 ];

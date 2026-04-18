@@ -41,7 +41,7 @@ export default function RhinoCornerPage() {
           color: "#3d2008",
         }}>
           <div style={{ width: "130px", height: "130px", position: "relative", borderRadius: "50%", overflow: "hidden", border: "4px solid #c4923a", boxShadow: "0 6px 20px rgba(0,0,0,0.25)", margin: "0 auto 16px" }}>
-            <Image src="/images/Ms. Rose in vibrant cartoon style.png" alt="Ms. Rose" fill
+            <Image src="/images/Ms Rose Transparent.png" alt="Ms. Rose" fill
               style={{ objectFit: "cover", objectPosition: "center top" }} sizes="130px" />
           </div>
           <h2 style={{ fontFamily: "Georgia, serif", fontSize: "1.6rem", fontWeight: 900, margin: "0 0 6px" }}>
