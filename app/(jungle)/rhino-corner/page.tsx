@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import pageContent from "@/data/page-content.json";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Rhino Corner",
   description: "Meet Ms. Rose and the Kingdom Kids Safari Rules!",
 };
 
-const RULES = [
-  { emoji: "👂", color: "#f07c2a", text: "Listen with open ears and an open heart" },
-  { emoji: "🤝", color: "#3ab5e6", text: "Treat every explorer with kindness and respect" },
-  { emoji: "🙋", color: "#22c55e", text: "Be brave — ask questions and share your thoughts!" },
-  { emoji: "🙏", color: "#f5c842", text: "Honor God in everything we do" },
-  { emoji: "🎉", color: "#d94f2b", text: "Have a BLAST on every adventure!" },
-];
+const { msRose, promise: RULES } = pageContent.rhinoCorner;
 
 export default function RhinoCornerPage() {
   return (
@@ -51,7 +48,7 @@ export default function RhinoCornerPage() {
             ⭐ Lead Explorer
           </div>
           <p style={{ fontSize: "0.9rem", lineHeight: 1.75, margin: 0, color: "#5c3d1e" }}>
-            She shows up with snacks, a Bible, and more energy than anyone in the room. Ms. Rose has this gift — she makes every kid feel like the most important explorer in the jungle. ❤️ And she absolutely cannot wait to go on this adventure with YOU.
+            {msRose.bio}
           </p>
         </div>
 

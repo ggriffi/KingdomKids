@@ -1,0 +1,57 @@
+{
+  "about": {
+    "crew": [
+      {
+        "name": "Timmy",
+        "role": "The Leader",
+        "color": "#f07c2a",
+        "img": "/images/timmy and drums.png",
+        "bio": "Brave, loud, and the first one to jump into any adventure — Timmy leads with his whole heart. He doesn't always get it right, but he never gives up. Sound familiar? 🥁"
+      },
+      {
+        "name": "Ian & Sophie",
+        "role": "The Dynamic Duo",
+        "color": "#3ab5e6",
+        "img": "/images/Ian Sophie Transparent.png",
+        "bio": "Ian overthinks everything. Sophie acts before she thinks. Together? Pure chaos — and the best kind of teamwork. These two prove that opposites really do make the best friends."
+      },
+      {
+        "name": "Ms. Rose",
+        "role": "Lead Explorer",
+        "color": "#22c55e",
+        "img": "/images/Ms Rose Transparent.png",
+        "bio": "She shows up with snacks, a Bible, and more energy than anyone in the room. Ms. Rose has a gift for making God&apos;s Word feel like it was written specifically for YOU — because it was. ❤️"
+      }
+    ],
+    "friends": [
+      { "name": "Bleu",  "role": "The Loyal Sidekick",  "color": "#3ab5e6" },
+      { "name": "Chloe", "role": "The Encourager",       "color": "#f5c842" },
+      { "name": "Rane",  "role": "The Creative One",     "color": "#d94f2b" },
+      { "name": "Elk",   "role": "The New Friend",       "color": "#9b8db0" }
+    ],
+    "mission": {
+      "quote": "Every trail in the Kingdom starts with one question: what does God say about THIS?",
+      "body1": "Ms. Rose always says the jungle has answers to ALL of life's questions — you just have to look in the right Book.",
+      "body2": "Kingdom Kids is built on one big idea: every child deserves to know that God's Word is alive, exciting, and written with them in mind.",
+      "cta": "Five days. Five big truths. One adventure you won't forget. 🦁"
+    }
+  },
+  "rhinoCorner": {
+    "msRose": {
+      "bio": "She shows up with snacks, a Bible, and more energy than anyone in the room. Ms. Rose has this gift — she makes every kid feel like the most important explorer in the jungle. ❤️ And she absolutely cannot wait to go on this adventure with YOU."
+    },
+    "promise": [
+      { "emoji": "👂", "color": "#f07c2a", "text": "Listen with open ears and an open heart" },
+      { "emoji": "🤝", "color": "#3ab5e6", "text": "Treat every explorer with kindness and respect" },
+      { "emoji": "🙋", "color": "#22c55e", "text": "Be brave — ask questions and share your thoughts!" },
+      { "emoji": "🙏", "color": "#f5c842", "text": "Honor God in everything we do" },
+      { "emoji": "🎉", "color": "#d94f2b", "text": "Have a BLAST on every adventure!" }
+    ]
+  },
+  "bookshelf": {
+    "songs": [
+      { "file": "/music/Kingdom Kids Humble Heart.mp3",         "title": "Humble Heart",        "note": "A song about choosing kindness every day 🌸" },
+      { "file": "/music/Kingdom Kids Jesus Makes Us Whole.mp3", "title": "Jesus Makes Us Whole", "note": "Because with Jesus, nothing is missing ✝️" }
+    ]
+  }
+}
