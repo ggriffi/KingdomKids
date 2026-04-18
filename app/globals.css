@@ -285,6 +285,27 @@
   .kk-desktop { display: none; }
 }
 
+/* ── Portrait-mode rotate overlay ────────────────────── */
+.kk-rotate-overlay { display: none; }
+
+@media (max-width: 699px) and (orientation: portrait) {
+  .kk-rotate-overlay {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #0a2c10;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 32px;
+    gap: 18px;
+    background-image: radial-gradient(#ffffff0f 2px, transparent 2px);
+    background-size: 24px 24px;
+  }
+}
+
 /* ── Responsive grid helpers (jungle pages) ──────────── */
 @layer utilities {
   .kk-grid-2 {

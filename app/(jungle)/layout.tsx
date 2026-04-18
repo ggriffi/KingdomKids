@@ -102,6 +102,19 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
 
   return (
     <>
+      {/* ── Rotate overlay (portrait mobile only) ── */}
+      <div className="kk-rotate-overlay">
+        <div style={{ fontSize: "3.5rem", lineHeight: 1 }}>📱</div>
+        <div style={{ fontSize: "2rem", lineHeight: 1 }}>↻</div>
+        <h2 style={{ fontFamily: "Georgia, serif", color: "#f5c842", fontSize: "1.4rem", fontWeight: 900, margin: 0, textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
+          Rotate Your Device
+        </h2>
+        <p style={{ color: "rgba(255,248,227,0.8)", fontSize: "0.9rem", lineHeight: 1.7, margin: 0, maxWidth: "260px" }}>
+          Kingdom Kids Safari is best explored in <strong style={{ color: "#f5c842" }}>landscape mode</strong>. Rotate your device to start the adventure!
+        </p>
+        <div style={{ fontSize: "1.5rem", marginTop: "4px" }}>🌿 🦁 🌿</div>
+      </div>
+
       {/* ═══════════════════════════════════════════════
           MOBILE  (≤ 699 px)
       ═══════════════════════════════════════════════ */}
