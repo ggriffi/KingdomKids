@@ -72,31 +72,6 @@ function CircleLink({ b }: { b: typeof CIRCLES[number] }) {
   );
 }
 
-const PAGE_BANNERS: Record<string, string> = {
-  "/store":        "/images/store-banner.png",
-  "/shop":         "/images/store-banner.png",
-  "/bookshelf":    "/images/video-banner.png",
-  "/contact":      "/images/contact-banner.png",
-  "/about":        "/images/about-banner.png",
-  "/games":        "/images/games-banner.png",
-  "/rhino-corner": "/images/vbs-banner.png",
-};
-
-function PanelHeader({ pathname }: { pathname: string }) {
-  const src = PAGE_BANNERS[pathname] ?? "/images/page banner template.png";
-  return (
-    <div style={{ display: "flex", justifyContent: "flex-start", lineHeight: 0, padding: "8px 0 0 14px" }}>
-      <Image
-        src={src}
-        alt=""
-        width={900}
-        height={350}
-        style={{ width: "28%", height: "auto", display: "block" }}
-        sizes="250px"
-      />
-    </div>
-  );
-}
 
 function PanelFooter() {
   return (
@@ -193,8 +168,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
         ) : (
           <div style={{ flex: 1, overflowY: "auto", backgroundImage: "url('/images/The Kingdom Kids Jungle Adventures Page v3.png')", backgroundSize: "cover", backgroundPosition: "center top", display: "flex", flexDirection: "column", backdropFilter: "blur(2px)", WebkitBackdropFilter: "blur(2px)" }}>
             <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "rgba(10,44,16,0.45)" }}>
-              <PanelHeader pathname={pathname} />
-              <div style={{ padding: "0 14px 20px" }}>{children}</div>
+              <div style={{ padding: "14px 14px 20px" }}>{children}</div>
               <PanelFooter />
             </div>
           </div>
@@ -232,8 +206,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
               boxShadow: "0 8px 32px rgba(0,0,0,0.55)",
               zIndex: 10,
             }}>
-              <PanelHeader pathname={pathname} />
-              <div style={{ padding: "0 18px 18px" }}>{children}</div>
+              <div style={{ padding: "14px 18px 18px" }}>{children}</div>
               <PanelFooter />
             </div>
           )}
