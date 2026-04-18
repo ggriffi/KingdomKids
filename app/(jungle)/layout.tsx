@@ -177,7 +177,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             </div>
           </div>
         ) : (
-          <div style={{ flex: 1, overflowY: "auto", backgroundImage: "url('/images/03D7814E-62DC-4E3F-8DCE-C30DB8FB6F10.png')", backgroundSize: "cover", backgroundPosition: "center top", display: "flex", flexDirection: "column" }}>
+          <div style={{ flex: 1, overflowY: "auto", backgroundImage: "url('/images/The Kingdom Kids Jungle Adventures Page v3.png')", backgroundSize: "cover", backgroundPosition: "center top", display: "flex", flexDirection: "column" }}>
             <PanelHeader pathname={pathname} />
             <div style={{ padding: "0 14px 20px" }}>{children}</div>
           </div>
@@ -209,10 +209,9 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             <div style={{
               position: "absolute", top: "14%", left: "8%", right: "8%", bottom: "23%",
               overflowY: "auto", borderRadius: "16px",
-              backgroundImage: "url('/images/03D7814E-62DC-4E3F-8DCE-C30DB8FB6F10.png')",
-              backgroundSize: "cover", backgroundPosition: "center top",
-              border: "2px solid rgba(140,100,20,0.8)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,220,100,0.3)",
+              background: "transparent",
+              border: "2px solid rgba(140,100,20,0.6)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.55)",
               zIndex: 10,
             }}>
               <PanelHeader pathname={pathname} />
