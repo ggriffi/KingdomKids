@@ -85,14 +85,14 @@ const PAGE_BANNERS: Record<string, string> = {
 function PanelHeader({ pathname }: { pathname: string }) {
   const src = PAGE_BANNERS[pathname] ?? "/images/page banner template.png";
   return (
-    <div style={{ display: "flex", justifyContent: "flex-start", lineHeight: 0, padding: "8px 0 0 14px" }}>
+    <div style={{ display: "flex", justifyContent: "center", lineHeight: 0, padding: "8px 0 4px" }}>
       <Image
         src={src}
         alt=""
         width={900}
         height={350}
-        style={{ width: "28%", height: "auto", display: "block" }}
-        sizes="250px"
+        style={{ width: "22%", height: "auto", display: "block" }}
+        sizes="200px"
       />
     </div>
   );
