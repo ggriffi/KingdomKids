@@ -59,28 +59,37 @@
       "coverColor": "#3ab5e6"
     },
     {
+      "id": "directors-guide",
+      "name": "Director's Guide",
+      "category": "Curriculum",
+      "price": 19.99,
+      "description": "Everything a VBS director needs — full program overview, daily schedule, volunteer coordination, and setup instructions for a 5-Day Safari Adventure.",
+      "badge": "Print",
+      "inStock": true,
+      "plusShipping": true,
+      "coverColor": "#1a5c22"
+    },
+    {
       "id": "snack-guide",
       "name": "Jungle Snack Shack Leader Guide",
       "category": "Curriculum",
-      "price": 0,
-      "description": "Safari-themed VBS snack ideas for every day — free with your email!",
-      "badge": "Free",
+      "price": 11.99,
+      "description": "Safari-themed VBS snack ideas for every day of the adventure.",
+      "badge": "Print",
       "inStock": true,
-      "coverColor": "#f07c2a",
-      "freeDownload": true,
-      "downloadFiles": ["snack-guide.pdf"]
+      "plusShipping": true,
+      "coverColor": "#f07c2a"
     },
     {
       "id": "leader-guide",
       "name": "Creation Station Leader Guide",
       "category": "Curriculum",
-      "price": 0,
-      "description": "Essential VBS leader guide — daily schedule, tips, and everything you need to run the show. Free with your email!",
-      "badge": "Free",
+      "price": 11.99,
+      "description": "Essential VBS leader guide — daily schedule, tips, and everything you need to run the show.",
+      "badge": "Print",
       "inStock": true,
-      "coverColor": "#22c55e",
-      "freeDownload": true,
-      "downloadFiles": ["leader-guide.pdf"]
+      "plusShipping": true,
+      "coverColor": "#22c55e"
     },
     {
       "id": "explorer-passport",
