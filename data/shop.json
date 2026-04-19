@@ -29,34 +29,34 @@
       "id": "fear-not-daniel",
       "name": "Fear Not: Daniel & the Lions' Den",
       "category": "Bible Lessons",
-      "price": 3.99,
+      "price": 14.99,
       "description": "A complete Bible lesson exploring Daniel's courage and God's protection. Great for any age group.",
-      "badge": "PDF",
+      "badge": "Print",
       "inStock": true,
-      "coverColor": "#d94f2b",
-      "downloadFiles": ["fear-not-daniel.pdf"]
+      "plusShipping": true,
+      "coverColor": "#d94f2b"
     },
     {
       "id": "god-leads-humble",
       "name": "God Leads the Humble",
       "category": "Bible Lessons",
-      "price": 3.99,
+      "price": 14.99,
       "description": "Discover what it truly means to walk humbly before God in this powerful lesson for kids.",
-      "badge": "PDF",
+      "badge": "Print",
       "inStock": true,
-      "coverColor": "#9b8db0",
-      "downloadFiles": ["god-leads-humble.pdf"]
+      "plusShipping": true,
+      "coverColor": "#9b8db0"
     },
     {
       "id": "lord-gives-victory",
       "name": "It is the Lord Who Gives the Victory",
       "category": "Bible Lessons",
-      "price": 3.99,
+      "price": 14.99,
       "description": "Help kids understand that true victory comes from trusting God, not their own strength.",
-      "badge": "PDF",
+      "badge": "Print",
       "inStock": true,
-      "coverColor": "#3ab5e6",
-      "downloadFiles": ["lord-gives-victory.pdf"]
+      "plusShipping": true,
+      "coverColor": "#3ab5e6"
     },
     {
       "id": "snack-guide",

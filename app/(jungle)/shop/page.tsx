@@ -109,7 +109,7 @@ export default function ShopPage() {
                   {p.name}
                 </p>
                 <p style={{ color: "#d94f2b", fontWeight: 800, fontSize: "0.75rem", margin: "0 0 5px" }}>
-                  {p.price === 0 ? "Free" : `$${p.price.toFixed(2)}`}
+                  {p.price === 0 ? "Free" : `$${p.price.toFixed(2)}`}{(p as {plusShipping?: boolean}).plusShipping ? <span style={{ fontSize: "0.6rem", fontWeight: 600, color: "#8b5e3c" }}> + s/h</span> : null}
                 </p>
                 {p.freeDownload ? (
                   <Link href="/free-downloads" style={{
