@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { writeFileSync } from "fs";
 import { join } from "path";
+import { verifySessionToken } from "@/lib/admin-auth";
 
 const DATA_DIR = join(process.cwd(), "data");
 const ALLOWED_FILES = ["page-content", "layout-config", "shop"];
@@ -13,7 +14,7 @@ export async function POST(req: NextRequest) {
 
   const auth = req.headers.get("authorization") ?? "";
   const token = auth.startsWith("Bearer ") ? auth.slice(7) : "";
-  if (token !== adminPassword) {
+  if (!verifySessionToken(token, adminPassword)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

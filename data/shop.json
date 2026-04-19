@@ -1,13 +1,18 @@
 {
   "heading": "Kingdom Kids Shop",
   "subheading": "Bible lessons, leader guides, and safari curriculum",
-  "categories": ["All", "Bible Lessons", "Curriculum", "Gifts"],
+  "categories": [
+    "All",
+    "Bible Lessons",
+    "Curriculum",
+    "Gifts"
+  ],
   "products": [
     {
       "id": "vbs-curriculum-digital",
       "name": "VBS Curriculum Kit — Digital",
       "category": "Curriculum",
-      "price": 89.00,
+      "price": 89,
       "description": "Instant download. Everything done for you — Director Guide, Skits & Bible Lessons, Games, Crafts & Snacks, Worship & Daily Schedule, and Decorations & Setup. 5-Day Safari Adventure.",
       "badge": "Digital",
       "inStock": true,
@@ -18,7 +23,7 @@
       "id": "vbs-curriculum-print",
       "name": "VBS Curriculum Kit — Print",
       "category": "Curriculum",
-      "price": 129.00,
+      "price": 129,
       "description": "Printed & shipped to your door. Director Guide, Skits & Bible Lessons, Games, Crafts & Snacks, Worship & Daily Schedule, and Decorations & Setup. 5-Day Safari Adventure.",
       "badge": "Print",
       "inStock": true,
@@ -90,26 +95,6 @@
       "inStock": true,
       "plusShipping": true,
       "coverColor": "#22c55e"
-    },
-    {
-      "id": "explorer-passport",
-      "name": "Explorer Passport Journal",
-      "category": "Gifts",
-      "price": 9.99,
-      "description": "A beautifully illustrated personal journal for collecting mission badges and writing prayers.",
-      "badge": "Fan Favorite",
-      "inStock": true,
-      "coverColor": "#d4a853"
-    },
-    {
-      "id": "character-plushies",
-      "name": "Explorer Animal Plush Set",
-      "category": "Gifts",
-      "price": 34.99,
-      "description": "Soft plush versions of Ellie, Giraffy, Stripes, and Hippo in safari gear.",
-      "badge": "New",
-      "inStock": false,
-      "coverColor": "#9b8db0"
     }
   ]
 }

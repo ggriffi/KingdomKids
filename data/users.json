@@ -1,0 +1,26 @@
+[
+  {
+    "id": "509ca55af5e5f61b",
+    "name": "Geoff Griffith",
+    "username": "geoff",
+    "passwordHash": "27504f3b541c9e0d4d0648d967c396b8:27e3722e5af08bbd33947c15ba40ae1f04f220d7e52d9fa1b5759f366c0040596a51832d997e8e9fe6fd275a32bca186b2f185f78bc51734d58dfdd685f2a7b3",
+    "totpSecret": "PF4GOMQDQHHMFKGPXYWROYJNVNVLPV3Y",
+    "mustChangePassword": false,
+    "mustSetupMfa": false,
+    "role": "admin",
+    "createdAt": "2026-04-19T11:51:23.576Z",
+    "lastLogin": "2026-04-19T11:58:09.998Z"
+  },
+  {
+    "id": "6a0112cd9e8fec97",
+    "name": "Tanya Washington",
+    "username": "tanya",
+    "passwordHash": "e8909886fbb767f79db905ecda4d8342:311d82bd7c8acded9c7a016321ae8404ac0b7bfef437bc011af89d8d91c5c361438faadb86548ff2bb16260ab67e44f2dfca319bd441d1d86a8a43155e961b25",
+    "totpSecret": null,
+    "mustChangePassword": true,
+    "mustSetupMfa": true,
+    "role": "admin",
+    "createdAt": "2026-04-19T11:51:23.615Z",
+    "lastLogin": null
+  }
+]

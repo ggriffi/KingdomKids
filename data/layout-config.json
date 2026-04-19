@@ -1,15 +1,68 @@
 {
   "topNav": [
-    { "label": "Home",    "href": "/",           "cx": "10%",   "cy": "4.8%", "w": "5%", "h": "4%" },
-    { "label": "Store",   "href": "/shop",        "cx": "21.7%", "cy": "4.8%", "w": "5%", "h": "4%" },
-    { "label": "Games",   "href": "/games",       "cx": "30.9%", "cy": "4.8%", "w": "5%", "h": "4%" },
-    { "label": "Videos",  "href": "/bookshelf",   "cx": "42.4%", "cy": "4.8%", "w": "5%", "h": "4%" },
-    { "label": "Contact", "href": "/contact",     "cx": "53.3%", "cy": "4.8%", "w": "5%", "h": "4%" }
+    {
+      "label": "Home",
+      "href": "/",
+      "cx": "10%",
+      "cy": "4.8%",
+      "w": "5%",
+      "h": "4%"
+    },
+    {
+      "label": "Store",
+      "href": "/shop",
+      "cx": "21.7%",
+      "cy": "4.8%",
+      "w": "5%",
+      "h": "4%"
+    },
+    {
+      "label": "Games",
+      "href": "/games",
+      "cx": "30.9%",
+      "cy": "4.8%",
+      "w": "5%",
+      "h": "4%"
+    },
+    {
+      "label": "Videos",
+      "href": "/bookshelf",
+      "cx": "42.4%",
+      "cy": "4.8%",
+      "w": "5%",
+      "h": "4%"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact",
+      "cx": "53.3%",
+      "cy": "4.8%",
+      "w": "5%",
+      "h": "4%"
+    }
   ],
   "circles": [
-    { "label": "Latest Video", "href": "/bookshelf", "cx": "26%", "cy": "87%", "d": "11%" },
-    { "label": "Fun Games",    "href": "/games",     "cx": "50%", "cy": "87%", "d": "11%" },
-    { "label": "About Us",     "href": "/about",     "cx": "74%", "cy": "87%", "d": "11%" }
+    {
+      "label": "Latest Video",
+      "href": "/bookshelf",
+      "cx": "26%",
+      "cy": "87%",
+      "d": "11%"
+    },
+    {
+      "label": "Fun Games",
+      "href": "/games",
+      "cx": "50%",
+      "cy": "87%",
+      "d": "11%"
+    },
+    {
+      "label": "About Us",
+      "href": "/about",
+      "cx": "74%",
+      "cy": "87%",
+      "d": "11%"
+    }
   ],
   "vbsZone": {
     "right": "5%",
