@@ -179,7 +179,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
             </div>
           </div>
         ) : (
-          <div style={{ flex: 1, overflowY: "auto", backgroundImage: "url('/images/The Kingdom Kids Jungle Adventures Page v3.png')", backgroundSize: "cover", backgroundPosition: "center top", display: "flex", flexDirection: "column", backdropFilter: "blur(2px)", WebkitBackdropFilter: "blur(2px)" }}>
+          <div className="kk-scroll" style={{ flex: 1, overflowY: "auto", backgroundImage: "url('/images/The Kingdom Kids Jungle Adventures Page v3.png')", backgroundSize: "cover", backgroundPosition: "center top", display: "flex", flexDirection: "column", backdropFilter: "blur(2px)", WebkitBackdropFilter: "blur(2px)" }}>
             <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "rgba(10,44,16,0.45)" }}>
               <div style={{ padding: "14px 14px 20px" }}>{children}</div>
               <PanelFooter />
@@ -210,7 +210,7 @@ export default function JungleLayout({ children }: { children: React.ReactNode }
           </Link>
 
           {!isHome && (
-            <div style={{
+            <div className="kk-scroll" style={{
               position: "absolute", top: "14%", left: "8%", right: "8%", bottom: "23%",
               overflowY: "auto", borderRadius: "16px",
               background: "rgba(10,44,16,0.45)",
