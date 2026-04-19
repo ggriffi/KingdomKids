@@ -3,7 +3,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 const DATA_DIR = join(process.cwd(), "data");
-const ALLOWED_FILES = ["site", "books", "curriculum", "explorers", "missions", "shop"];
+const ALLOWED_FILES = ["page-content", "layout-config", "shop"];
 
 export async function GET(req: NextRequest) {
   const adminPassword = process.env.ADMIN_PASSWORD;
